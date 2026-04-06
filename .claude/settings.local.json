@@ -1,7 +1,14 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:ui.shadcn.com)"
+      "WebFetch(domain:ui.shadcn.com)",
+      "Bash(find /c/Users/patrickribeiro/workspace/patrick.dev.br/ui -path */node_modules -prune -o -name accordion* -type f -print)",
+      "Bash(find /c/Users/patrickribeiro/workspace/patrick.dev.br/ui/packages/react/node_modules/.pnpm -path *base-ui*accordion* -print)",
+      "Bash(find /c/Users/patrickribeiro/workspace/patrick.dev.br/ui -path */node_modules/@base-ui -type d)",
+      "Bash(for dir:*)",
+      "Bash(do mkdir:*)",
+      "Bash(done)",
+      "Bash(pnpm --filter @patrick-ui/react build)"
     ]
   }
 }

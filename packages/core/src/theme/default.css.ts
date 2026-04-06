@@ -14,7 +14,7 @@ export const defaultTheme = createTheme(vars, {
     background: "oklch(1 0 0)",
     border: "oklch(0.922 0 0)",
     input: "oklch(0.922 0 0)",
-    ring: "oklch(0.708 0 0)",
+    ring: "oklch(0.623 0.214 255.815)",
   },
   font: {
     body: "'Geist Mono', 'Geist Fallback', system-ui, sans-serif",
@@ -37,7 +37,7 @@ export const darkTheme = createTheme(vars, {
     background: "oklch(0.145 0 0)",
     border: "oklch(0.269 0 0)",
     input: "oklch(0.269 0 0)",
-    ring: "oklch(0.439 0 0)",
+    ring: "oklch(0.707 0.165 254.624)",
   },
   font: {
     body: "'Geist Mono', 'Geist Fallback', system-ui, sans-serif",

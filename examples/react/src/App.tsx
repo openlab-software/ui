@@ -1,4 +1,5 @@
 import { Button, PatrickUIProvider } from "@patrick-ui/react";
+import { Checkbox } from "@patrick-ui/react";
 import {
   Table,
   TableHeader,
@@ -14,6 +15,13 @@ export default function App() {
   return (
     <PatrickUIProvider>
       <Button>Eu sou um botão React.js</Button>
+
+      <Checkbox.Label>
+        <Checkbox.Root>
+          <Checkbox.Indicator />
+        </Checkbox.Root>
+        Olá
+      </Checkbox.Label>
 
       <Table>
         <TableCaption>Lista de pagamentos</TableCaption>

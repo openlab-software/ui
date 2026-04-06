@@ -22,6 +22,7 @@ export default defineConfig({
   },
 
   build: {
+    cssCodeSplit: true,
     rollupOptions: {
       external: ["react", "react-dom"],
       output: {
