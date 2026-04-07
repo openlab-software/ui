@@ -27,7 +27,8 @@
     /* Workspace source resolution */
     "paths": {
       "@patrick-ui/react": ["../../packages/react/src/index.ts"],
-      "@patrick-ui/react/*": ["../../packages/react/src/*"]
+      "@patrick-ui/react/*": ["../../packages/react/src/*"],
+      "@patrick-ui/core/*": ["../../packages/core/src/*"]
     }
   },
   "include": ["src"]

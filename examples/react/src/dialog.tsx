@@ -19,7 +19,7 @@ export default function DialogDemo() {
     <Dialog>
       <form>
         <DialogTrigger
-          render={<Button variant="outline">Open Dialog</Button>}
+          render={<Button variant="secondary">Open Dialog</Button>}
         />
         <DialogContent>
           <DialogHeader>

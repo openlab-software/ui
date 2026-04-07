@@ -21,7 +21,7 @@ import ContextMenuDemo from "./context-menu";
 export default function App() {
   return (
     <PatrickUIProvider>
-      <Button variant="">Eu sou um botão React.js</Button>
+      <Button variant="secondary">Eu sou um botão React.js</Button>
 
       <AccordionDemo />
       <DialogDemo />
