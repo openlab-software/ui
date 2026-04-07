@@ -7,7 +7,7 @@ export const input = style({
   padding: "0.5rem 0.75rem",
   fontSize: "0.875rem",
   fontFamily: "inherit",
-  borderRadius: vars.radius.button,
+  borderRadius: vars.radius.base,
   border: `1px solid ${vars.color.border}`,
   background: vars.color.background,
   color: vars.color.foreground,
@@ -25,7 +25,7 @@ export const popup = style({
   marginTop: "0.5rem",
   backgroundColor: vars.color.background,
   border: `1px solid ${vars.color.border}`,
-  borderRadius: vars.radius.button,
+  borderRadius: vars.radius.base,
   overflow: "hidden",
   boxShadow: `0 4px 12px rgba(0,0,0,0.1)`,
 });
@@ -37,7 +37,7 @@ export const listbox = style({
 export const item = style({
   padding: "0.5rem 0.75rem",
   fontSize: "0.875rem",
-  borderRadius: vars.radius.button,
+  borderRadius: vars.radius.base,
   cursor: "pointer",
   color: vars.color.foreground,
   selectors: {

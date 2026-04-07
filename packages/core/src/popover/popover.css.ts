@@ -1,28 +1,50 @@
 import { style } from "@vanilla-extract/css";
 import { vars } from "../theme/theme-contract.css";
+import { r, alpha, zoomIn95, zoomOut95, fadeIn, fadeOut } from "../theme/utils.css";
 
 export const root = style({});
 export const trigger = style({ display: "inline-flex" });
+
+export const positioner = style({
+  isolation: "isolate",
+  zIndex: 50,
+});
+
 export const popup = style({
-  position: "fixed", zIndex: 50,
-  backgroundColor: vars.color.background,
-  border: `1px solid ${vars.color.border}`,
-  borderRadius: vars.radius.button,
+  zIndex: 50,
+  display: "flex",
+  width: "18rem",
+  flexDirection: "column",
+  gap: "1rem",
+  borderRadius: r["2xl"],
+  backgroundColor: vars.color.popover,
   padding: "1rem",
-  minWidth: "14rem",
-  boxShadow: `0 4px 12px rgba(0,0,0,0.1)`,
+  fontSize: "0.875rem",
+  color: vars.color.popoverForeground,
+  boxShadow: `0 25px 50px -12px rgba(0,0,0,0.25), 0 0 0 1px ${alpha(vars.color.foreground, 5)}`,
+  outline: "none",
+  selectors: {
+    "&[data-open]": { animation: `${fadeIn} 100ms ease, ${zoomIn95} 100ms ease` },
+    "&[data-closed]": { animation: `${fadeOut} 100ms ease, ${zoomOut95} 100ms ease` },
+  },
 });
-export const backdrop = style({
-  position: "fixed", inset: 0, zIndex: 49, backgroundColor: "rgba(0,0,0,0.3)",
-  selectors: { "&[data-starting-style]": { opacity: 0 }, "&[data-ending-style]": { opacity: 0 } },
+
+export const header = style({
+  display: "flex",
+  flexDirection: "column",
+  gap: "0.25rem",
+  fontSize: "0.875rem",
 });
-export const arrow = style({ fill: vars.color.background });
-export const title = style({ fontSize: "0.875rem", fontWeight: 600, color: vars.color.foreground });
-export const close = style({
-  display: "inline-flex", alignItems: "center", justifyContent: "center",
-  marginTop: "1rem", padding: "0.5rem 1rem", fontSize: "0.875rem",
-  fontFamily: "inherit", borderRadius: vars.radius.button,
-  border: `1px solid ${vars.color.border}`, background: vars.color.secondary,
-  color: vars.color.secondaryForeground, cursor: "pointer",
+
+export const title = style({
+  fontSize: "1rem",
+  fontWeight: 500,
 });
-export const description = style({ fontSize: "0.875rem", color: vars.color.mutedForeground });
+
+export const description = style({
+  color: vars.color.mutedForeground,
+});
+
+export const arrow = style({
+  fill: vars.color.popover,
+});

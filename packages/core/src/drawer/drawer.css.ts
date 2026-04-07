@@ -25,7 +25,7 @@ export const description = style({ fontSize: "0.875rem", color: vars.color.muted
 export const close = style({
   display: "inline-flex", alignItems: "center", justifyContent: "center",
   marginTop: "1rem", padding: "0.5rem 1rem", fontSize: "0.875rem",
-  fontFamily: "inherit", borderRadius: vars.radius.button,
+  fontFamily: "inherit", borderRadius: vars.radius.base,
   border: `1px solid ${vars.color.border}`, background: vars.color.secondary,
   color: vars.color.secondaryForeground, cursor: "pointer",
 });

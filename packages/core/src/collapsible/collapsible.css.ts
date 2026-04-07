@@ -9,7 +9,7 @@ export const trigger = style({
   padding: "0.5rem 1rem",
   fontSize: "0.875rem",
   fontFamily: "inherit",
-  borderRadius: vars.radius.button,
+  borderRadius: vars.radius.base,
   border: `1px solid ${vars.color.border}`,
   background: vars.color.secondary,
   color: vars.color.secondaryForeground,

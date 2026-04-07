@@ -7,7 +7,7 @@ const buttonBase = style({
   flexShrink: 0,
   alignItems: "center",
   justifyContent: "center",
-  borderRadius: vars.radius.button,
+  borderRadius: vars.radius.base,
   border: "1px solid transparent",
   backgroundClip: "padding-box",
   fontSize: "0.875rem",

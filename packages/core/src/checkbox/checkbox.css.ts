@@ -1,53 +1,53 @@
 import { style } from "@vanilla-extract/css";
 import { vars } from "../theme/theme-contract.css";
-
-export const label = style({
-  display: "flex",
-  alignItems: "center",
-  gap: "0.5rem",
-  fontSize: "1rem",
-  lineHeight: "1.5rem",
-  color: vars.color.foreground,
-});
+import { alpha, focusRing, invalidRing } from "../theme/utils.css";
+import { darkTheme } from "../theme/default.css";
 
 export const root = style({
-  boxSizing: "border-box",
+  position: "relative",
   display: "flex",
-  width: "1.25rem",
-  height: "1.25rem",
+  flexShrink: 0,
+  width: "1rem",
+  height: "1rem",
   alignItems: "center",
   justifyContent: "center",
-  borderRadius: "0.25rem",
-  outline: 0,
-  padding: 0,
-  margin: 0,
-  border: "none",
+  borderRadius: "6px",
+  border: `1px solid ${vars.color.input}`,
+  outline: "none",
+  transition: "box-shadow 150ms",
   selectors: {
-    "&[data-unchecked]": {
-      border: `1px solid ${vars.color.border}`,
-      backgroundColor: "transparent",
-    },
+    // Focus
+    "&:focus-visible": focusRing(),
+    // Disabled
+    "&:disabled, &[data-disabled]": { cursor: "not-allowed", opacity: 0.5 },
+    // Checked state
     "&[data-checked]": {
+      borderColor: vars.color.primary,
+      backgroundColor: vars.color.primary,
+      color: vars.color.primaryForeground,
+    },
+    // Dark unchecked background
+    [`.${darkTheme} &`]: {
+      backgroundColor: alpha(vars.color.input, 30),
+    },
+    [`.${darkTheme} &[data-checked]`]: {
       backgroundColor: vars.color.primary,
     },
-    "&:focus-visible": {
-      outline: `2px solid ${vars.color.ring}`,
-      outlineOffset: "2px",
+    // Invalid
+    "&[aria-invalid='true']": {
+      ...invalidRing(),
     },
+    "&[aria-invalid='true'][data-checked]": {
+      borderColor: vars.color.primary,
+    },
+    // Field disabled
+    "[data-disabled=true] &": { opacity: 0.5 },
   },
 });
 
 export const indicator = style({
-  display: "flex",
-  color: vars.color.primaryForeground,
-  selectors: {
-    "&[data-unchecked]": {
-      display: "none",
-    },
-  },
-});
-
-export const icon = style({
-  width: "0.75rem",
-  height: "0.75rem",
+  display: "grid",
+  placeContent: "center",
+  color: "currentColor",
+  transition: "none",
 });

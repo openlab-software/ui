@@ -2,14 +2,11 @@ import { style } from "@vanilla-extract/css";
 import { vars } from "../theme/theme-contract.css";
 
 export const root = style({
-  border: "none",
+  flexShrink: 0,
   backgroundColor: vars.color.border,
+  border: "none",
   selectors: {
     "&[data-orientation=horizontal]": { height: "1px", width: "100%" },
-    "&[data-orientation=vertical]": { height: "100%", width: "1px" },
+    "&[data-orientation=vertical]": { width: "1px", alignSelf: "stretch" },
   },
-});
-export const label = style({
-  fontSize: "0.75rem",
-  color: vars.color.mutedForeground,
 });

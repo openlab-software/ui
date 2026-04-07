@@ -2,13 +2,13 @@ import { style } from "@vanilla-extract/css";
 import { vars } from "../theme/theme-contract.css";
 
 export const root = style({ display: "inline-flex" });
-export const rootImage = style({ width: "100%", height: "auto", borderRadius: vars.radius.button });
+export const rootImage = style({ width: "100%", height: "auto", borderRadius: vars.radius.base });
 export const popup = style({
   position: "fixed", zIndex: 50,
   width: "20rem",
   backgroundColor: vars.color.background,
   border: `1px solid ${vars.color.border}`,
-  borderRadius: vars.radius.button,
+  borderRadius: vars.radius.base,
   padding: "0.5rem",
   boxShadow: `0 4px 12px rgba(0,0,0,0.1)`,
 });

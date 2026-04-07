@@ -1,55 +1,105 @@
 import { AlertDialog as AlertDialogBase } from "@base-ui/react/alert-dialog";
+import { Button } from "../button/button";
 import * as styles from "@patrick-ui/core/alert-dialog/alert-dialog.css";
 
-export type AlertDialogRootProps = AlertDialogBase.Root.Props;
-export type AlertDialogTriggerProps = AlertDialogBase.Trigger.Props;
-export type AlertDialogPopupProps = AlertDialogBase.Popup.Props;
-export type AlertDialogBackdropProps = AlertDialogBase.Backdrop.Props;
-export type AlertDialogTitleProps = AlertDialogBase.Title.Props;
-export type AlertDialogDescriptionProps = AlertDialogBase.Description.Props;
-export type AlertDialogCloseProps = AlertDialogBase.Close.Props;
-
-export function AlertDialogRoot(props: AlertDialogRootProps) {
-  return <AlertDialogBase.Root {...props} />;
+export function AlertDialog(props: AlertDialogBase.Root.Props) {
+  return <AlertDialogBase.Root data-slot="alert-dialog" {...props} />;
 }
-AlertDialogRoot.displayName = "PatrickUIAlertDialogRoot";
 
-export function AlertDialogTrigger(props: AlertDialogTriggerProps) {
-  return <AlertDialogBase.Trigger className={styles.trigger} {...props} />;
+export function AlertDialogTrigger(props: AlertDialogBase.Trigger.Props) {
+  return (
+    <AlertDialogBase.Trigger data-slot="alert-dialog-trigger" {...props} />
+  );
 }
-AlertDialogTrigger.displayName = "PatrickUIAlertDialogTrigger";
 
-export function AlertDialogPopup(props: AlertDialogPopupProps) {
-  return <AlertDialogBase.Popup className={styles.popup} {...props} />;
+export function AlertDialogPortal(props: AlertDialogBase.Portal.Props) {
+  return <AlertDialogBase.Portal data-slot="alert-dialog-portal" {...props} />;
 }
-AlertDialogPopup.displayName = "PatrickUIAlertDialogPopup";
 
-export function AlertDialogBackdrop(props: AlertDialogBackdropProps) {
-  return <AlertDialogBase.Backdrop className={styles.backdrop} {...props} />;
+export function AlertDialogOverlay(props: AlertDialogBase.Backdrop.Props) {
+  return (
+    <AlertDialogBase.Backdrop
+      data-slot="alert-dialog-overlay"
+      className={styles.backdrop}
+      {...props}
+    />
+  );
 }
-AlertDialogBackdrop.displayName = "PatrickUIAlertDialogBackdrop";
 
-export function AlertDialogTitle(props: AlertDialogTitleProps) {
-  return <AlertDialogBase.Title className={styles.title} {...props} />;
+export function AlertDialogContent({
+  size = "default",
+  ...props
+}: AlertDialogBase.Popup.Props & { size?: "default" | "sm" }) {
+  return (
+    <AlertDialogPortal>
+      <AlertDialogOverlay />
+      <AlertDialogBase.Popup
+        data-slot="alert-dialog-content"
+        data-size={size}
+        className={styles.popup}
+        {...props}
+      />
+    </AlertDialogPortal>
+  );
 }
-AlertDialogTitle.displayName = "PatrickUIAlertDialogTitle";
 
-export function AlertDialogDescription(props: AlertDialogDescriptionProps) {
-  return <AlertDialogBase.Description className={styles.description} {...props} />;
+export function AlertDialogHeader(props: React.ComponentProps<"div">) {
+  return (
+    <div data-slot="alert-dialog-header" className={styles.header} {...props} />
+  );
 }
-AlertDialogDescription.displayName = "PatrickUIAlertDialogDescription";
 
-export function AlertDialogClose(props: AlertDialogCloseProps) {
-  return <AlertDialogBase.Close className={styles.close} {...props} />;
+export function AlertDialogFooter(props: React.ComponentProps<"div">) {
+  return (
+    <div data-slot="alert-dialog-footer" className={styles.footer} {...props} />
+  );
 }
-AlertDialogClose.displayName = "PatrickUIAlertDialogClose";
 
-export const AlertDialog = {
-  Root: AlertDialogRoot,
-  Trigger: AlertDialogTrigger,
-  Popup: AlertDialogPopup,
-  Backdrop: AlertDialogBackdrop,
-  Title: AlertDialogTitle,
-  Description: AlertDialogDescription,
-  Close: AlertDialogClose,
-};
+export function AlertDialogMedia(props: React.ComponentProps<"div">) {
+  return (
+    <div data-slot="alert-dialog-media" className={styles.media} {...props} />
+  );
+}
+
+export function AlertDialogTitle(props: AlertDialogBase.Title.Props) {
+  return (
+    <AlertDialogBase.Title
+      data-slot="alert-dialog-title"
+      className={styles.title}
+      {...props}
+    />
+  );
+}
+
+export function AlertDialogDescription(
+  props: AlertDialogBase.Description.Props,
+) {
+  return (
+    <AlertDialogBase.Description
+      data-slot="alert-dialog-description"
+      className={styles.description}
+      {...props}
+    />
+  );
+}
+
+export function AlertDialogAction(props: React.ComponentProps<typeof Button>) {
+  return <Button data-slot="alert-dialog-action" {...props} />;
+}
+
+export function AlertDialogCancel({
+  variant = "outline",
+  size = "default",
+  ...props
+}: AlertDialogBase.Close.Props &
+  Pick<React.ComponentProps<typeof Button>, "variant" | "size">) {
+  return (
+    <AlertDialogBase.Close
+      data-slot="alert-dialog-cancel"
+      render={<Button variant={variant} size={size} />}
+      {...props}
+    />
+  );
+}
+
+export const AlertDialogBackdrop = AlertDialogOverlay;

@@ -24,7 +24,7 @@ export default defineConfig({
   build: {
     cssCodeSplit: true,
     rollupOptions: {
-      external: ["react", "react-dom"],
+      external: ["react", "react-dom", "lucide-react"],
       output: {
         globals: {
           react: "React",

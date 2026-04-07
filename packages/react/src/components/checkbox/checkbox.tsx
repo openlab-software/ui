@@ -1,28 +1,19 @@
 import { Checkbox as CheckboxBase } from "@base-ui/react/checkbox";
+import { CheckIcon } from "lucide-react";
 import * as styles from "@patrick-ui/core/checkbox/checkbox.css";
 
-export type CheckboxRootProps = CheckboxBase.Root.Props;
-export type CheckboxIndicatorProps = CheckboxBase.Indicator.Props;
-export type CheckboxLabelProps = React.LabelHTMLAttributes<HTMLLabelElement>;
+export type CheckboxProps = CheckboxBase.Root.Props;
 
-export function CheckboxRoot(props: CheckboxRootProps) {
-  return <CheckboxBase.Root className={styles.root} {...props} />;
+export function Checkbox(props: CheckboxProps) {
+  return (
+    <CheckboxBase.Root data-slot="checkbox" className={styles.root} {...props}>
+      <CheckboxBase.Indicator
+        data-slot="checkbox-indicator"
+        className={styles.indicator}
+      >
+        <CheckIcon />
+      </CheckboxBase.Indicator>
+    </CheckboxBase.Root>
+  );
 }
-CheckboxRoot.displayName = "PatrickUICheckbox";
-
-export function CheckboxIndicator(props: CheckboxIndicatorProps) {
-  return <CheckboxBase.Indicator className={styles.indicator} {...props} />;
-}
-CheckboxIndicator.displayName = "PatrickUICheckboxIndicator";
-
-export function CheckboxLabel(props: CheckboxLabelProps) {
-  return <label className={styles.label} {...props} />;
-}
-CheckboxLabel.displayName = "PatrickUICheckboxLabel";
-
-export const Checkbox = {
-  Root: CheckboxRoot,
-  Indicator: CheckboxIndicator,
-  Label: CheckboxLabel,
-  iconClass: styles.icon,
-};
+Checkbox.displayName = "PatrickUICheckbox";

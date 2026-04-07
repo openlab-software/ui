@@ -6,7 +6,7 @@ export const list = style({ display: "inline-flex", alignItems: "center", gap: "
 export const item = style({});
 export const trigger = style({
   padding: "0.375rem 0.75rem", fontSize: "0.875rem", fontFamily: "inherit",
-  borderRadius: vars.radius.button,
+  borderRadius: vars.radius.base,
   border: "none", background: "transparent", color: vars.color.foreground,
   cursor: "pointer", outline: "none",
   selectors: { "&:focus-visible": { outline: `2px solid ${vars.color.ring}` } },
@@ -15,7 +15,7 @@ export const popup = style({
   position: "absolute", zIndex: 50,
   backgroundColor: vars.color.background,
   border: `1px solid ${vars.color.border}`,
-  borderRadius: vars.radius.button,
+  borderRadius: vars.radius.base,
   padding: "0.5rem",
   boxShadow: `0 4px 12px rgba(0,0,0,0.1)`,
 });
@@ -27,6 +27,6 @@ export const backdrop = style({
 export const indicator = style({
   position: "absolute", zIndex: -1,
   backgroundColor: vars.color.muted,
-  borderRadius: vars.radius.button,
+  borderRadius: vars.radius.base,
 });
 export const arrow = style({ fill: vars.color.background });

@@ -9,7 +9,7 @@ export const button = style({
   padding: "0.5rem 0.75rem",
   fontSize: "0.875rem",
   fontFamily: "inherit",
-  borderRadius: vars.radius.button,
+  borderRadius: vars.radius.base,
   border: "none",
   background: "transparent",
   color: vars.color.foreground,

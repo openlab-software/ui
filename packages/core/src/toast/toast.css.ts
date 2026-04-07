@@ -14,7 +14,7 @@ export const root = style({
   maxWidth: "calc(100vw - 2rem)",
   backgroundColor: vars.color.background,
   border: `1px solid ${vars.color.border}`,
-  borderRadius: vars.radius.button,
+  borderRadius: vars.radius.base,
   boxShadow: `0 10px 25px rgba(0,0,0,0.15)`,
   selectors: {
     "&[data-type=info]": { borderColor: vars.color.ring },
@@ -44,7 +44,7 @@ export const close = style({
 export const action = style({
   padding: "0.375rem 0.75rem",
   fontSize: "0.75rem",
-  borderRadius: vars.radius.button,
+  borderRadius: vars.radius.base,
   border: "none",
   background: vars.color.primary,
   color: vars.color.primaryForeground,

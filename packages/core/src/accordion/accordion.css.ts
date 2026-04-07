@@ -1,12 +1,27 @@
-import { style } from "@vanilla-extract/css";
+import { globalStyle, style } from "@vanilla-extract/css";
 import { vars } from "../theme/theme-contract.css";
+import {
+  r,
+  alpha,
+  accordionDown,
+  accordionUp,
+  focusRing,
+} from "../theme/utils.css";
 
 export const root = style({
+  display: "flex",
   width: "100%",
+  flexDirection: "column",
+  overflow: "hidden",
+  borderRadius: r["2xl"],
+  border: `1px solid ${vars.color.border}`,
 });
 
 export const item = style({
-  borderBottom: `1px solid ${vars.color.border}`,
+  selectors: {
+    "&:not(:last-child)": { borderBottom: `1px solid ${vars.color.border}` },
+    "&[data-open]": { backgroundColor: alpha(vars.color.muted, 50) },
+  },
 });
 
 export const header = style({
@@ -14,34 +29,56 @@ export const header = style({
 });
 
 export const trigger = style({
+  position: "relative",
   display: "flex",
   flex: 1,
-  alignItems: "center",
+  alignItems: "flex-start",
   justifyContent: "space-between",
-  padding: "0.75rem 0",
-  fontFamily: "inherit",
+  gap: "1.5rem",
+  padding: "1rem",
+  textAlign: "left",
   fontSize: "0.875rem",
   fontWeight: 500,
+  fontFamily: "inherit",
   background: "none",
-  border: "none",
+  border: "1px solid transparent",
+  borderRadius: r["2xl"],
   color: vars.color.foreground,
   cursor: "pointer",
   outline: "none",
+  transition: "all 150ms cubic-bezier(0.4,0,0.2,1)",
   selectors: {
-    "&:focus-visible": {
-      outline: `2px solid ${vars.color.ring}`,
-      outlineOffset: "2px",
-    },
+    "&:hover": { textDecoration: "underline" },
+    "&:focus-visible": focusRing(),
+    "&[aria-disabled]": { pointerEvents: "none", opacity: 0.5 },
   },
 });
 
 export const panel = style({
   overflow: "hidden",
+  paddingLeft: "1rem",
+  paddingRight: "1rem",
   fontSize: "0.875rem",
-  color: vars.color.mutedForeground,
-  paddingBottom: "0.75rem",
   selectors: {
-    "&[data-starting-style]": { opacity: 0 },
-    "&[data-ending-style]": { opacity: 0 },
+    "&[data-open]": { animation: `${accordionDown} 150ms ease` },
+    "&[data-closed]": { animation: `${accordionUp} 150ms ease` },
   },
+});
+
+export const panelContent = style({
+  height: "var(--accordion-panel-height)",
+  paddingBottom: "1rem",
+  selectors: {
+    "&[data-starting-style]": { height: "0" },
+    "&[data-ending-style]": { height: "0" },
+  },
+});
+
+globalStyle(`${panelContent} a`, {
+  textDecoration: "underline",
+  textUnderlineOffset: "3px",
+});
+
+globalStyle(`${panelContent} p:not(:last-child)`, {
+  marginBottom: "1rem",
 });

@@ -6,13 +6,13 @@ export const popup = style({
   position: "fixed", zIndex: 50,
   backgroundColor: vars.color.background,
   border: `1px solid ${vars.color.border}`,
-  borderRadius: vars.radius.button,
+  borderRadius: vars.radius.base,
   padding: "0.25rem",
   minWidth: "10rem",
   boxShadow: `0 4px 12px rgba(0,0,0,0.1)`,
 });
 export const item = style({
-  padding: "0.375rem 0.75rem", fontSize: "0.875rem", borderRadius: vars.radius.button,
+  padding: "0.375rem 0.75rem", fontSize: "0.875rem", borderRadius: vars.radius.base,
   cursor: "pointer", color: vars.color.foreground, outline: "none",
   selectors: { "&[data-highlighted]": { backgroundColor: vars.color.muted } },
 });

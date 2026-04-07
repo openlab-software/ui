@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import * as styles from '@patrick-ui/core/field/field.css'
+import * as inputStyles from '@patrick-ui/core/input/input.css'
 
-const className = computed(() => styles.input())
+const className = computed(() => inputStyles.root)
 </script>
 
 <template>

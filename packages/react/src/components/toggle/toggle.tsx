@@ -1,3 +1,22 @@
-import { type ToggleProps } from "@base-ui/react/toggle";
+import { Toggle as ToggleBase } from "@base-ui/react/toggle";
+import * as styles from "@patrick-ui/core/toggle/toggle.css";
+import type { ToggleVariants } from "@patrick-ui/core/toggle/toggle.css";
 
-export type { ToggleProps };
+export type ToggleProps = ToggleBase.Props & ToggleVariants;
+
+export function Toggle({
+  variant = "default",
+  size = "default",
+  ...props
+}: ToggleProps) {
+  return (
+    <ToggleBase
+      data-slot="toggle"
+      className={styles.toggle({ variant, size })}
+      {...props}
+    />
+  );
+}
+Toggle.displayName = "PatrickUIToggle";
+
+export { type ToggleVariants };

@@ -1,19 +1,18 @@
 import { Switch as SwitchBase } from "@base-ui/react/switch";
 import * as styles from "@patrick-ui/core/switch/switch.css";
 
-export type SwitchRootProps = SwitchBase.Root.Props;
-export type SwitchThumbProps = SwitchBase.Thumb.Props;
+export type SwitchProps = SwitchBase.Root.Props & { size?: "default" | "sm" };
 
-export function SwitchRoot(props: SwitchRootProps) {
-  return <SwitchBase.Root className={styles.root} {...props} />;
+export function Switch({ size = "default", ...props }: SwitchProps) {
+  return (
+    <SwitchBase.Root
+      data-slot="switch"
+      data-size={size}
+      className={styles.root}
+      {...props}
+    >
+      <SwitchBase.Thumb data-slot="switch-thumb" className={styles.thumb} />
+    </SwitchBase.Root>
+  );
 }
-SwitchRoot.displayName = "PatrickUISwitchRoot";
-export function SwitchThumb(props: SwitchThumbProps) {
-  return <SwitchBase.Thumb className={styles.thumb} {...props} />;
-}
-SwitchThumb.displayName = "PatrickUISwitchThumb";
-
-export const Switch = {
-  Root: SwitchRoot,
-  Thumb: SwitchThumb,
-};
+Switch.displayName = "PatrickUISwitch";

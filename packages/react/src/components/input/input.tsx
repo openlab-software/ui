@@ -1,10 +1,16 @@
-import { Input as InputBase, type InputProps } from "@base-ui/react/input";
+import { Input as InputBase } from "@base-ui/react/input";
 import * as styles from "@patrick-ui/core/input/input.css";
 
-export type { InputProps };
+export type InputProps = React.ComponentProps<"input">;
 
-export function Input(props: InputProps) {
-  return <InputBase className={styles.root} {...props} />;
+export function Input({ type, ...props }: InputProps) {
+  return (
+    <InputBase
+      type={type}
+      data-slot="input"
+      className={styles.root}
+      {...props}
+    />
+  );
 }
 Input.displayName = "PatrickUIInput";
-export const InputComponent = { Root: Input };

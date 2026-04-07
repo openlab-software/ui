@@ -1,24 +1,19 @@
+import { Button as BaseButton } from "@base-ui/react/button";
 import type { ButtonVariants } from "@patrick-ui/core/button/button.css";
 import * as styles from "@patrick-ui/core/button/button.css";
 
-import {
-  Button as BaseButton,
-  type ButtonProps as BaseButtonProps,
-} from "@base-ui/react/button";
+export type ButtonProps = React.ComponentProps<typeof BaseButton> & ButtonVariants;
 
-export type ButtonProps = BaseButtonProps & ButtonVariants;
-
-export const Button: React.FC<ButtonProps> = ({
-  children,
-  variant,
-  size,
-  ...props
-}) => {
+export function Button({ variant, size, className, ...props }: ButtonProps) {
   return (
-    <BaseButton className={styles.button({ variant, size })} {...props}>
-      {children}
-    </BaseButton>
+    <BaseButton
+      data-slot="button"
+      className={styles.button({ variant, size })}
+      {...props}
+    />
   );
-};
-
+}
 Button.displayName = "PatrickUIButton";
+
+export { styles as buttonStyles };
+export type { ButtonVariants };

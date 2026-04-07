@@ -8,7 +8,9 @@
       "Bash(for dir:*)",
       "Bash(do mkdir:*)",
       "Bash(done)",
-      "Bash(pnpm --filter @patrick-ui/react build)"
+      "Bash(pnpm --filter @patrick-ui/react build)",
+      "Bash(pnpm --filter react build)",
+      "Bash(pnpm --filter vue build)"
     ]
   }
 }

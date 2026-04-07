@@ -9,7 +9,7 @@ export const trigger = style({
   padding: "0.5rem 0.75rem",
   fontSize: "0.875rem",
   fontFamily: "inherit",
-  borderRadius: vars.radius.button,
+  borderRadius: vars.radius.base,
   border: `1px solid ${vars.color.border}`,
   background: vars.color.background,
   color: vars.color.foreground,
@@ -22,7 +22,7 @@ export const input = style({
   padding: "0.5rem 0.75rem",
   fontSize: "0.875rem",
   fontFamily: "inherit",
-  borderRadius: vars.radius.button,
+  borderRadius: vars.radius.base,
   border: `1px solid ${vars.color.border}`,
   background: vars.color.background,
   color: vars.color.foreground,
@@ -33,13 +33,13 @@ export const popup = style({
   position: "absolute", zIndex: 50, marginTop: "0.25rem",
   backgroundColor: vars.color.background,
   border: `1px solid ${vars.color.border}`,
-  borderRadius: vars.radius.button,
+  borderRadius: vars.radius.base,
   boxShadow: `0 4px 12px rgba(0,0,0,0.1)`,
   overflow: "hidden",
 });
 export const listbox = style({ padding: "0.25rem", maxHeight: "16rem", overflow: "auto" });
 export const item = style({
-  padding: "0.5rem 0.75rem", fontSize: "0.875rem", borderRadius: vars.radius.button,
+  padding: "0.5rem 0.75rem", fontSize: "0.875rem", borderRadius: vars.radius.base,
   cursor: "pointer", color: vars.color.foreground,
   selectors: { "&[data-highlighted]": { backgroundColor: vars.color.muted } },
 });
@@ -53,6 +53,6 @@ export const backdrop = style({
 export const arrow = style({ fill: vars.color.background });
 export const chip = style({
   display: "inline-flex", alignItems: "center", gap: "0.25rem",
-  padding: "0.25rem 0.5rem", fontSize: "0.75rem", borderRadius: vars.radius.button,
+  padding: "0.25rem 0.5rem", fontSize: "0.75rem", borderRadius: vars.radius.base,
   backgroundColor: vars.color.muted, color: vars.color.mutedForeground,
 });

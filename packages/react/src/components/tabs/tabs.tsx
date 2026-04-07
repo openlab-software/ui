@@ -1,37 +1,54 @@
 import { Tabs as TabsBase } from "@base-ui/react/tabs";
 import * as styles from "@patrick-ui/core/tabs/tabs.css";
+import type { TabsListVariants } from "@patrick-ui/core/tabs/tabs.css";
 
-export type TabsRootProps = TabsBase.Root.Props;
-export type TabsListProps = TabsBase.List.Props;
-export type TabsIndicatorProps = TabsBase.Indicator.Props;
-export type TabsTabProps = TabsBase.Tab.Props;
-export type TabsPanelProps = TabsBase.Panel.Props;
+export function Tabs({
+  orientation = "horizontal",
+  ...props
+}: TabsBase.Root.Props) {
+  return (
+    <TabsBase.Root
+      data-slot="tabs"
+      data-orientation={orientation}
+      className={styles.root}
+      orientation={orientation}
+      {...props}
+    />
+  );
+}
 
-export function TabsRoot(props: TabsRootProps) {
-  return <TabsBase.Root className={styles.root} {...props} />;
+export function TabsList({
+  variant = "default",
+  ...props
+}: TabsBase.List.Props & TabsListVariants) {
+  return (
+    <TabsBase.List
+      data-slot="tabs-list"
+      data-variant={variant}
+      className={styles.list({ variant })}
+      {...props}
+    />
+  );
 }
-TabsRoot.displayName = "PatrickUITabsRoot";
-export function TabsList(props: TabsListProps) {
-  return <TabsBase.List className={styles.list} {...props} />;
-}
-TabsList.displayName = "PatrickUITabsList";
-export function TabsIndicator(props: TabsIndicatorProps) {
-  return <TabsBase.Indicator className={styles.indicator} {...props} />;
-}
-TabsIndicator.displayName = "PatrickUITabsIndicator";
-export function TabsTab(props: TabsTabProps) {
-  return <TabsBase.Tab className={styles.tab} {...props} />;
-}
-TabsTab.displayName = "PatrickUITabsTab";
-export function TabsPanel(props: TabsPanelProps) {
-  return <TabsBase.Panel className={styles.panel} {...props} />;
-}
-TabsPanel.displayName = "PatrickUITabsPanel";
 
-export const Tabs = {
-  Root: TabsRoot,
-  List: TabsList,
-  Indicator: TabsIndicator,
-  Tab: TabsTab,
-  Panel: TabsPanel,
-};
+export function TabsTrigger(props: TabsBase.Tab.Props) {
+  return (
+    <TabsBase.Tab
+      data-slot="tabs-trigger"
+      className={styles.trigger}
+      {...props}
+    />
+  );
+}
+
+export function TabsContent(props: TabsBase.Panel.Props) {
+  return (
+    <TabsBase.Panel
+      data-slot="tabs-content"
+      className={styles.panel}
+      {...props}
+    />
+  );
+}
+
+export const TabsPanel = TabsContent;

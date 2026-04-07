@@ -1,41 +1,66 @@
 import { Accordion as AccordionBase } from "@base-ui/react/accordion";
 import * as styles from "@patrick-ui/core/accordion/accordion.css";
+import { ChevronDownIcon } from "lucide-react";
 
-export type AccordionRootProps = AccordionBase.Root.Props;
-export type AccordionItemProps = AccordionBase.Item.Props;
-export type AccordionHeaderProps = AccordionBase.Header.Props;
-export type AccordionTriggerProps = AccordionBase.Trigger.Props;
-export type AccordionPanelProps = AccordionBase.Panel.Props;
+export type { AccordionBase as AccordionPrimitive };
 
-export function AccordionRoot(props: AccordionRootProps) {
-  return <AccordionBase.Root className={styles.root} {...props} />;
+export function Accordion(props: AccordionBase.Root.Props) {
+  return (
+    <AccordionBase.Root
+      data-slot="accordion"
+      className={styles.root}
+      {...props}
+    />
+  );
 }
-AccordionRoot.displayName = "PatrickUIAccordionRoot";
 
-export function AccordionItem(props: AccordionItemProps) {
-  return <AccordionBase.Item className={styles.item} {...props} />;
+export function AccordionItem(props: AccordionBase.Item.Props) {
+  return (
+    <AccordionBase.Item
+      data-slot="accordion-item"
+      className={styles.item}
+      {...props}
+    />
+  );
 }
-AccordionItem.displayName = "PatrickUIAccordionItem";
 
-export function AccordionHeader(props: AccordionHeaderProps) {
-  return <AccordionBase.Header className={styles.header} {...props} />;
+export function AccordionTrigger({
+  children,
+  ...props
+}: AccordionBase.Trigger.Props) {
+  return (
+    <AccordionBase.Header className={styles.header}>
+      <AccordionBase.Trigger
+        data-slot="accordion-trigger"
+        className={styles.trigger}
+        {...props}
+      >
+        {children}
+        <ChevronDownIcon
+          data-slot="accordion-trigger-icon"
+          style={{
+            pointerEvents: "none",
+            flexShrink: 0,
+            width: "1rem",
+            height: "1rem",
+          }}
+        />
+      </AccordionBase.Trigger>
+    </AccordionBase.Header>
+  );
 }
-AccordionHeader.displayName = "PatrickUIAccordionHeader";
 
-export function AccordionTrigger(props: AccordionTriggerProps) {
-  return <AccordionBase.Trigger className={styles.trigger} {...props} />;
+export function AccordionContent({
+  children,
+  ...props
+}: AccordionBase.Panel.Props) {
+  return (
+    <AccordionBase.Panel
+      data-slot="accordion-content"
+      className={styles.panel}
+      {...props}
+    >
+      <div className={styles.panelContent}>{children}</div>
+    </AccordionBase.Panel>
+  );
 }
-AccordionTrigger.displayName = "PatrickUIAccordionTrigger";
-
-export function AccordionPanel(props: AccordionPanelProps) {
-  return <AccordionBase.Panel className={styles.panel} {...props} />;
-}
-AccordionPanel.displayName = "PatrickUIAccordionPanel";
-
-export const Accordion = {
-  Root: AccordionRoot,
-  Item: AccordionItem,
-  Header: AccordionHeader,
-  Trigger: AccordionTrigger,
-  Panel: AccordionPanel,
-};

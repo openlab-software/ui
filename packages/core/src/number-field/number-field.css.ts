@@ -8,7 +8,7 @@ export const input = style({
   fontSize: "0.875rem",
   fontFamily: "inherit",
   textAlign: "center",
-  borderRadius: vars.radius.button,
+  borderRadius: vars.radius.base,
   border: `1px solid ${vars.color.border}`,
   background: vars.color.background,
   color: vars.color.foreground,
@@ -19,7 +19,7 @@ export const group = style({ display: "inline-flex", alignItems: "center" });
 export const increment = style({
   display: "inline-flex", alignItems: "center", justifyContent: "center",
   width: "2rem", height: "2rem",
-  borderRadius: vars.radius.button,
+  borderRadius: vars.radius.base,
   border: `1px solid ${vars.color.border}`,
   background: vars.color.secondary,
   color: vars.color.foreground,
@@ -29,7 +29,7 @@ export const increment = style({
 export const decrement = style({
   display: "inline-flex", alignItems: "center", justifyContent: "center",
   width: "2rem", height: "2rem",
-  borderRadius: vars.radius.button,
+  borderRadius: vars.radius.base,
   border: `1px solid ${vars.color.border}`,
   background: vars.color.secondary,
   color: vars.color.foreground,
