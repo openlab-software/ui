@@ -1,6 +1,8 @@
-import { recipe } from "@vanilla-extract/recipes";
+import { recipe, type RecipeVariants } from "@vanilla-extract/recipes";
 import { style } from "@vanilla-extract/css";
 import { vars } from "../theme/theme-contract.css";
+
+export type AlertVariant = NonNullable<RecipeVariants<typeof root>>["variant"];
 
 export const root = recipe({
   base: {

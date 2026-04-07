@@ -1,6 +1,13 @@
 import { style } from "@vanilla-extract/css";
 import { vars } from "../theme/theme-contract.css";
-import { r, alpha, fadeIn, fadeOut, zoomIn95, zoomOut95 } from "../theme/utils.css";
+import {
+  r,
+  alpha,
+  fadeIn,
+  fadeOut,
+  zoomIn95,
+  zoomOut95,
+} from "../theme/utils.css";
 
 export const root = style({});
 export const trigger = style({ display: "inline-flex" });
@@ -8,7 +15,7 @@ export const trigger = style({ display: "inline-flex" });
 export const backdrop = style({
   position: "fixed",
   inset: 0,
-  isolate: "isolate",
+  isolation: "isolate",
   zIndex: 50,
   backgroundColor: "rgba(0,0,0,0.8)",
   selectors: {
@@ -34,8 +41,12 @@ export const popup = style({
   boxShadow: `0 0 0 1px ${alpha(vars.color.foreground, 5)}`,
   outline: "none",
   selectors: {
-    "&[data-open]": { animation: `${fadeIn} 100ms ease, ${zoomIn95} 100ms ease` },
-    "&[data-closed]": { animation: `${fadeOut} 100ms ease, ${zoomOut95} 100ms ease` },
+    "&[data-open]": {
+      animation: `${fadeIn} 100ms ease, ${zoomIn95} 100ms ease`,
+    },
+    "&[data-closed]": {
+      animation: `${fadeOut} 100ms ease, ${zoomOut95} 100ms ease`,
+    },
   },
   "@media": {
     "(min-width: 640px)": { maxWidth: "28rem" },

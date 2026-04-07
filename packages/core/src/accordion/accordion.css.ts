@@ -50,7 +50,7 @@ export const trigger = style({
   selectors: {
     "&:hover": { textDecoration: "underline" },
     "&:focus-visible": focusRing(),
-    "&[aria-disabled]": { pointerEvents: "none", opacity: 0.5 },
+    "&[aria-disabled=true]": { pointerEvents: "none", opacity: 0.5 },
   },
 });
 

@@ -1,11 +1,16 @@
 import { style } from "@vanilla-extract/css";
 import { vars } from "../theme/theme-contract.css";
-import { r, alpha, focusRing, invalidRing, transitionColors } from "../theme/utils.css";
+import {
+  r,
+  alpha,
+  focusRing,
+  invalidRing,
+  transitionColors,
+} from "../theme/utils.css";
 import { darkTheme } from "../theme/default.css";
 
 export const root = style({
   display: "flex",
-  fieldSizing: "content",
   minHeight: "4rem",
   width: "100%",
   resize: "none",

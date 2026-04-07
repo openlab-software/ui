@@ -1,11 +1,8 @@
-import { useMemo } from "react";
+import type { FieldOrientation } from "@patrick-ui/core/field/field.css";
 import * as styles from "@patrick-ui/core/field/field.css";
+import { useMemo } from "react";
 import { Label } from "../label/label";
 import { Separator } from "../separator/separator";
-import type {
-  FieldOrientation,
-  FieldLegendVariants,
-} from "@patrick-ui/core/field/field.css";
 
 export function FieldSet(props: React.ComponentProps<"fieldset">) {
   return (
