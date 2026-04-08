@@ -1,5 +1,5 @@
 import { Toolbar as ToolbarBase } from "@base-ui/react/toolbar";
-import * as styles from "@patrick-ui/core/toolbar/toolbar.css";
+import * as styles from "@openlab-ui/core/toolbar/toolbar.css";
 
 export type ToolbarRootProps = ToolbarBase.Root.Props;
 export type ToolbarButtonProps = ToolbarBase.Button.Props;
@@ -11,27 +11,27 @@ export type ToolbarLinkProps = ToolbarBase.Link.Props;
 export function ToolbarRoot(props: ToolbarRootProps) {
   return <ToolbarBase.Root {...props} />;
 }
-ToolbarRoot.displayName = "PatrickUIToolbarRoot";
+ToolbarRoot.displayName = "OpenLabUIToolbarRoot";
 export function ToolbarButton(props: ToolbarButtonProps) {
   return <ToolbarBase.Button className={styles.button} {...props} />;
 }
-ToolbarButton.displayName = "PatrickUIToolbarButton";
+ToolbarButton.displayName = "OpenLabUIToolbarButton";
 export function ToolbarSeparator(props: ToolbarSeparatorProps) {
   return <ToolbarBase.Separator className={styles.separator} {...props} />;
 }
-ToolbarSeparator.displayName = "PatrickUIToolbarSeparator";
+ToolbarSeparator.displayName = "OpenLabUIToolbarSeparator";
 export function ToolbarGroup(props: ToolbarGroupProps) {
   return <ToolbarBase.Group {...props} />;
 }
-ToolbarGroup.displayName = "PatrickUIToolbarGroup";
+ToolbarGroup.displayName = "OpenLabUIToolbarGroup";
 export function ToolbarInput(props: ToolbarInputProps) {
   return <ToolbarBase.Input className={styles.button} {...props} />;
 }
-ToolbarInput.displayName = "PatrickUIToolbarInput";
+ToolbarInput.displayName = "OpenLabUIToolbarInput";
 export function ToolbarLink(props: ToolbarLinkProps) {
   return <ToolbarBase.Link {...props} />;
 }
-ToolbarLink.displayName = "PatrickUIToolbarLink";
+ToolbarLink.displayName = "OpenLabUIToolbarLink";
 
 export const Toolbar = {
   Root: ToolbarRoot,

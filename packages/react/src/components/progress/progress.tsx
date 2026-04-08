@@ -1,5 +1,5 @@
 import { Progress as ProgressBase } from "@base-ui/react/progress";
-import * as styles from "@patrick-ui/core/progress/progress.css";
+import * as styles from "@openlab-ui/core/progress/progress.css";
 
 export function Progress({
   children,

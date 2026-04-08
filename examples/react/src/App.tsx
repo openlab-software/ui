@@ -4,7 +4,7 @@ import {
   Field,
   FieldLabel,
   Input,
-  PatrickUIProvider,
+  OpenLabUIProvider,
   Table,
   TableBody,
   TableCaption,
@@ -12,15 +12,15 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@patrick-ui/react";
-import "@patrick-ui/react/styles.css";
+} from "@openlab-ui/react";
+import "@openlab-ui/react/styles.css";
 import { AccordionDemo } from "./accordion";
 import DialogDemo from "./dialog";
 import ContextMenuDemo from "./context-menu";
 
 export default function App() {
   return (
-    <PatrickUIProvider>
+    <OpenLabUIProvider>
       <Button variant="secondary">Eu sou um botão React.js</Button>
 
       <AccordionDemo />
@@ -66,6 +66,6 @@ export default function App() {
           </TableRow>
         </TableBody>
       </Table>
-    </PatrickUIProvider>
+    </OpenLabUIProvider>
   );
 }

@@ -13,8 +13,8 @@
     "noUncheckedSideEffectImports": true,
 
     "paths": {
-      "@patrick-ui/vue": ["../../packages/vue"]
-    }
+      "@openlab-ui/vue": ["../../packages/vue"],
+    },
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
 }

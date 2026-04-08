@@ -1,5 +1,5 @@
 import { Meter as MeterBase } from "@base-ui/react/meter";
-import * as styles from "@patrick-ui/core/meter/meter.css";
+import * as styles from "@openlab-ui/core/meter/meter.css";
 
 export type MeterRootProps = MeterBase.Root.Props;
 export type MeterTrackProps = MeterBase.Track.Props;
@@ -10,23 +10,23 @@ export type MeterLabelProps = MeterBase.Label.Props;
 export function MeterRoot(props: MeterRootProps) {
   return <MeterBase.Root className={styles.root} {...props} />;
 }
-MeterRoot.displayName = "PatrickUIMeterRoot";
+MeterRoot.displayName = "OpenLabUIMeterRoot";
 export function MeterTrack(props: MeterTrackProps) {
   return <MeterBase.Track className={styles.track} {...props} />;
 }
-MeterTrack.displayName = "PatrickUIMeterTrack";
+MeterTrack.displayName = "OpenLabUIMeterTrack";
 export function MeterIndicator(props: MeterIndicatorProps) {
   return <MeterBase.Indicator className={styles.indicator} {...props} />;
 }
-MeterIndicator.displayName = "PatrickUIMeterIndicator";
+MeterIndicator.displayName = "OpenLabUIMeterIndicator";
 export function MeterValue(props: MeterValueProps) {
   return <MeterBase.Value className={styles.valueText} {...props} />;
 }
-MeterValue.displayName = "PatrickUIMeterValue";
+MeterValue.displayName = "OpenLabUIMeterValue";
 export function MeterLabel(props: MeterLabelProps) {
   return <MeterBase.Label className={styles.label} {...props} />;
 }
-MeterLabel.displayName = "PatrickUIMeterLabel";
+MeterLabel.displayName = "OpenLabUIMeterLabel";
 
 export const Meter = {
   Root: MeterRoot,

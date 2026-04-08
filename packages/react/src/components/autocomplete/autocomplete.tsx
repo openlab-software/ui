@@ -1,5 +1,5 @@
 import { Autocomplete as AutocompleteBase } from "@base-ui/react/autocomplete";
-import * as styles from "@patrick-ui/core/autocomplete/autocomplete.css";
+import * as styles from "@openlab-ui/core/autocomplete/autocomplete.css";
 
 export type AutocompleteRootProps<Value = any> =
   AutocompleteBase.Root.Props<Value>;
@@ -14,42 +14,42 @@ export type AutocompleteArrowProps = AutocompleteBase.Arrow.Props;
 export function AutocompleteRoot(props: AutocompleteBase.Root.Props<any>) {
   return <AutocompleteBase.Root {...props} />;
 }
-AutocompleteRoot.displayName = "PatrickUIAutocompleteRoot";
+AutocompleteRoot.displayName = "OpenLabUIAutocompleteRoot";
 
 export function AutocompleteInput(props: AutocompleteBase.Input.Props) {
   return <AutocompleteBase.Input className={styles.input} {...props} />;
 }
-AutocompleteInput.displayName = "PatrickUIAutocompleteInput";
+AutocompleteInput.displayName = "OpenLabUIAutocompleteInput";
 
 export function AutocompletePopup(props: AutocompleteBase.Popup.Props) {
   return <AutocompleteBase.Popup className={styles.popup} {...props} />;
 }
-AutocompletePopup.displayName = "PatrickUIAutocompletePopup";
+AutocompletePopup.displayName = "OpenLabUIAutocompletePopup";
 
 export function AutocompleteListbox(props: AutocompleteBase.List.Props) {
   return <AutocompleteBase.List className={styles.listbox} {...props} />;
 }
-AutocompleteListbox.displayName = "PatrickUIAutocompleteListbox";
+AutocompleteListbox.displayName = "OpenLabUIAutocompleteListbox";
 
 export function AutocompleteItem(props: AutocompleteBase.Item.Props) {
   return <AutocompleteBase.Item className={styles.item} {...props} />;
 }
-AutocompleteItem.displayName = "PatrickUIAutocompleteItem";
+AutocompleteItem.displayName = "OpenLabUIAutocompleteItem";
 
 export function AutocompleteEmpty(props: AutocompleteBase.Empty.Props) {
   return <AutocompleteBase.Empty className={styles.empty} {...props} />;
 }
-AutocompleteEmpty.displayName = "PatrickUIAutocompleteEmpty";
+AutocompleteEmpty.displayName = "OpenLabUIAutocompleteEmpty";
 
 export function AutocompleteBackdrop(props: AutocompleteBase.Backdrop.Props) {
   return <AutocompleteBase.Backdrop className={styles.backdrop} {...props} />;
 }
-AutocompleteBackdrop.displayName = "PatrickUIAutocompleteBackdrop";
+AutocompleteBackdrop.displayName = "OpenLabUIAutocompleteBackdrop";
 
 export function AutocompleteArrow(props: AutocompleteBase.Arrow.Props) {
   return <AutocompleteBase.Arrow className={styles.arrow} {...props} />;
 }
-AutocompleteArrow.displayName = "PatrickUIAutocompleteArrow";
+AutocompleteArrow.displayName = "OpenLabUIAutocompleteArrow";
 
 export const Autocomplete = {
   Root: AutocompleteRoot,

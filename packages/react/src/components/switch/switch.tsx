@@ -1,5 +1,5 @@
 import { Switch as SwitchBase } from "@base-ui/react/switch";
-import * as styles from "@patrick-ui/core/switch/switch.css";
+import * as styles from "@openlab-ui/core/switch/switch.css";
 
 export type SwitchProps = SwitchBase.Root.Props & { size?: "default" | "sm" };
 
@@ -15,4 +15,4 @@ export function Switch({ size = "default", ...props }: SwitchProps) {
     </SwitchBase.Root>
   );
 }
-Switch.displayName = "PatrickUISwitch";
+Switch.displayName = "OpenLabUISwitch";

@@ -1,6 +1,6 @@
 import { Radio as RadioBase } from "@base-ui/react/radio";
 import { RadioGroup as RadioGroupBase } from "@base-ui/react/radio-group";
-import * as styles from "@patrick-ui/core/radio-group/radio-group.css";
+import * as styles from "@openlab-ui/core/radio-group/radio-group.css";
 
 export function RadioGroup(props: RadioGroupBase.Props) {
   return (

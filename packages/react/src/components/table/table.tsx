@@ -1,4 +1,4 @@
-import * as styles from "@patrick-ui/core/table/table.css";
+import * as styles from "@openlab-ui/core/table/table.css";
 
 export function Table(props: React.ComponentProps<"table">) {
   return (

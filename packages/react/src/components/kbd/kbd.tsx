@@ -1,4 +1,4 @@
-import * as styles from "@patrick-ui/core/kbd/kbd.css";
+import * as styles from "@openlab-ui/core/kbd/kbd.css";
 
 export function Kbd(props: React.ComponentProps<"kbd">) {
   return <kbd data-slot="kbd" className={styles.root} {...props} />;

@@ -1,5 +1,5 @@
 import { Combobox as ComboboxBase } from "@base-ui/react/combobox";
-import * as styles from "@patrick-ui/core/combobox/combobox.css";
+import * as styles from "@openlab-ui/core/combobox/combobox.css";
 
 export type ComboboxRootProps<
   Value,
@@ -23,56 +23,56 @@ export function ComboboxRoot<
 >(props: ComboboxRootProps<Value, Multiple>) {
   return <ComboboxBase.Root {...props} />;
 }
-ComboboxRoot.displayName = "PatrickUIComboboxRoot";
+ComboboxRoot.displayName = "OpenLabUIComboboxRoot";
 
 export function ComboboxTrigger(props: ComboboxTriggerProps) {
   return <ComboboxBase.Trigger className={styles.trigger} {...props} />;
 }
-ComboboxTrigger.displayName = "PatrickUIComboboxTrigger";
+ComboboxTrigger.displayName = "OpenLabUIComboboxTrigger";
 
 export function ComboboxInput(props: ComboboxInputProps) {
   return <ComboboxBase.Input className={styles.input} {...props} />;
 }
-ComboboxInput.displayName = "PatrickUIComboboxInput";
+ComboboxInput.displayName = "OpenLabUIComboboxInput";
 
 export function ComboboxPopup(props: ComboboxPopupProps) {
   return <ComboboxBase.Popup className={styles.popup} {...props} />;
 }
-ComboboxPopup.displayName = "PatrickUIComboboxPopup";
+ComboboxPopup.displayName = "OpenLabUIComboboxPopup";
 
 export function ComboboxList(props: ComboboxListProps) {
   return <ComboboxBase.List className={styles.listbox} {...props} />;
 }
-ComboboxList.displayName = "PatrickUIComboboxList";
+ComboboxList.displayName = "OpenLabUIComboboxList";
 
 export function ComboboxItem(props: ComboboxItemProps) {
   return <ComboboxBase.Item className={styles.item} {...props} />;
 }
-ComboboxItem.displayName = "PatrickUIComboboxItem";
+ComboboxItem.displayName = "OpenLabUIComboboxItem";
 
 export function ComboboxEmpty(props: ComboboxEmptyProps) {
   return <ComboboxBase.Empty className={styles.empty} {...props} />;
 }
-ComboboxEmpty.displayName = "PatrickUIComboboxEmpty";
+ComboboxEmpty.displayName = "OpenLabUIComboboxEmpty";
 
 export function ComboboxBackdrop(props: ComboboxBackdropProps) {
   return <ComboboxBase.Backdrop className={styles.backdrop} {...props} />;
 }
-ComboboxBackdrop.displayName = "PatrickUIComboboxBackdrop";
+ComboboxBackdrop.displayName = "OpenLabUIComboboxBackdrop";
 export function ComboboxArrow(props: ComboboxArrowProps) {
   return <ComboboxBase.Arrow className={styles.arrow} {...props} />;
 }
-ComboboxArrow.displayName = "PatrickUIComboboxArrow";
+ComboboxArrow.displayName = "OpenLabUIComboboxArrow";
 
 export function ComboboxGroup(props: ComboboxGroupProps) {
   return <ComboboxBase.Group className={styles.group} {...props} />;
 }
-ComboboxGroup.displayName = "PatrickUIComboboxGroup";
+ComboboxGroup.displayName = "OpenLabUIComboboxGroup";
 
 export function ComboboxGroupLabel(props: ComboboxGroupLabelProps) {
   return <ComboboxBase.GroupLabel className={styles.groupLabel} {...props} />;
 }
-ComboboxGroupLabel.displayName = "PatrickUIComboboxGroupLabel";
+ComboboxGroupLabel.displayName = "OpenLabUIComboboxGroupLabel";
 
 export const Combobox = {
   Root: ComboboxRoot,

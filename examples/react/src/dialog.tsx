@@ -12,7 +12,7 @@ import {
   Input,
   DialogFooter,
   DialogClose,
-} from "@patrick-ui/react";
+} from "@openlab-ui/react";
 
 export default function DialogDemo() {
   return (

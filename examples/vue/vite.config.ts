@@ -7,11 +7,11 @@ export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
-      "@patrick-ui/vue/styles.css": path.resolve(
+      "@openlab-ui/vue/styles.css": path.resolve(
         __dirname,
-        "../../packages/vue/dist/index.css"
+        "../../packages/vue/dist/index.css",
       ),
-      "@patrick-ui/vue": path.resolve(__dirname, "../../packages/vue/dist"),
+      "@openlab-ui/vue": path.resolve(__dirname, "../../packages/vue/dist"),
     },
   },
 });

@@ -1,5 +1,5 @@
 import { Input as InputBase } from "@base-ui/react/input";
-import * as styles from "@patrick-ui/core/input/input.css";
+import * as styles from "@openlab-ui/core/input/input.css";
 
 export type InputProps = React.ComponentProps<"input">;
 
@@ -13,4 +13,4 @@ export function Input({ type, ...props }: InputProps) {
     />
   );
 }
-Input.displayName = "PatrickUIInput";
+Input.displayName = "OpenLabUIInput";

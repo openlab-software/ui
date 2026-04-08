@@ -1,5 +1,5 @@
 {
-  "name": "@patrick-ui/react",
+  "name": "@openlab-ui/react",
   "version": "0.0.3",
   "type": "module",
   "exports": {
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",
-    "@patrick-ui/core": "workspace:*",
+    "@openlab-ui/core": "workspace:*",
     "@tanstack/react-table": "^8.21.3",
     "@zag-js/react": "^1.25.0",
     "react": "^19.1.1",

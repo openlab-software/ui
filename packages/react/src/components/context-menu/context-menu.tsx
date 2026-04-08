@@ -1,5 +1,5 @@
 import { ContextMenu as ContextMenuBase } from "@base-ui/react/context-menu";
-import * as styles from "@patrick-ui/core/context-menu/context-menu.css";
+import * as styles from "@openlab-ui/core/context-menu/context-menu.css";
 import { CheckIcon, ChevronRightIcon } from "lucide-react";
 import { type ComponentProps } from "react";
 
@@ -55,12 +55,12 @@ export interface ContextMenuContentProps extends ContextMenuBase.Popup.Props {
 export function ContextMenu({ ...props }: ContextMenuProps) {
   return <ContextMenuBase.Root data-slot="context-menu" {...props} />;
 }
-ContextMenu.displayName = "PatrickUIContextMenu";
+ContextMenu.displayName = "OpenLabUIContextMenu";
 
 export function ContextMenuPortal({ ...props }: ContextMenuPortalProps) {
   return <ContextMenuBase.Portal data-slot="context-menu-portal" {...props} />;
 }
-ContextMenuPortal.displayName = "PatrickUIContextMenuPortal";
+ContextMenuPortal.displayName = "OpenLabUIContextMenuPortal";
 
 export function ContextMenuTrigger({
   className,
@@ -74,7 +74,7 @@ export function ContextMenuTrigger({
     />
   );
 }
-ContextMenuTrigger.displayName = "PatrickUIContextMenuTrigger";
+ContextMenuTrigger.displayName = "OpenLabUIContextMenuTrigger";
 
 export function ContextMenuContent({
   align = "start",
@@ -102,12 +102,12 @@ export function ContextMenuContent({
     </ContextMenuBase.Portal>
   );
 }
-ContextMenuContent.displayName = "PatrickUIContextMenuContent";
+ContextMenuContent.displayName = "OpenLabUIContextMenuContent";
 
 export function ContextMenuGroup({ ...props }: ContextMenuGroupProps) {
   return <ContextMenuBase.Group data-slot="context-menu-group" {...props} />;
 }
-ContextMenuGroup.displayName = "PatrickUIContextMenuGroup";
+ContextMenuGroup.displayName = "OpenLabUIContextMenuGroup";
 
 export function ContextMenuLabel({
   className,
@@ -123,7 +123,7 @@ export function ContextMenuLabel({
     />
   );
 }
-ContextMenuLabel.displayName = "PatrickUIContextMenuLabel";
+ContextMenuLabel.displayName = "OpenLabUIContextMenuLabel";
 
 export function ContextMenuItem({
   inset,
@@ -140,14 +140,14 @@ export function ContextMenuItem({
     />
   );
 }
-ContextMenuItem.displayName = "PatrickUIContextMenuItem";
+ContextMenuItem.displayName = "OpenLabUIContextMenuItem";
 
 export function ContextMenuSub({ ...props }: ContextMenuSubProps) {
   return (
     <ContextMenuBase.SubmenuRoot data-slot="context-menu-sub" {...props} />
   );
 }
-ContextMenuSub.displayName = "PatrickUIContextMenuSub";
+ContextMenuSub.displayName = "OpenLabUIContextMenuSub";
 
 export function ContextMenuSubTrigger({
   inset,
@@ -166,14 +166,14 @@ export function ContextMenuSubTrigger({
     </ContextMenuBase.SubmenuTrigger>
   );
 }
-ContextMenuSubTrigger.displayName = "PatrickUIContextMenuSubTrigger";
+ContextMenuSubTrigger.displayName = "OpenLabUIContextMenuSubTrigger";
 
 export function ContextMenuSubContent(
   props: ComponentProps<typeof ContextMenuContent>,
 ) {
   return <ContextMenuContent side="right" {...props} />;
 }
-ContextMenuSubContent.displayName = "PatrickUIContextMenuSubContent";
+ContextMenuSubContent.displayName = "OpenLabUIContextMenuSubContent";
 
 export function ContextMenuCheckboxItem({
   children,
@@ -196,7 +196,7 @@ export function ContextMenuCheckboxItem({
     </ContextMenuBase.CheckboxItem>
   );
 }
-ContextMenuCheckboxItem.displayName = "PatrickUIContextMenuCheckboxItem";
+ContextMenuCheckboxItem.displayName = "OpenLabUIContextMenuCheckboxItem";
 
 export function ContextMenuRadioGroup({
   ...props
@@ -208,7 +208,7 @@ export function ContextMenuRadioGroup({
     />
   );
 }
-ContextMenuRadioGroup.displayName = "PatrickUIContextMenuRadioGroup";
+ContextMenuRadioGroup.displayName = "OpenLabUIContextMenuRadioGroup";
 
 export function ContextMenuRadioItem({
   children,
@@ -231,7 +231,7 @@ export function ContextMenuRadioItem({
     </ContextMenuBase.RadioItem>
   );
 }
-ContextMenuRadioItem.displayName = "PatrickUIContextMenuRadioItem";
+ContextMenuRadioItem.displayName = "OpenLabUIContextMenuRadioItem";
 
 export function ContextMenuSeparator({ ...props }: ContextMenuSeparatorProps) {
   return (
@@ -242,7 +242,7 @@ export function ContextMenuSeparator({ ...props }: ContextMenuSeparatorProps) {
     />
   );
 }
-ContextMenuSeparator.displayName = "PatrickUIContextMenuSeparator";
+ContextMenuSeparator.displayName = "OpenLabUIContextMenuSeparator";
 
 export function ContextMenuShortcut({
   className,
@@ -258,14 +258,14 @@ export function ContextMenuShortcut({
     />
   );
 }
-ContextMenuShortcut.displayName = "PatrickUIContextMenuShortcut";
+ContextMenuShortcut.displayName = "OpenLabUIContextMenuShortcut";
 
 export function ContextMenuArrow(props: ContextMenuBase.Arrow.Props) {
   return <ContextMenuBase.Arrow {...props} />;
 }
-ContextMenuArrow.displayName = "PatrickUIContextMenuArrow";
+ContextMenuArrow.displayName = "OpenLabUIContextMenuArrow";
 
 export function ContextMenuBackdrop(props: ContextMenuBase.Backdrop.Props) {
   return <ContextMenuBase.Backdrop {...props} />;
 }
-ContextMenuBackdrop.displayName = "PatrickUIContextMenuBackdrop";
+ContextMenuBackdrop.displayName = "OpenLabUIContextMenuBackdrop";

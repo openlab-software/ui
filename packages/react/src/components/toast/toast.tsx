@@ -1,5 +1,5 @@
 import { Toast as ToastBase } from "@base-ui/react/toast";
-import * as styles from "@patrick-ui/core/toast/toast.css";
+import * as styles from "@openlab-ui/core/toast/toast.css";
 
 export type ToastRootProps = ToastBase.Root.Props;
 export type ToastTitleProps = ToastBase.Title.Props;
@@ -12,31 +12,31 @@ export type ToastArrowProps = ToastBase.Arrow.Props;
 export function ToastRoot(props: ToastRootProps) {
   return <ToastBase.Root className={styles.root} {...props} />;
 }
-ToastRoot.displayName = "PatrickUIToastRoot";
+ToastRoot.displayName = "OpenLabUIToastRoot";
 export function ToastTitle(props: ToastTitleProps) {
   return <ToastBase.Title className={styles.title} {...props} />;
 }
-ToastTitle.displayName = "PatrickUIToastTitle";
+ToastTitle.displayName = "OpenLabUIToastTitle";
 export function ToastDescription(props: ToastDescriptionProps) {
   return <ToastBase.Description className={styles.description} {...props} />;
 }
-ToastDescription.displayName = "PatrickUIToastDescription";
+ToastDescription.displayName = "OpenLabUIToastDescription";
 export function ToastClose(props: ToastCloseProps) {
   return <ToastBase.Close className={styles.close} {...props} />;
 }
-ToastClose.displayName = "PatrickUIToastClose";
+ToastClose.displayName = "OpenLabUIToastClose";
 export function ToastAction(props: ToastActionProps) {
   return <ToastBase.Action className={styles.action} {...props} />;
 }
-ToastAction.displayName = "PatrickUIToastAction";
+ToastAction.displayName = "OpenLabUIToastAction";
 export function ToastProvider(props: ToastProviderProps) {
   return <ToastBase.Provider {...props} />;
 }
-ToastProvider.displayName = "PatrickUIToastProvider";
+ToastProvider.displayName = "OpenLabUIToastProvider";
 export function ToastArrow(props: ToastArrowProps) {
   return <ToastBase.Arrow className={styles.arrow} {...props} />;
 }
-ToastArrow.displayName = "PatrickUIToastArrow";
+ToastArrow.displayName = "OpenLabUIToastArrow";
 
 export const Toast = {
   Root: ToastRoot,

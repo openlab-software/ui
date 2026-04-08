@@ -8,7 +8,7 @@ import path from "path";
 export default defineConfig({
   plugins: [
     vue(),
-    vanillaExtractPlugin({ identifiers: ({ hash }) => `patrick-ui_${hash}` }),
+    vanillaExtractPlugin({ identifiers: ({ hash }) => `openlab-ui_${hash}` }),
     dts({
       tsconfigPath: "./tsconfig.app.json",
       outDir: "dist/@types",
@@ -17,7 +17,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@patrick-ui/core": path.resolve(__dirname, "../core/src"),
+      "@openlab-ui/core": path.resolve(__dirname, "../core/src"),
     },
   },
 
@@ -32,7 +32,7 @@ export default defineConfig({
     },
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
-      name: "PatrickUI",
+      name: "OpenLabUI",
       fileName: "index",
       formats: ["es"],
     },

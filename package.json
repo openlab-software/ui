@@ -1,18 +1,18 @@
 {
-  "name": "@patrick-ui/patrick-ui",
+  "name": "@openlab-ui/openlab-ui",
   "directories": {
     "example": "examples"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/patrickdevbr-portfolio/patrick-ui.git"
+    "url": "git+https://github.com/openlab-software/ui.git"
   },
   "author": "https://github.com/patrickdevbr",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/patrickdevbr-portfolio/patrick-ui/issues"
+    "url": "https://github.com/openlab-software/ui/issues"
   },
-  "homepage": "https://github.com/patrickdevbr-portfolio/patrick-ui#readme",
+  "homepage": "https://github.com/openlab-software/ui#readme",
   "private": true,
   "devDependencies": {
     "pnpm": "^8.0.0"

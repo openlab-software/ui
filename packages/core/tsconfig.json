@@ -24,8 +24,8 @@
     "noUncheckedSideEffectImports": true,
 
     "paths": {
-      "@patrick-ui/core/*": ["./src/*"]
-    }
+      "@openlab-ui/core/*": ["./src/*"],
+    },
   },
-  "include": ["src"]
+  "include": ["src"],
 }

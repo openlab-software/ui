@@ -1,5 +1,5 @@
 import { Menu as MenuBase } from "@base-ui/react/menu";
-import * as styles from "@patrick-ui/core/menu/menu.css";
+import * as styles from "@openlab-ui/core/menu/menu.css";
 
 export type MenuRootProps = MenuBase.Root.Props;
 export type MenuTriggerProps = MenuBase.Trigger.Props;
@@ -16,47 +16,47 @@ export type MenuArrowProps = MenuBase.Arrow.Props;
 export function MenuRoot(props: MenuRootProps) {
   return <MenuBase.Root {...props} />;
 }
-MenuRoot.displayName = "PatrickUIMenuRoot";
+MenuRoot.displayName = "OpenLabUIMenuRoot";
 export function MenuTrigger(props: MenuTriggerProps) {
   return <MenuBase.Trigger className={styles.root} {...props} />;
 }
-MenuTrigger.displayName = "PatrickUIMenuTrigger";
+MenuTrigger.displayName = "OpenLabUIMenuTrigger";
 export function MenuPopup(props: MenuPopupProps) {
   return <MenuBase.Popup className={styles.popup} {...props} />;
 }
-MenuPopup.displayName = "PatrickUIMenuPopup";
+MenuPopup.displayName = "OpenLabUIMenuPopup";
 export function MenuBackdrop(props: MenuBackdropProps) {
   return <MenuBase.Backdrop className={styles.popup} {...props} />;
 }
-MenuBackdrop.displayName = "PatrickUIMenuBackdrop";
+MenuBackdrop.displayName = "OpenLabUIMenuBackdrop";
 export function MenuItem(props: MenuItemProps) {
   return <MenuBase.Item className={styles.item} {...props} />;
 }
-MenuItem.displayName = "PatrickUIMenuItem";
+MenuItem.displayName = "OpenLabUIMenuItem";
 export function MenuLinkItem(props: MenuLinkItemProps) {
   return <MenuBase.LinkItem className={styles.item} {...props} />;
 }
-MenuLinkItem.displayName = "PatrickUIMenuLinkItem";
+MenuLinkItem.displayName = "OpenLabUIMenuLinkItem";
 export function MenuCheckboxItem(props: MenuCheckboxItemProps) {
   return <MenuBase.CheckboxItem className={styles.item} {...props} />;
 }
-MenuCheckboxItem.displayName = "PatrickUIMenuCheckboxItem";
+MenuCheckboxItem.displayName = "OpenLabUIMenuCheckboxItem";
 export function MenuRadioItem(props: MenuRadioItemProps) {
   return <MenuBase.RadioItem className={styles.item} {...props} />;
 }
-MenuRadioItem.displayName = "PatrickUIMenuRadioItem";
+MenuRadioItem.displayName = "OpenLabUIMenuRadioItem";
 export function MenuGroup(props: MenuGroupProps) {
   return <MenuBase.Group className={styles.group} {...props} />;
 }
-MenuGroup.displayName = "PatrickUIMenuGroup";
+MenuGroup.displayName = "OpenLabUIMenuGroup";
 export function MenuGroupLabel(props: MenuGroupLabelProps) {
   return <MenuBase.GroupLabel className={styles.groupLabel} {...props} />;
 }
-MenuGroupLabel.displayName = "PatrickUIMenuGroupLabel";
+MenuGroupLabel.displayName = "OpenLabUIMenuGroupLabel";
 export function MenuArrow(props: MenuArrowProps) {
   return <MenuBase.Arrow className={styles.arrow} {...props} />;
 }
-MenuArrow.displayName = "PatrickUIMenuArrow";
+MenuArrow.displayName = "OpenLabUIMenuArrow";
 
 export const Menu = {
   Root: MenuRoot,

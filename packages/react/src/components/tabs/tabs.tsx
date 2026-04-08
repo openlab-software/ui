@@ -1,6 +1,6 @@
 import { Tabs as TabsBase } from "@base-ui/react/tabs";
-import * as styles from "@patrick-ui/core/tabs/tabs.css";
-import type { TabsListVariants } from "@patrick-ui/core/tabs/tabs.css";
+import * as styles from "@openlab-ui/core/tabs/tabs.css";
+import type { TabsListVariants } from "@openlab-ui/core/tabs/tabs.css";
 
 export function Tabs({
   orientation = "horizontal",

@@ -1,7 +1,7 @@
 import { Dialog as DialogBase } from "@base-ui/react/dialog";
 import { XIcon } from "lucide-react";
 import { Button } from "../button/button";
-import * as styles from "@patrick-ui/core/dialog/dialog.css";
+import * as styles from "@openlab-ui/core/dialog/dialog.css";
 
 export function Dialog(props: DialogBase.Root.Props) {
   return <DialogBase.Root data-slot="dialog" {...props} />;

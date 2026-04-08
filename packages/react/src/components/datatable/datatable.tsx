@@ -4,7 +4,7 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import * as styles from "@patrick-ui/core/datatable/datatable.css";
+import * as styles from "@openlab-ui/core/datatable/datatable.css";
 import {
   Table,
   TableBody,
@@ -64,10 +64,7 @@ export function DataTable<TData, TValue>({
             ))
           ) : (
             <TableRow>
-              <TableCell
-                colSpan={columns.length}
-                className={styles.emptyCell}
-              >
+              <TableCell colSpan={columns.length} className={styles.emptyCell}>
                 No results.
               </TableCell>
             </TableRow>

@@ -1,5 +1,5 @@
-import * as styles from "@patrick-ui/core/input-group/input-group.css";
-import type { InputGroupAddonVariants } from "@patrick-ui/core/input-group/input-group.css";
+import * as styles from "@openlab-ui/core/input-group/input-group.css";
+import type { InputGroupAddonVariants } from "@openlab-ui/core/input-group/input-group.css";
 import { Input } from "../input/input";
 import { Textarea } from "../textarea/textarea";
 import { Button } from "../button/button";

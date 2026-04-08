@@ -21,8 +21,8 @@ pnpm dev:react
 pnpm dev:vue
 
 # Build a single package
-pnpm --filter @patrick-ui/react build
-pnpm --filter @patrick-ui/vue build
+pnpm --filter @openlab-ui/react build
+pnpm --filter @openlab-ui/vue build
 ```
 
 > There are no tests configured yet.
@@ -44,11 +44,11 @@ All CSS lives in `packages/core/src/**/*.css.ts` files. Components use:
 - `recipe()` — for multi-variant components (e.g. Button has `variant` and `size`)
 - `style()` / `globalStyle()` — for single-purpose styles
 
-Framework packages resolve `@patrick-ui/core` to `../core/src` via a Vite alias — they import directly from source during build, not from a compiled dist.
+Framework packages resolve `@openlab-ui/core` to `../core/src` via a Vite alias — they import directly from source during build, not from a compiled dist.
 
 ### Theming
 
-`PatrickUIProvider` applies the `defaultTheme` class to a wrapper `<div>`, which activates all CSS variables defined in `theme-contract.css.ts`. To support dark mode, apply the `darkTheme` class instead.
+`OpenLabUIProvider` applies the `defaultTheme` class to a wrapper `<div>`, which activates all CSS variables defined in `theme-contract.css.ts`. To support dark mode, apply the `darkTheme` class instead.
 
 ### Adding a new component
 
@@ -58,4 +58,4 @@ Framework packages resolve `@patrick-ui/core` to `../core/src` via a Vite alias 
 
 ### CSS class naming
 
-Both Vite configs use `identifiers: ({ hash }) => \`patrick-ui_${hash}\`` so all generated class names are prefixed with `patrick-ui_`.
+Both Vite configs use `identifiers: ({ hash }) => \`openlab-ui_${hash}\`` so all generated class names are prefixed with `openlab-ui_`.

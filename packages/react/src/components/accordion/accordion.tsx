@@ -1,5 +1,5 @@
 import { Accordion as AccordionBase } from "@base-ui/react/accordion";
-import * as styles from "@patrick-ui/core/accordion/accordion.css";
+import * as styles from "@openlab-ui/core/accordion/accordion.css";
 import { ChevronDownIcon } from "lucide-react";
 
 export type { AccordionBase as AccordionPrimitive };

@@ -1,5 +1,5 @@
-import type { AlertVariant } from "@patrick-ui/core/alert/alert.css";
-import * as styles from "@patrick-ui/core/alert/alert.css";
+import type { AlertVariant } from "@openlab-ui/core/alert/alert.css";
+import * as styles from "@openlab-ui/core/alert/alert.css";
 
 export function Alert({
   variant = "default",

@@ -1,5 +1,5 @@
 import { Popover as PopoverBase } from "@base-ui/react/popover";
-import * as styles from "@patrick-ui/core/popover/popover.css";
+import * as styles from "@openlab-ui/core/popover/popover.css";
 
 export function Popover(props: PopoverBase.Root.Props) {
   return <PopoverBase.Root data-slot="popover" {...props} />;

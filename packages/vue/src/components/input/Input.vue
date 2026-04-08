@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import * as inputStyles from '@patrick-ui/core/input/input.css'
+import { computed } from "vue";
+import * as inputStyles from "@openlab-ui/core/input/input.css";
 
-const className = computed(() => inputStyles.root)
+const className = computed(() => inputStyles.root);
 </script>
 
 <template>

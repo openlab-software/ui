@@ -13,7 +13,7 @@ import {
   ContextMenuSubContent,
   ContextMenuSubTrigger,
   ContextMenuTrigger,
-} from "@patrick-ui/react";
+} from "@openlab-ui/react";
 
 export default function ContextMenuDemo() {
   return (

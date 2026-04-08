@@ -1,6 +1,6 @@
 import { Button as BaseButton } from "@base-ui/react/button";
-import type { ButtonVariants } from "@patrick-ui/core/button/button.css";
-import * as styles from "@patrick-ui/core/button/button.css";
+import type { ButtonVariants } from "@openlab-ui/core/button/button.css";
+import * as styles from "@openlab-ui/core/button/button.css";
 
 export type ButtonProps = React.ComponentProps<typeof BaseButton> &
   ButtonVariants;
@@ -14,7 +14,7 @@ export function Button({ variant, size, className, ...props }: ButtonProps) {
     />
   );
 }
-Button.displayName = "PatrickUIButton";
+Button.displayName = "OpenLabUIButton";
 
 export { styles as buttonStyles };
 export type { ButtonVariants };

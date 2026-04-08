@@ -1,5 +1,5 @@
 {
-  "name": "@patrick-ui/example-vue",
+  "name": "@openlab-ui/example-vue",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@patrick-ui/vue": "*",
+    "@openlab-ui/vue": "*",
     "@types/node": "^24.6.1",
     "vue": "^3.5.21"
   },

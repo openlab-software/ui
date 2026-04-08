@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import "@patrick-ui/vue/styles.css";
-import { Button, PatrickUIProvider } from "@patrick-ui/vue";
+import "@openlab-ui/vue/styles.css";
+import { Button, OpenLabUIProvider } from "@openlab-ui/vue";
 </script>
 
 <template>
-    <PatrickUIProvider>
+    <OpenLabUIProvider>
         <Button primary>Eu sou um botão Vue.js</Button>
-    </PatrickUIProvider>
+    </OpenLabUIProvider>
 </template>

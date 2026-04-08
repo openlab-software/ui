@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import * as styles from "@patrick-ui/core/theme/default.css";
+import * as styles from "@openlab-ui/core/theme/default.css";
 </script>
 
 <template>

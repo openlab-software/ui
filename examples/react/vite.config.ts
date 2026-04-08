@@ -5,7 +5,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
-    exclude: ["@patrick-ui/react", "@patrick-ui/core"],
+    exclude: ["@openlab-ui/react", "@openlab-ui/core"],
   },
   server: {
     fs: {

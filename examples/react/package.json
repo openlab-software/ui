@@ -1,5 +1,5 @@
 {
-  "name": "@patrick-ui/example-react",
+  "name": "@openlab-ui/example-react",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@fontsource/geist-mono": "^5.2.7",
-    "@patrick-ui/react": "workspace:*",
+    "@openlab-ui/react": "workspace:*",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },

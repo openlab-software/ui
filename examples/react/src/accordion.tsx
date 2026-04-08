@@ -3,7 +3,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@patrick-ui/react";
+} from "@openlab-ui/react";
 
 export function AccordionDemo() {
   return (

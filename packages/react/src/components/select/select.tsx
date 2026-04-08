@@ -1,6 +1,6 @@
 import { Select as SelectBase } from "@base-ui/react/select";
 import { ChevronDownIcon, ChevronUpIcon, CheckIcon } from "lucide-react";
-import * as styles from "@patrick-ui/core/select/select.css";
+import * as styles from "@openlab-ui/core/select/select.css";
 
 const Select = SelectBase.Root;
 export { Select };

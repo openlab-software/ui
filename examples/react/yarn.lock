@@ -444,21 +444,21 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@patrick-ui/core@workspace:*":
+"@openlab-ui/core@workspace:*":
   version "0.0.1"
-  resolved "https://registry.npmmirror.com/@patrick-ui/core/-/core-0.0.1.tgz#b70cb797623e7ae5bf83a522635f26cd89fe45ee"
+  resolved "https://registry.npmmirror.com/@openlab-ui/core/-/core-0.0.1.tgz#b70cb797623e7ae5bf83a522635f26cd89fe45ee"
   integrity sha512-4TtYFmLpW93hQA4yH6QDNjvv+YKTRuIaT+7bHsDlzKBoV2gXAkxz0O0fPLE9MzLpLP8lZgAY2Dz8d/00pSJf/Q==
   dependencies:
     "@vanilla-extract/css" "^1.17.4"
     "@vanilla-extract/recipes" "^0.5.7"
     "@zag-js/core" "1.25.0"
 
-"@patrick-ui/react@*":
+"@openlab-ui/react@*":
   version "0.0.3"
-  resolved "https://registry.npmmirror.com/@patrick-ui/react/-/react-0.0.3.tgz#842fa639dcd4ea188d9f9b0313c9af29ef2155f5"
+  resolved "https://registry.npmmirror.com/@openlab-ui/react/-/react-0.0.3.tgz#842fa639dcd4ea188d9f9b0313c9af29ef2155f5"
   integrity sha512-FLYKLx+5dHs+4dPwb88uLhaKXoAqhgwWwDtkvD5Fw8prdvtWkSXiaUATwGnMafbfYAIT8kHE04SUfHkT9LiqmA==
   dependencies:
-    "@patrick-ui/core" "workspace:*"
+    "@openlab-ui/core" "workspace:*"
     "@zag-js/react" "^1.25.0"
     react "^19.1.1"
     react-dom "^19.1.1"

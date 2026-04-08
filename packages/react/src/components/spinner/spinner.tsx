@@ -1,5 +1,5 @@
 import { Loader2 } from "lucide-react";
-import * as styles from "@patrick-ui/core/spinner/spinner.css";
+import * as styles from "@openlab-ui/core/spinner/spinner.css";
 
 export function Spinner(props: React.ComponentProps<"svg">) {
   return (

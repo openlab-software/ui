@@ -1,5 +1,5 @@
 import { Slider as SliderBase } from "@base-ui/react/slider";
-import * as styles from "@patrick-ui/core/slider/slider.css";
+import * as styles from "@openlab-ui/core/slider/slider.css";
 
 export type SliderProps = SliderBase.Root.Props;
 
@@ -45,4 +45,4 @@ export function Slider({
     </SliderBase.Root>
   );
 }
-Slider.displayName = "PatrickUISlider";
+Slider.displayName = "OpenLabUISlider";

@@ -1,5 +1,5 @@
 import { Tooltip as TooltipBase } from "@base-ui/react/tooltip";
-import * as styles from "@patrick-ui/core/tooltip/tooltip.css";
+import * as styles from "@openlab-ui/core/tooltip/tooltip.css";
 
 export function TooltipProvider({
   delay = 0,

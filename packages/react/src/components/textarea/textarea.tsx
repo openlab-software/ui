@@ -1,4 +1,4 @@
-import * as styles from "@patrick-ui/core/textarea/textarea.css";
+import * as styles from "@openlab-ui/core/textarea/textarea.css";
 
 export type TextareaProps = React.ComponentProps<"textarea">;
 

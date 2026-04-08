@@ -1,5 +1,5 @@
-import * as styles from "@patrick-ui/core/badge/badge.css";
-import type { BadgeVariants } from "@patrick-ui/core/badge/badge.css";
+import * as styles from "@openlab-ui/core/badge/badge.css";
+import type { BadgeVariants } from "@openlab-ui/core/badge/badge.css";
 
 export type { BadgeVariants };
 
@@ -8,10 +8,6 @@ export function Badge({
   ...props
 }: React.ComponentProps<"span"> & BadgeVariants) {
   return (
-    <span
-      data-slot="badge"
-      className={styles.badge({ variant })}
-      {...props}
-    />
+    <span data-slot="badge" className={styles.badge({ variant })} {...props} />
   );
 }

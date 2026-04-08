@@ -26,10 +26,10 @@
 
     /* Workspace source resolution */
     "paths": {
-      "@patrick-ui/react": ["../../packages/react/src/index.ts"],
-      "@patrick-ui/react/*": ["../../packages/react/src/*"],
-      "@patrick-ui/core/*": ["../../packages/core/src/*"]
-    }
+      "@openlab-ui/react": ["../../packages/react/src/index.ts"],
+      "@openlab-ui/react/*": ["../../packages/react/src/*"],
+      "@openlab-ui/core/*": ["../../packages/core/src/*"],
+    },
   },
-  "include": ["src"]
+  "include": ["src"],
 }

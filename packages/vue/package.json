@@ -1,5 +1,5 @@
 {
-  "name": "@patrick-ui/vue",
+  "name": "@openlab-ui/vue",
   "version": "0.0.1",
   "type": "module",
   "exports": {
@@ -17,7 +17,7 @@
     "dist"
   ],
   "dependencies": {
-    "@patrick-ui/core": "workspace:*",
+    "@openlab-ui/core": "workspace:*",
     "@vanilla-extract/dynamic": "^2.1.5",
     "vue": "^3.5.21"
   },

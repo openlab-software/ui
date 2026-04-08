@@ -1,5 +1,5 @@
 import { ScrollArea as ScrollAreaBase } from "@base-ui/react/scroll-area";
-import * as styles from "@patrick-ui/core/scroll-area/scroll-area.css";
+import * as styles from "@openlab-ui/core/scroll-area/scroll-area.css";
 
 export function ScrollArea({ children, ...props }: ScrollAreaBase.Root.Props) {
   return (

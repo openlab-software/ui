@@ -1,6 +1,6 @@
 import { AlertDialog as AlertDialogBase } from "@base-ui/react/alert-dialog";
 import { Button } from "../button/button";
-import * as styles from "@patrick-ui/core/alert-dialog/alert-dialog.css";
+import * as styles from "@openlab-ui/core/alert-dialog/alert-dialog.css";
 
 export function AlertDialog(props: AlertDialogBase.Root.Props) {
   return <AlertDialogBase.Root data-slot="alert-dialog" {...props} />;

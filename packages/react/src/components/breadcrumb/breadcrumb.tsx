@@ -1,9 +1,14 @@
 import { ChevronRight, MoreHorizontal } from "lucide-react";
-import * as styles from "@patrick-ui/core/breadcrumb/breadcrumb.css";
+import * as styles from "@openlab-ui/core/breadcrumb/breadcrumb.css";
 
 export function Breadcrumb(props: React.ComponentProps<"nav">) {
   return (
-    <nav aria-label="breadcrumb" data-slot="breadcrumb" className={styles.root} {...props} />
+    <nav
+      aria-label="breadcrumb"
+      data-slot="breadcrumb"
+      className={styles.root}
+      {...props}
+    />
   );
 }
 
@@ -44,7 +49,9 @@ export function BreadcrumbSeparator({
       className={styles.separator}
       {...props}
     >
-      {children ?? <ChevronRight style={{ width: "0.875rem", height: "0.875rem" }} />}
+      {children ?? (
+        <ChevronRight style={{ width: "0.875rem", height: "0.875rem" }} />
+      )}
     </li>
   );
 }
@@ -59,7 +66,15 @@ export function BreadcrumbEllipsis(props: React.ComponentProps<"span">) {
       {...props}
     >
       <MoreHorizontal style={{ width: "1rem", height: "1rem" }} />
-      <span style={{ position: "absolute", width: "1px", height: "1px", overflow: "hidden", clip: "rect(0,0,0,0)" }}>
+      <span
+        style={{
+          position: "absolute",
+          width: "1px",
+          height: "1px",
+          overflow: "hidden",
+          clip: "rect(0,0,0,0)",
+        }}
+      >
         More
       </span>
     </span>

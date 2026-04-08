@@ -172,21 +172,21 @@
   resolved "https://registry.npmmirror.com/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.5.5.tgz#6912b00d2c631c0d15ce1a7ab57cd657f2a8f8ba"
   integrity sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==
 
-"@patrick-ui/core@workspace:*":
+"@openlab-ui/core@workspace:*":
   version "0.0.1"
-  resolved "https://registry.npmmirror.com/@patrick-ui/core/-/core-0.0.1.tgz#b70cb797623e7ae5bf83a522635f26cd89fe45ee"
+  resolved "https://registry.npmmirror.com/@openlab-ui/core/-/core-0.0.1.tgz#b70cb797623e7ae5bf83a522635f26cd89fe45ee"
   integrity sha512-4TtYFmLpW93hQA4yH6QDNjvv+YKTRuIaT+7bHsDlzKBoV2gXAkxz0O0fPLE9MzLpLP8lZgAY2Dz8d/00pSJf/Q==
   dependencies:
     "@vanilla-extract/css" "^1.17.4"
     "@vanilla-extract/recipes" "^0.5.7"
     "@zag-js/core" "1.25.0"
 
-"@patrick-ui/vue@*":
+"@openlab-ui/vue@*":
   version "0.0.1"
-  resolved "https://registry.npmmirror.com/@patrick-ui/vue/-/vue-0.0.1.tgz#12f83dda61496e0c31b8b4b74b5066274021053c"
+  resolved "https://registry.npmmirror.com/@openlab-ui/vue/-/vue-0.0.1.tgz#12f83dda61496e0c31b8b4b74b5066274021053c"
   integrity sha512-mF5alCnmvX8ZRU/LKNOFSOcINoOd8xnCs4VioH4i1VvBLUzxO3yl0gOlAbQBYswbs+xuSWG9DiubToaDCEaCtA==
   dependencies:
-    "@patrick-ui/core" "workspace:*"
+    "@openlab-ui/core" "workspace:*"
     vue "^3.5.21"
 
 "@rolldown/pluginutils@1.0.0-beta.29":

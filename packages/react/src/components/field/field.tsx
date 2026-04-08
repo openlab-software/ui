@@ -1,5 +1,5 @@
-import type { FieldOrientation } from "@patrick-ui/core/field/field.css";
-import * as styles from "@patrick-ui/core/field/field.css";
+import type { FieldOrientation } from "@openlab-ui/core/field/field.css";
+import * as styles from "@openlab-ui/core/field/field.css";
 import { useMemo } from "react";
 import { Label } from "../label/label";
 import { Separator } from "../separator/separator";

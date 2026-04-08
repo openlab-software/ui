@@ -1,6 +1,6 @@
 import { Toggle as ToggleBase } from "@base-ui/react/toggle";
-import * as styles from "@patrick-ui/core/toggle/toggle.css";
-import type { ToggleVariants } from "@patrick-ui/core/toggle/toggle.css";
+import * as styles from "@openlab-ui/core/toggle/toggle.css";
+import type { ToggleVariants } from "@openlab-ui/core/toggle/toggle.css";
 
 export type ToggleProps = ToggleBase.Props & ToggleVariants;
 
@@ -17,6 +17,6 @@ export function Toggle({
     />
   );
 }
-Toggle.displayName = "PatrickUIToggle";
+Toggle.displayName = "OpenLabUIToggle";
 
 export { type ToggleVariants };

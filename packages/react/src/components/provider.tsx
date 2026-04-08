@@ -1,7 +1,7 @@
-import * as styles from "@patrick-ui/core/theme/default.css";
+import * as styles from "@openlab-ui/core/theme/default.css";
 import { useEffect, type PropsWithChildren } from "react";
 
-export function PatrickUIProvider(props: PropsWithChildren) {
+export function OpenLabUIProvider(props: PropsWithChildren) {
   useEffect(() => {
     document.body.classList.add(styles.defaultTheme);
     return () => {

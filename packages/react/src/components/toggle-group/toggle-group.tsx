@@ -1,13 +1,18 @@
 import React from "react";
 import { Toggle as ToggleBase } from "@base-ui/react/toggle";
 import { ToggleGroup as ToggleGroupBase } from "@base-ui/react/toggle-group";
-import * as styles from "@patrick-ui/core/toggle-group/toggle-group.css";
-import * as toggleStyles from "@patrick-ui/core/toggle/toggle.css";
-import type { ToggleVariants } from "@patrick-ui/core/toggle/toggle.css";
+import * as styles from "@openlab-ui/core/toggle-group/toggle-group.css";
+import * as toggleStyles from "@openlab-ui/core/toggle/toggle.css";
+import type { ToggleVariants } from "@openlab-ui/core/toggle/toggle.css";
 
 const ToggleGroupContext = React.createContext<
   ToggleVariants & { spacing?: number; orientation?: "horizontal" | "vertical" }
->({ size: "default", variant: "default", spacing: 0, orientation: "horizontal" });
+>({
+  size: "default",
+  variant: "default",
+  spacing: 0,
+  orientation: "horizontal",
+});
 
 export function ToggleGroup({
   variant,
@@ -16,7 +21,11 @@ export function ToggleGroup({
   orientation = "horizontal",
   children,
   ...props
-}: ToggleGroupBase.Props & ToggleVariants & { spacing?: number; orientation?: "horizontal" | "vertical" }) {
+}: ToggleGroupBase.Props &
+  ToggleVariants & {
+    spacing?: number;
+    orientation?: "horizontal" | "vertical";
+  }) {
   return (
     <ToggleGroupBase
       data-slot="toggle-group"
@@ -27,7 +36,9 @@ export function ToggleGroup({
       className={styles.root}
       {...props}
     >
-      <ToggleGroupContext.Provider value={{ variant, size, spacing, orientation }}>
+      <ToggleGroupContext.Provider
+        value={{ variant, size, spacing, orientation }}
+      >
         {children}
       </ToggleGroupContext.Provider>
     </ToggleGroupBase>
@@ -47,7 +58,10 @@ export function ToggleGroupItem({
       data-size={ctx.size ?? size}
       data-spacing={ctx.spacing}
       className={[
-        toggleStyles.toggle({ variant: ctx.variant ?? variant, size: ctx.size ?? size }),
+        toggleStyles.toggle({
+          variant: ctx.variant ?? variant,
+          size: ctx.size ?? size,
+        }),
         styles.item,
       ].join(" ")}
       {...props}
