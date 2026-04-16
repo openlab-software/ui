@@ -11,7 +11,8 @@
       "Bash(pnpm --filter @openlab-ui/react build)",
       "Bash(pnpm --filter react build)",
       "Bash(pnpm --filter vue build)",
-      "Bash(pnpm build:*)"
+      "Bash(pnpm build:*)",
+      "Bash(npx tsc *)"
     ]
   }
 }

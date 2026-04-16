@@ -12,6 +12,9 @@ export type MenuRadioItemProps = MenuBase.RadioItem.Props;
 export type MenuGroupProps = MenuBase.Group.Props;
 export type MenuGroupLabelProps = MenuBase.GroupLabel.Props;
 export type MenuArrowProps = MenuBase.Arrow.Props;
+export type MenuPortalProps = MenuBase.Portal.Props;
+export type MenuPositionerProps = MenuBase.Positioner.Props;
+export type MenuSeparatorProps = MenuBase.Separator.Props;
 
 export function MenuRoot(props: MenuRootProps) {
   return <MenuBase.Root {...props} />;
@@ -57,6 +60,23 @@ export function MenuArrow(props: MenuArrowProps) {
   return <MenuBase.Arrow className={styles.arrow} {...props} />;
 }
 MenuArrow.displayName = "OpenLabUIMenuArrow";
+export function MenuPortal(props: MenuPortalProps) {
+  return <MenuBase.Portal {...props} />;
+}
+MenuPortal.displayName = "OpenLabUIMenuPortal";
+export function MenuPositioner(props: MenuPositionerProps) {
+  return <MenuBase.Positioner {...props} />;
+}
+MenuPositioner.displayName = "OpenLabUIMenuPositioner";
+export function MenuSeparator(props: MenuSeparatorProps) {
+  return (
+    <MenuBase.Separator
+      style={{ height: 1, background: "var(--color-border)", margin: "4px 0" }}
+      {...props}
+    />
+  );
+}
+MenuSeparator.displayName = "OpenLabUIMenuSeparator";
 
 export const Menu = {
   Root: MenuRoot,
@@ -70,4 +90,7 @@ export const Menu = {
   Group: MenuGroup,
   GroupLabel: MenuGroupLabel,
   Arrow: MenuArrow,
+  Portal: MenuPortal,
+  Positioner: MenuPositioner,
+  Separator: MenuSeparator,
 };

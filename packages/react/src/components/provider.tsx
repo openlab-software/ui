@@ -1,13 +1,19 @@
 import * as styles from "@openlab-ui/core/theme/default.css";
 import { useEffect, type PropsWithChildren } from "react";
 
-export function OpenLabUIProvider(props: PropsWithChildren) {
-  useEffect(() => {
-    document.body.classList.add(styles.defaultTheme);
-    return () => {
-      document.body.classList.remove(styles.defaultTheme);
-    };
-  }, []);
+export interface OpenLabUIProviderProps extends PropsWithChildren {
+  dark?: boolean;
+}
 
-  return <div className={styles.defaultTheme}>{props.children}</div>;
+export function OpenLabUIProvider({ dark = false, children }: OpenLabUIProviderProps) {
+  const theme = dark ? styles.darkTheme : styles.defaultTheme;
+
+  useEffect(() => {
+    document.body.classList.add(theme);
+    return () => {
+      document.body.classList.remove(theme);
+    };
+  }, [theme]);
+
+  return <div className={theme}>{children}</div>;
 }
