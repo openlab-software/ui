@@ -38,10 +38,10 @@ export const description = style({
 });
 
 export const action = style({
-  gridColumn: 2,
-  gridRow: "1 / span 2",
+  display: 'flex',
   alignSelf: "start",
   justifySelf: "end",
+  gap: "12px"
 });
 
 export const content = style({

@@ -23,16 +23,28 @@ export function CardPage() {
           <Card style={{ width: "100%", maxWidth: 360 }}>
             <CardHeader>
               <CardTitle>Subscription Plan</CardTitle>
-              <CardDescription>Manage your billing and subscription.</CardDescription>
+              <CardDescription>
+                Manage your billing and subscription.
+              </CardDescription>
             </CardHeader>
             <CardContent>
-              <p style={{ fontSize: "0.875rem", color: "var(--color-muted-foreground)" }}>
-                You are currently on the <strong>Pro</strong> plan. Your next billing date is March 1, 2026.
+              <p
+                style={{
+                  fontSize: "0.875rem",
+                  color: "var(--color-muted-foreground)",
+                }}
+              >
+                You are currently on the <strong>Pro</strong> plan. Your next
+                billing date is March 1, 2026.
               </p>
             </CardContent>
             <CardFooter>
-              <Button variant="outline" size="sm">Cancel plan</Button>
-              <Button size="sm">Upgrade</Button>
+              <CardAction>
+                <Button variant="outline" size="sm">
+                  Cancel plan
+                </Button>
+                <Button size="sm">Upgrade</Button>
+              </CardAction>
             </CardFooter>
           </Card>
         }
@@ -91,7 +103,12 @@ export function CardPage() {
               <CardTitle>Quick Note</CardTitle>
             </CardHeader>
             <CardContent>
-              <p style={{ fontSize: "0.875rem", color: "var(--color-muted-foreground)" }}>
+              <p
+                style={{
+                  fontSize: "0.875rem",
+                  color: "var(--color-muted-foreground)",
+                }}
+              >
                 Compact card for dense UI layouts.
               </p>
             </CardContent>

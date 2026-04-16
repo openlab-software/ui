@@ -1,9 +1,4 @@
-import {
-  Checkbox,
-  CheckboxGroup,
-  Field,
-  FieldLabel,
-} from "@openlab-ui/react";
+import { Checkbox, CheckboxGroup, Field, FieldLabel } from "@openlab-ui/react";
 import { Page, Section } from "../Section";
 
 export function CheckboxPage() {
@@ -16,15 +11,36 @@ export function CheckboxPage() {
         title="Basic"
         preview={
           <>
-            <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.875rem" }}>
+            <label
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "0.5rem",
+                fontSize: "0.875rem",
+              }}
+            >
               <Checkbox defaultChecked />
               Accept terms and conditions
             </label>
-            <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.875rem" }}>
+            <label
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "0.5rem",
+                fontSize: "0.875rem",
+              }}
+            >
               <Checkbox />
               Subscribe to newsletter
             </label>
-            <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.875rem" }}>
+            <label
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "0.5rem",
+                fontSize: "0.875rem",
+              }}
+            >
               <Checkbox disabled />
               Disabled option
             </label>

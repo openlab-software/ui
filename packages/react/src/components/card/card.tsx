@@ -28,7 +28,7 @@ export function CardDescription(props: React.ComponentProps<"div">) {
 }
 
 export function CardAction(props: React.ComponentProps<"div">) {
-  return <div data-slot="card-action" className={styles.action} {...props} />;
+  return <div data-slot="card-actions" className={styles.action} {...props} />;
 }
 
 export function CardContent(props: React.ComponentProps<"div">) {
