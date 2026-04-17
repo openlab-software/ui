@@ -1,0 +1,92 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { AlertDialogBasic } from "../components/previews/react/AlertDialogPreview";
+import AlertDialogPreviewVue from "../components/previews/vue/AlertDialogPreview.vue";
+---
+
+<DocsLayout
+  title="Alert Dialog"
+  description="A modal dialog that interrupts the user with important content and expects a response."
+  activeId="alert-dialog"
+>
+  <div class="docs-section">
+    <h2 class="docs-section-title">Basic</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview">
+        <AlertDialogBasic client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body">
+          <pre>{`import {
+  AlertDialog,
+  AlertDialogTrigger,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogFooter,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogAction,
+  AlertDialogCancel,
+  Button,
+} from "@openlab-ui/react";
+
+<AlertDialog>
+  <AlertDialogTrigger render={<Button variant="outline">Delete Account</Button>} />
+  <AlertDialogContent>
+    <AlertDialogHeader>
+      <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+      <AlertDialogDescription>
+        This action cannot be undone.
+      </AlertDialogDescription>
+    </AlertDialogHeader>
+    <AlertDialogFooter>
+      <AlertDialogCancel>Cancel</AlertDialogCancel>
+      <AlertDialogAction variant="destructive">Delete Account</AlertDialogAction>
+    </AlertDialogFooter>
+  </AlertDialogContent>
+</AlertDialog>`}</pre>
+        </div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview">
+        <AlertDialogPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body">
+          <pre>{`<script setup>
+import {
+  AlertDialog, AlertDialogTrigger, AlertDialogContent,
+  AlertDialogHeader, AlertDialogFooter,
+  AlertDialogTitle, AlertDialogDescription,
+  AlertDialogAction, AlertDialogCancel,
+  Button,
+} from "@openlab-ui/vue";
+</script>
+
+<template>
+  <AlertDialog>
+    <AlertDialogTrigger>
+      <Button variant="outline">Delete Account</Button>
+    </AlertDialogTrigger>
+    <AlertDialogContent>
+      <AlertDialogHeader>
+        <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+        <AlertDialogDescription>
+          This action cannot be undone.
+        </AlertDialogDescription>
+      </AlertDialogHeader>
+      <AlertDialogFooter>
+        <AlertDialogCancel>Cancel</AlertDialogCancel>
+        <AlertDialogAction variant="destructive">Delete Account</AlertDialogAction>
+      </AlertDialogFooter>
+    </AlertDialogContent>
+  </AlertDialog>
+</template>`}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>

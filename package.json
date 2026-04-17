@@ -20,8 +20,10 @@
   "scripts": {
     "dev:react": "pnpm --filter example-react dev",
     "dev:vue": "pnpm --filter example-vue dev",
+    "dev:docs": "pnpm --filter example-docs dev",
     "build": "pnpm -r --if-present build",
     "build:packages": "pnpm --filter vue --filter react build -w",
+    "build:docs": "pnpm --filter example-docs build",
     "bootstrap": "pnpm install && pnpm -w -r build"
   }
 }

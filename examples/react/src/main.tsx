@@ -1,13 +1,11 @@
+import "@openlab-ui/react/styles.css";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "@openlab-ui/react/styles.css";
 // @ts-ignore
 import "@fontsource/geist-mono";
 
-import App from "./App.tsx";
-
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
+    <div>Coming soon</div>
   </StrictMode>,
 );

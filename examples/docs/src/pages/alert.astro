@@ -1,0 +1,52 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { AlertDefault } from "../components/previews/react/AlertPreview";
+import AlertPreviewVue from "../components/previews/vue/AlertPreview.vue";
+---
+
+<DocsLayout title="Alert" description="Display informational, warning, or error messages to the user." activeId="alert">
+  <div class="docs-section">
+    <h2 class="docs-section-title">Variants</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview docs-preview-column">
+        <AlertDefault client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import { Alert, AlertTitle, AlertDescription } from "@openlab-ui/react";
+
+<Alert>
+  <AlertTitle>Default Alert</AlertTitle>
+  <AlertDescription>This is a default alert.</AlertDescription>
+</Alert>
+
+<Alert variant="destructive">
+  <AlertTitle>Error</AlertTitle>
+  <AlertDescription>Something went wrong.</AlertDescription>
+</Alert>`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview docs-preview-column">
+        <AlertPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<script setup>
+import { Alert, AlertTitle, AlertDescription } from "@openlab-ui/vue";
+</script>
+
+<template>
+  <Alert>
+    <AlertTitle>Default Alert</AlertTitle>
+    <AlertDescription>This is a default alert.</AlertDescription>
+  </Alert>
+  <Alert variant="destructive">
+    <AlertTitle>Error</AlertTitle>
+    <AlertDescription>Something went wrong.</AlertDescription>
+  </Alert>
+</template>`}</pre></div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>

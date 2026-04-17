@@ -1,0 +1,40 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { SliderBasic } from "../components/previews/react/SliderPreview";
+import SliderPreviewVue from "../components/previews/vue/SliderPreview.vue";
+---
+
+<DocsLayout title="Slider" description="An input where the user selects a value from within a given range." activeId="slider">
+  <div class="docs-section">
+    <h2 class="docs-section-title">Basic</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview docs-preview-column">
+        <SliderBasic client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import { Slider } from "@openlab-ui/react";
+
+<Slider defaultValue={[40]} min={0} max={100} step={1} />
+<Slider defaultValue={[20, 80]} min={0} max={100} step={1} />`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview docs-preview-column">
+        <SliderPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<script setup>
+import { Slider } from "@openlab-ui/vue";
+import { ref } from "vue";
+const value = ref(40);
+</script>
+
+<template>
+  <Slider v-model="value" :min="0" :max="100" :step="1" />
+</template>`}</pre></div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>

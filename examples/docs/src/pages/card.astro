@@ -1,0 +1,125 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { CardBasic, CardWithAction, CardSmall } from "../components/previews/react/CardPreview";
+import CardPreviewVue from "../components/previews/vue/CardPreview.vue";
+---
+
+<DocsLayout title="Card" description="A container with a header, content, and footer for grouping related information." activeId="card">
+  <div class="docs-section">
+    <h2 class="docs-section-title">Basic</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview docs-preview-center">
+        <CardBasic client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@openlab-ui/react";
+
+<Card>
+  <CardHeader>
+    <CardTitle>Subscription Plan</CardTitle>
+    <CardDescription>Manage your billing and subscription.</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>You are currently on the Pro plan.</p>
+  </CardContent>
+  <CardFooter>
+    <Button variant="outline" size="sm">Cancel plan</Button>
+    <Button size="sm">Upgrade</Button>
+  </CardFooter>
+</Card>`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview docs-preview-center">
+        <CardPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<script setup>
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@openlab-ui/vue";
+</script>
+
+<template>
+  <Card>
+    <CardHeader>
+      <CardTitle>Subscription Plan</CardTitle>
+      <CardDescription>Manage your billing and subscription.</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <p>You are currently on the Pro plan.</p>
+    </CardContent>
+    <CardFooter>
+      <Button variant="outline" size="sm">Cancel plan</Button>
+      <Button size="sm">Upgrade</Button>
+    </CardFooter>
+  </Card>
+</template>`}</pre></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="docs-section">
+    <h2 class="docs-section-title">With Action</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview docs-preview-center">
+        <CardWithAction client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`<CardHeader>
+  <CardTitle>Total Revenue</CardTitle>
+  <CardDescription>January – June 2025</CardDescription>
+  <CardAction>
+    <Badge variant="secondary">+12%</Badge>
+  </CardAction>
+</CardHeader>`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview docs-preview-center">
+        <CardPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<CardHeader>
+  <CardTitle>Total Revenue</CardTitle>
+  <CardAction>
+    <Badge variant="secondary">+12%</Badge>
+  </CardAction>
+</CardHeader>`}</pre></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="docs-section">
+    <h2 class="docs-section-title">Small Size</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview docs-preview-center">
+        <CardSmall client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`<Card size="sm">
+  <CardHeader>
+    <CardTitle>Quick Note</CardTitle>
+  </CardHeader>
+  <CardContent>...</CardContent>
+</Card>`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview docs-preview-center">
+        <CardPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<Card size="sm">
+  <CardHeader>
+    <CardTitle>Quick Note</CardTitle>
+  </CardHeader>
+</Card>`}</pre></div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>

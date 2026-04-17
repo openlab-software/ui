@@ -1,0 +1,66 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { MenuBasic } from "../components/previews/react/MenuPreview";
+import MenuPreviewVue from "../components/previews/vue/MenuPreview.vue";
+---
+
+<DocsLayout title="Menu" description="Displays a dropdown list of actions triggered by a button." activeId="menu">
+  <div class="docs-section">
+    <h2 class="docs-section-title">Dropdown Menu</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview docs-preview-center">
+        <MenuBasic client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import {
+  DropdownMenu, DropdownMenuTrigger, DropdownMenuContent,
+  DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator
+} from "@openlab-ui/react";
+
+<DropdownMenu>
+  <DropdownMenuTrigger asChild>
+    <Button variant="outline">Open Menu</Button>
+  </DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>Profile</DropdownMenuItem>
+    <DropdownMenuItem>Settings</DropdownMenuItem>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>Log out</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview docs-preview-center">
+        <MenuPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<script setup>
+import {
+  DropdownMenu, DropdownMenuTrigger, DropdownMenuContent,
+  DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator
+} from "@openlab-ui/vue";
+</script>
+
+<template>
+  <DropdownMenu>
+    <DropdownMenuTrigger as-child>
+      <Button variant="outline">Open Menu</Button>
+    </DropdownMenuTrigger>
+    <DropdownMenuContent>
+      <DropdownMenuLabel>My Account</DropdownMenuLabel>
+      <DropdownMenuSeparator />
+      <DropdownMenuItem>Profile</DropdownMenuItem>
+      <DropdownMenuSeparator />
+      <DropdownMenuItem>Log out</DropdownMenuItem>
+    </DropdownMenuContent>
+  </DropdownMenu>
+</template>`}</pre></div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>

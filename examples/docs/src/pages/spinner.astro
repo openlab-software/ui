@@ -1,0 +1,67 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { SpinnerBasic, SkeletonBasic } from "../components/previews/react/SpinnerPreview";
+import SpinnerPreviewVue from "../components/previews/vue/SpinnerPreview.vue";
+---
+
+<DocsLayout title="Spinner & Skeleton" description="Loading indicators for asynchronous operations and content placeholders." activeId="spinner">
+  <div class="docs-section">
+    <h2 class="docs-section-title">Spinner</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview">
+        <SpinnerBasic client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import { Spinner } from "@openlab-ui/react";
+
+<Spinner size="sm" />
+<Spinner />
+<Spinner size="lg" />`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview">
+        <SpinnerPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<script setup>
+import { Spinner } from "@openlab-ui/vue";
+</script>
+
+<template>
+  <Spinner size="sm" />
+  <Spinner />
+  <Spinner size="lg" />
+</template>`}</pre></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="docs-section">
+    <h2 class="docs-section-title">Skeleton</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview docs-preview-column">
+        <SkeletonBasic client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import { Skeleton } from "@openlab-ui/react";
+
+<Skeleton style={{ height: "1rem", width: "60%" }} />
+<Skeleton style={{ height: "0.75rem", width: "90%" }} />`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview docs-preview-column">
+        <SpinnerPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<Skeleton style="height: 1rem; width: 60%" />
+<Skeleton style="height: 0.75rem; width: 90%" />`}</pre></div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>

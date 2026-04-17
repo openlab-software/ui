@@ -1,0 +1,43 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { BadgeVariants } from "../components/previews/react/BadgePreview";
+import BadgePreviewVue from "../components/previews/vue/BadgePreview.vue";
+---
+
+<DocsLayout title="Badge" description="Small status labels to highlight state or category." activeId="badge">
+  <div class="docs-section">
+    <h2 class="docs-section-title">Variants</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview">
+        <BadgeVariants client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import { Badge } from "@openlab-ui/react";
+
+<Badge variant="default">Default</Badge>
+<Badge variant="secondary">Secondary</Badge>
+<Badge variant="outline">Outline</Badge>
+<Badge variant="destructive">Destructive</Badge>`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview">
+        <BadgePreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<script setup>
+import { Badge } from "@openlab-ui/vue";
+</script>
+
+<template>
+  <Badge variant="default">Default</Badge>
+  <Badge variant="secondary">Secondary</Badge>
+  <Badge variant="outline">Outline</Badge>
+  <Badge variant="destructive">Destructive</Badge>
+</template>`}</pre></div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>

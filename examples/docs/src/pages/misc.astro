@@ -1,0 +1,134 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { KbdBasic, ToggleBasic, ToggleGroupBasic, BreadcrumbBasic } from "../components/previews/react/MiscPreview";
+import MiscPreviewVue from "../components/previews/vue/MiscPreview.vue";
+---
+
+<DocsLayout title="Kbd, Toggle, Breadcrumb…" description="Utility components for keyboard shortcuts, toggles, and navigation." activeId="misc">
+  <div class="docs-section">
+    <h2 class="docs-section-title">Kbd</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview">
+        <KbdBasic client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import { Kbd } from "@openlab-ui/react";
+
+<Kbd>⌘K</Kbd>
+<Kbd>Ctrl</Kbd> + <Kbd>K</Kbd>`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview">
+        <MiscPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<Kbd>⌘K</Kbd>
+<Kbd>Ctrl</Kbd> + <Kbd>K</Kbd>`}</pre></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="docs-section">
+    <h2 class="docs-section-title">Toggle</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview">
+        <ToggleBasic client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import { Toggle } from "@openlab-ui/react";
+
+<Toggle>Bold</Toggle>
+<Toggle pressed>Italic</Toggle>
+<Toggle variant="outline">Underline</Toggle>`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview">
+        <MiscPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<Toggle>Bold</Toggle>
+<Toggle :pressed="true">Italic</Toggle>`}</pre></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="docs-section">
+    <h2 class="docs-section-title">Toggle Group</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview">
+        <ToggleGroupBasic client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import { ToggleGroup, ToggleGroupItem } from "@openlab-ui/react";
+import { BoldIcon, ItalicIcon } from "lucide-react";
+
+<ToggleGroup type="multiple">
+  <ToggleGroupItem value="bold"><BoldIcon /></ToggleGroupItem>
+  <ToggleGroupItem value="italic"><ItalicIcon /></ToggleGroupItem>
+</ToggleGroup>`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview">
+        <MiscPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<ToggleGroup type="multiple">
+  <ToggleGroupItem value="bold">B</ToggleGroupItem>
+  <ToggleGroupItem value="italic">I</ToggleGroupItem>
+</ToggleGroup>`}</pre></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="docs-section">
+    <h2 class="docs-section-title">Breadcrumb</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview">
+        <BreadcrumbBasic client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import {
+  Breadcrumb, BreadcrumbList, BreadcrumbItem,
+  BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage
+} from "@openlab-ui/react";
+
+<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem><BreadcrumbLink href="/">Home</BreadcrumbLink></BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem><BreadcrumbPage>Current</BreadcrumbPage></BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview">
+        <MiscPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/">Home</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbPage>Current</BreadcrumbPage>
+    </BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>`}</pre></div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>

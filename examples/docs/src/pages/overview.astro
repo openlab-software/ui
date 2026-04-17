@@ -1,0 +1,65 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+---
+
+<DocsLayout title="Overview" description="OpenLab UI — a headless component library for React and Vue." activeId="overview">
+  <div class="docs-section">
+    <h2 class="docs-section-title">Introduction</h2>
+    <p style="font-size: 0.875rem; color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 1rem">
+      OpenLab UI is a component library built on top of <strong>vanilla-extract</strong> for CSS-in-TypeScript
+      styling. It provides the same components for both <strong>React</strong> (via Base UI) and <strong>Vue 3</strong>
+      (using native elements with Vue reactivity).
+    </p>
+  </div>
+
+  <div class="docs-section">
+    <h2 class="docs-section-title">Installation</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-code">
+        <div class="docs-code-header"><span>bash</span></div>
+        <div class="docs-code-body"><pre>pnpm add @openlab-ui/react</pre></div>
+      </div>
+      <div class="docs-code" style="margin-top: 0.75rem">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import { OpenLabUIProvider, Button } from "@openlab-ui/react";
+import "@openlab-ui/react/styles.css";
+
+function App() {
+  return (
+    <OpenLabUIProvider>
+      <Button variant="default">Hello OpenLab UI</Button>
+    </OpenLabUIProvider>
+  );
+}`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>bash</span></div>
+        <div class="docs-code-body"><pre>pnpm add @openlab-ui/vue</pre></div>
+      </div>
+      <div class="docs-code" style="margin-top: 0.75rem">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<script setup>
+import { OpenLabUIProvider, Button } from "@openlab-ui/vue";
+import "@openlab-ui/vue/styles.css";
+</script>
+
+<template>
+  <OpenLabUIProvider>
+    <Button variant="default">Hello OpenLab UI</Button>
+  </OpenLabUIProvider>
+</template>`}</pre></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="docs-section">
+    <h2 class="docs-section-title">Theming</h2>
+    <p style="font-size: 0.875rem; color: var(--color-muted-foreground); line-height: 1.7">
+      The <code>OpenLabUIProvider</code> wraps your app and applies the default theme (or dark theme when
+      <code>dark</code> prop is set). All CSS variables are scoped to the theme class, so multiple themes
+      can coexist on the same page.
+    </p>
+  </div>
+</DocsLayout>

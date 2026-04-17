@@ -1,0 +1,55 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { TabsBasic } from "../components/previews/react/TabsPreview";
+import TabsPreviewVue from "../components/previews/vue/TabsPreview.vue";
+---
+
+<DocsLayout title="Tabs" description="Organizes content into multiple sections that can be switched between." activeId="tabs">
+  <div class="docs-section">
+    <h2 class="docs-section-title">Basic</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview docs-preview-column">
+        <TabsBasic client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import { Tabs, TabsList, TabsTrigger, TabsContent } from "@openlab-ui/react";
+
+<Tabs defaultValue="account">
+  <TabsList>
+    <TabsTrigger value="account">Account</TabsTrigger>
+    <TabsTrigger value="security">Security</TabsTrigger>
+  </TabsList>
+  <TabsContent value="account">
+    Account settings...
+  </TabsContent>
+  <TabsContent value="security">
+    Security settings...
+  </TabsContent>
+</Tabs>`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview docs-preview-column">
+        <TabsPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<script setup>
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@openlab-ui/vue";
+</script>
+
+<template>
+  <Tabs default-value="account">
+    <TabsList>
+      <TabsTrigger value="account">Account</TabsTrigger>
+      <TabsTrigger value="security">Security</TabsTrigger>
+    </TabsList>
+    <TabsContent value="account">Account settings...</TabsContent>
+    <TabsContent value="security">Security settings...</TabsContent>
+  </Tabs>
+</template>`}</pre></div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>

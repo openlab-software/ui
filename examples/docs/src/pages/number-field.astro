@@ -1,0 +1,67 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { NumberFieldBasic } from "../components/previews/react/NumberFieldPreview";
+import NumberFieldPreviewVue from "../components/previews/vue/NumberFieldPreview.vue";
+---
+
+<DocsLayout
+  title="Number Field"
+  description="An input for numeric values with increment and decrement controls."
+  activeId="number-field"
+>
+  <div class="docs-section">
+    <h2 class="docs-section-title">Basic</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview docs-preview-column">
+        <NumberFieldBasic client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body">
+          <pre>{`import { NumberField, Label, Field } from "@openlab-ui/react";
+
+<Field>
+  <Label>Quantity</Label>
+  <NumberField.Root defaultValue={1} min={0} max={99}>
+    <NumberField.Group>
+      <NumberField.Decrement>−</NumberField.Decrement>
+      <NumberField.Input />
+      <NumberField.Increment>+</NumberField.Increment>
+    </NumberField.Group>
+  </NumberField.Root>
+</Field>`}</pre>
+        </div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview docs-preview-column">
+        <NumberFieldPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body">
+          <pre>{`<script setup>
+import {
+  NumberFieldRoot, NumberFieldGroup, NumberFieldInput,
+  NumberFieldIncrement, NumberFieldDecrement,
+  Label, Field,
+} from "@openlab-ui/vue";
+</script>
+
+<template>
+  <Field>
+    <Label>Quantity</Label>
+    <NumberFieldRoot :default-value="1" :min="0" :max="99">
+      <NumberFieldGroup>
+        <NumberFieldDecrement>−</NumberFieldDecrement>
+        <NumberFieldInput />
+        <NumberFieldIncrement>+</NumberFieldIncrement>
+      </NumberFieldGroup>
+    </NumberFieldRoot>
+  </Field>
+</template>`}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>

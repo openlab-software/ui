@@ -1,0 +1,122 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import {
+    AvatarBasic,
+    AvatarSizes,
+    AvatarGroupDemo,
+} from "../components/previews/react/AvatarPreview";
+import AvatarPreviewVue from "../components/previews/vue/AvatarPreview.vue";
+---
+
+<DocsLayout
+    title="Avatar"
+    description="An image element with a fallback for representing the user."
+    activeId="avatar"
+>
+    <div class="docs-section">
+        <h2 class="docs-section-title">Basic</h2>
+        <div class="fw-panel" data-fw="react">
+            <div class="docs-preview">
+                <AvatarBasic client:load />
+            </div>
+            <div class="docs-code">
+                <div class="docs-code-header"><span>tsx</span></div>
+                <div class="docs-code-body">
+                    <pre>{
+          `import { Avatar, AvatarImage, AvatarFallback } from "@openlab-ui/react";
+
+          <Avatar>
+            <AvatarImage src="..." alt="User" />
+            <AvatarFallback>PR</AvatarFallback>
+          </Avatar>`
+}</pre>
+                </div>
+            </div>
+        </div>
+        <div class="fw-panel" data-fw="vue" hidden>
+            <div class="docs-preview">
+                <AvatarPreviewVue client:load />
+            </div>
+            <div class="docs-code">
+                <div class="docs-code-header"><span>vue</span></div>
+                <div class="docs-code-body">
+                    <pre>{`<script setup>
+import { Avatar, AvatarImage, AvatarFallback } from "@openlab-ui/vue";
+</script>
+
+<template>
+  <Avatar>
+    <AvatarImage src="..." alt="User" />
+    <AvatarFallback>PR</AvatarFallback>
+  </Avatar>
+</template>`}</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="docs-section">
+        <h2 class="docs-section-title">Sizes</h2>
+        <div class="fw-panel" data-fw="react">
+            <div class="docs-preview">
+                <AvatarSizes client:load />
+            </div>
+            <div class="docs-code">
+                <div class="docs-code-header"><span>tsx</span></div>
+                <div class="docs-code-body">
+                    <pre>{`<Avatar size="sm"><AvatarFallback>SM</AvatarFallback></Avatar>
+<Avatar><AvatarFallback>MD</AvatarFallback></Avatar>
+<Avatar size="lg"><AvatarFallback>LG</AvatarFallback></Avatar>`}</pre>
+                </div>
+            </div>
+        </div>
+        <div class="fw-panel" data-fw="vue" hidden>
+            <div class="docs-preview">
+                <AvatarPreviewVue client:load />
+            </div>
+            <div class="docs-code">
+                <div class="docs-code-header"><span>vue</span></div>
+                <div class="docs-code-body">
+                    <pre>{`<Avatar size="sm"><AvatarFallback>SM</AvatarFallback></Avatar>
+<Avatar><AvatarFallback>MD</AvatarFallback></Avatar>
+<Avatar size="lg"><AvatarFallback>LG</AvatarFallback></Avatar>`}</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="docs-section">
+        <h2 class="docs-section-title">Group</h2>
+        <div class="fw-panel" data-fw="react">
+            <div class="docs-preview">
+                <AvatarGroupDemo client:load />
+            </div>
+            <div class="docs-code">
+                <div class="docs-code-header"><span>tsx</span></div>
+                <div class="docs-code-body">
+                    <pre>{`import { AvatarGroup, AvatarGroupCount } from "@openlab-ui/react";
+
+<AvatarGroup>
+  <Avatar><AvatarFallback>A</AvatarFallback></Avatar>
+  <Avatar><AvatarFallback>B</AvatarFallback></Avatar>
+  <AvatarGroupCount>+5</AvatarGroupCount>
+</AvatarGroup>`}</pre>
+                </div>
+            </div>
+        </div>
+        <div class="fw-panel" data-fw="vue" hidden>
+            <div class="docs-preview">
+                <AvatarPreviewVue client:load />
+            </div>
+            <div class="docs-code">
+                <div class="docs-code-header"><span>vue</span></div>
+                <div class="docs-code-body">
+                    <pre>{`<AvatarGroup>
+  <Avatar><AvatarFallback>A</AvatarFallback></Avatar>
+  <AvatarGroupCount>+5</AvatarGroupCount>
+</AvatarGroup>`}</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</DocsLayout>

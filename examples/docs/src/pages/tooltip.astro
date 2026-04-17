@@ -1,0 +1,51 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { TooltipBasic } from "../components/previews/react/TooltipPreview";
+import TooltipPreviewVue from "../components/previews/vue/TooltipPreview.vue";
+---
+
+<DocsLayout title="Tooltip" description="A small popup that displays information about an element when hovering." activeId="tooltip">
+  <div class="docs-section">
+    <h2 class="docs-section-title">Basic</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview">
+        <TooltipBasic client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import { Tooltip, TooltipTrigger, TooltipContent } from "@openlab-ui/react";
+
+<Tooltip>
+  <TooltipTrigger asChild>
+    <Button variant="outline">Hover me</Button>
+  </TooltipTrigger>
+  <TooltipContent>
+    <p>This is a tooltip</p>
+  </TooltipContent>
+</Tooltip>`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview">
+        <TooltipPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<script setup>
+import { Tooltip, TooltipTrigger, TooltipContent } from "@openlab-ui/vue";
+</script>
+
+<template>
+  <Tooltip>
+    <TooltipTrigger as-child>
+      <Button variant="outline">Hover me</Button>
+    </TooltipTrigger>
+    <TooltipContent>
+      <p>This is a tooltip</p>
+    </TooltipContent>
+  </Tooltip>
+</template>`}</pre></div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>

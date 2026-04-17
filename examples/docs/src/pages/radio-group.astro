@@ -1,0 +1,51 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { RadioGroupBasic } from "../components/previews/react/RadioGroupPreview";
+import RadioGroupPreviewVue from "../components/previews/vue/RadioGroupPreview.vue";
+---
+
+<DocsLayout title="Radio Group" description="A set of interactive radio buttons where only one can be selected at a time." activeId="radio-group">
+  <div class="docs-section">
+    <h2 class="docs-section-title">Basic</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview docs-preview-column">
+        <RadioGroupBasic client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import { RadioGroup, Radio, Label, Field } from "@openlab-ui/react";
+
+<RadioGroup defaultValue="option-1">
+  <Field orientation="horizontal">
+    <Radio value="option-1" id="r1" />
+    <Label htmlFor="r1">Option one</Label>
+  </Field>
+  <Field orientation="horizontal">
+    <Radio value="option-2" id="r2" />
+    <Label htmlFor="r2">Option two</Label>
+  </Field>
+</RadioGroup>`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview docs-preview-column">
+        <RadioGroupPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<script setup>
+import { RadioGroup, Radio, Label, Field } from "@openlab-ui/vue";
+</script>
+
+<template>
+  <RadioGroup default-value="option-1">
+    <Field orientation="horizontal">
+      <Radio value="option-1" id="r1" />
+      <Label for="r1">Option one</Label>
+    </Field>
+  </RadioGroup>
+</template>`}</pre></div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>

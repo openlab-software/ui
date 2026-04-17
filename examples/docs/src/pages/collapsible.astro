@@ -1,0 +1,57 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { CollapsibleBasic } from "../components/previews/react/CollapsiblePreview";
+import CollapsiblePreviewVue from "../components/previews/vue/CollapsiblePreview.vue";
+---
+
+<DocsLayout
+  title="Collapsible"
+  description="An interactive component that expands or collapses a panel of content."
+  activeId="collapsible"
+>
+  <div class="docs-section">
+    <h2 class="docs-section-title">Basic</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview docs-preview-column">
+        <CollapsibleBasic client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body">
+          <pre>{`import { CollapsibleRoot, CollapsibleTrigger, CollapsiblePanel, Button } from "@openlab-ui/react";
+
+<CollapsibleRoot defaultOpen>
+  <CollapsibleTrigger render={<Button variant="outline">Toggle section ▾</Button>} />
+  <CollapsiblePanel>
+    <p>This content can be collapsed or expanded.</p>
+  </CollapsiblePanel>
+</CollapsibleRoot>`}</pre>
+        </div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview docs-preview-column">
+        <CollapsiblePreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body">
+          <pre>{`<script setup>
+import { CollapsibleRoot, CollapsibleTrigger, CollapsiblePanel, Button } from "@openlab-ui/vue";
+</script>
+
+<template>
+  <CollapsibleRoot :default-open="true">
+    <CollapsibleTrigger>
+      <Button variant="outline">Toggle section ▾</Button>
+    </CollapsibleTrigger>
+    <CollapsiblePanel>
+      <p>This content can be collapsed or expanded.</p>
+    </CollapsiblePanel>
+  </CollapsibleRoot>
+</template>`}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>

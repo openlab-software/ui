@@ -1,0 +1,66 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { SelectBasic } from "../components/previews/react/SelectPreview";
+import SelectPreviewVue from "../components/previews/vue/SelectPreview.vue";
+---
+
+<DocsLayout title="Select" description="Displays a list of options for the user to choose from." activeId="select">
+  <div class="docs-section">
+    <h2 class="docs-section-title">Basic</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview">
+        <SelectBasic client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import {
+  Select, SelectTrigger, SelectValue,
+  SelectContent, SelectItem, SelectGroup, SelectLabel
+} from "@openlab-ui/react";
+
+<Select>
+  <SelectTrigger>
+    <SelectValue placeholder="Select a fruit…" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectGroup>
+      <SelectLabel>Fruits</SelectLabel>
+      <SelectItem value="apple">Apple</SelectItem>
+      <SelectItem value="banana">Banana</SelectItem>
+    </SelectGroup>
+  </SelectContent>
+</Select>`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview">
+        <SelectPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<script setup>
+import {
+  Select, SelectTrigger, SelectValue,
+  SelectContent, SelectItem, SelectGroup, SelectLabel
+} from "@openlab-ui/vue";
+import { ref } from "vue";
+const value = ref("");
+</script>
+
+<template>
+  <Select v-model="value">
+    <SelectTrigger>
+      <SelectValue placeholder="Select a fruit…" />
+    </SelectTrigger>
+    <SelectContent>
+      <SelectGroup>
+        <SelectLabel>Fruits</SelectLabel>
+        <SelectItem value="apple">Apple</SelectItem>
+      </SelectGroup>
+    </SelectContent>
+  </Select>
+</template>`}</pre></div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>

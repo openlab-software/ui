@@ -1,0 +1,66 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { ProgressBasic, MeterBasic } from "../components/previews/react/ProgressPreview";
+import ProgressPreviewVue from "../components/previews/vue/ProgressPreview.vue";
+---
+
+<DocsLayout title="Progress & Meter" description="Visual indicators for completion percentage and measured values." activeId="progress">
+  <div class="docs-section">
+    <h2 class="docs-section-title">Progress</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview docs-preview-column">
+        <ProgressBasic client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import { Progress } from "@openlab-ui/react";
+
+<Progress value={33} />
+<Progress value={66} />
+<Progress value={100} />`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview docs-preview-column">
+        <ProgressPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<script setup>
+import { Progress } from "@openlab-ui/vue";
+</script>
+
+<template>
+  <Progress :value="33" />
+  <Progress :value="66" />
+  <Progress :value="100" />
+</template>`}</pre></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="docs-section">
+    <h2 class="docs-section-title">Meter</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview docs-preview-column">
+        <MeterBasic client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import { Meter } from "@openlab-ui/react";
+
+<Meter value={25} min={0} max={100} />
+<Meter value={90} min={0} max={100} />`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview docs-preview-column">
+        <ProgressPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<Meter :value="25" :min="0" :max="100" />`}</pre></div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>

@@ -1,0 +1,137 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { ButtonVariants, ButtonSizes, ButtonIcons, ButtonDisabled } from "../components/previews/react/ButtonPreview";
+import ButtonPreviewVue from "../components/previews/vue/ButtonPreview.vue";
+
+const reactVariants = `import { Button } from "@openlab-ui/react";
+
+<Button variant="default">Default</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="outline">Outline</Button>
+<Button variant="ghost">Ghost</Button>
+<Button variant="destructive">Destructive</Button>
+<Button variant="link">Link</Button>`;
+
+const vueVariants = `<script setup>
+import { Button } from "@openlab-ui/vue";
+</script>
+
+<template>
+  <Button variant="default">Default</Button>
+  <Button variant="secondary">Secondary</Button>
+  <Button variant="outline">Outline</Button>
+  <Button variant="ghost">Ghost</Button>
+  <Button variant="destructive">Destructive</Button>
+  <Button variant="link">Link</Button>
+</template>`;
+
+const reactSizes = `<Button size="xs">Extra Small</Button>
+<Button size="sm">Small</Button>
+<Button size="default">Default</Button>
+<Button size="lg">Large</Button>`;
+
+const vueSizes = `<Button size="xs">Extra Small</Button>
+<Button size="sm">Small</Button>
+<Button size="default">Default</Button>
+<Button size="lg">Large</Button>`;
+---
+
+<DocsLayout title="Button" description="Triggers an action or event, such as submitting a form or opening a dialog." activeId="button">
+  <div class="docs-section">
+    <h2 class="docs-section-title">Variants</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview">
+        <ButtonVariants client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{reactVariants}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview">
+        <ButtonPreviewVue section="variants" client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{vueVariants}</pre></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="docs-section">
+    <h2 class="docs-section-title">Sizes</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview">
+        <ButtonSizes client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{reactSizes}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview">
+        <ButtonPreviewVue section="sizes" client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{vueSizes}</pre></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="docs-section">
+    <h2 class="docs-section-title">With Icons</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview">
+        <ButtonIcons client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import { PlusIcon, ArrowRightIcon } from "lucide-react";
+
+<Button size="icon" variant="outline"><PlusIcon /></Button>
+<Button>
+  <PlusIcon data-icon="inline-start" />
+  Add item
+</Button>`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview">
+        <ButtonPreviewVue section="variants" client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<Button size="icon" variant="outline">
+  <svg .../>
+</Button>`}</pre></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="docs-section">
+    <h2 class="docs-section-title">Disabled</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview">
+        <ButtonDisabled client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`<Button disabled>Default</Button>
+<Button disabled variant="secondary">Secondary</Button>`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview">
+        <ButtonPreviewVue section="disabled" client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<Button disabled>Default</Button>
+<Button disabled variant="secondary">Secondary</Button>`}</pre></div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>

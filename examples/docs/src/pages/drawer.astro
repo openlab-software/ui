@@ -1,0 +1,69 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { DrawerBasic } from "../components/previews/react/DrawerPreview";
+import DrawerPreviewVue from "../components/previews/vue/DrawerPreview.vue";
+---
+
+<DocsLayout title="Drawer" description="A panel that slides in from the edge of the screen." activeId="drawer">
+  <div class="docs-section">
+    <h2 class="docs-section-title">Basic</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview docs-preview-center">
+        <DrawerBasic client:only="react" />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import {
+  Drawer, DrawerTrigger, DrawerContent,
+  DrawerHeader, DrawerTitle, DrawerFooter
+} from "@openlab-ui/react";
+
+<Drawer>
+  <DrawerTrigger asChild>
+    <Button>Open Drawer</Button>
+  </DrawerTrigger>
+  <DrawerContent>
+    <DrawerHeader>
+      <DrawerTitle>Shopping Cart</DrawerTitle>
+    </DrawerHeader>
+    <DrawerFooter>
+      <Button>Checkout</Button>
+    </DrawerFooter>
+  </DrawerContent>
+</Drawer>`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview docs-preview-center">
+        <DrawerPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<script setup>
+import {
+  Drawer, DrawerTrigger, DrawerContent,
+  DrawerHeader, DrawerTitle, DrawerFooter
+} from "@openlab-ui/vue";
+import { ref } from "vue";
+const open = ref(false);
+</script>
+
+<template>
+  <Drawer v-model="open">
+    <DrawerTrigger as-child>
+      <Button>Open Drawer</Button>
+    </DrawerTrigger>
+    <DrawerContent>
+      <DrawerHeader>
+        <DrawerTitle>Shopping Cart</DrawerTitle>
+      </DrawerHeader>
+      <DrawerFooter>
+        <Button @click="open = false">Checkout</Button>
+      </DrawerFooter>
+    </DrawerContent>
+  </Drawer>
+</template>`}</pre></div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>

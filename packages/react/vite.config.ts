@@ -8,7 +8,9 @@ import path from "path";
 export default defineConfig({
   plugins: [
     react(),
-    vanillaExtractPlugin({ identifiers: ({ hash }) => `openlab-ui_${hash}` }),
+    vanillaExtractPlugin({
+      identifiers: ({ hash }) => `openlab-ui-react_${hash}`,
+    }),
     dts({
       tsconfigPath: "./tsconfig.app.json",
       outDir: "dist/@types",

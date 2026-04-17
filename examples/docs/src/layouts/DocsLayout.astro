@@ -1,0 +1,244 @@
+---
+import { defaultTheme, darkTheme } from "@openlab-ui/core/theme/default.css";
+import "@openlab-ui/react/styles.css";
+import "../styles/docs.css";
+import "@fontsource/geist-mono";
+
+interface Props {
+  title: string;
+  description?: string;
+  activeId: string;
+}
+
+const { title, description, activeId } = Astro.props;
+
+const NAV = [
+  {
+    title: "Getting Started",
+    items: [{ id: "overview", label: "Overview" }],
+  },
+  {
+    title: "Layout",
+    items: [
+      { id: "card", label: "Card" },
+      { id: "separator", label: "Separator" },
+      { id: "scroll-area", label: "Scroll Area" },
+    ],
+  },
+  {
+    title: "Forms",
+    items: [
+      { id: "button", label: "Button" },
+      { id: "input", label: "Input & Textarea" },
+      { id: "number-field", label: "Number Field" },
+      { id: "select", label: "Select" },
+      { id: "combobox", label: "Combobox" },
+      { id: "checkbox", label: "Checkbox" },
+      { id: "radio-group", label: "Radio Group" },
+      { id: "switch", label: "Switch" },
+      { id: "slider", label: "Slider" },
+    ],
+  },
+  {
+    title: "Display",
+    items: [
+      { id: "badge", label: "Badge" },
+      { id: "alert", label: "Alert" },
+      { id: "avatar", label: "Avatar" },
+      { id: "progress", label: "Progress & Meter" },
+      { id: "table", label: "Table" },
+    ],
+  },
+  {
+    title: "Feedback",
+    items: [
+      { id: "spinner", label: "Spinner & Skeleton" },
+      { id: "toast", label: "Toast" },
+    ],
+  },
+  {
+    title: "Overlay",
+    items: [
+      { id: "dialog", label: "Dialog" },
+      { id: "alert-dialog", label: "Alert Dialog" },
+      { id: "drawer", label: "Drawer" },
+      { id: "popover", label: "Popover" },
+      { id: "context-menu", label: "Context Menu" },
+      { id: "tooltip", label: "Tooltip" },
+      { id: "menu", label: "Menu" },
+    ],
+  },
+  {
+    title: "Navigation",
+    items: [
+      { id: "accordion", label: "Accordion" },
+      { id: "collapsible", label: "Collapsible" },
+      { id: "tabs", label: "Tabs" },
+    ],
+  },
+  {
+    title: "Utilities",
+    items: [{ id: "misc", label: "Kbd, Toggle, Breadcrumb…" }],
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} — OpenLab UI</title>
+  </head>
+  <body>
+    <div
+      id="theme-root"
+      class={defaultTheme}
+      data-default-class={defaultTheme}
+      data-dark-class={darkTheme}
+    >
+      <div class="docs-root">
+        <header class="docs-header">
+          <a href="/overview" class="docs-header-brand">
+            <div class="docs-header-brand-logo">OL</div>
+            <span>OpenLab UI</span>
+          </a>
+          <div class="docs-header-actions">
+            <button
+              id="dark-toggle"
+              class="docs-icon-btn"
+              type="button"
+              aria-label="Toggle dark mode"
+            >
+              <svg
+                id="icon-moon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                ><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg
+              >
+              <svg
+                id="icon-sun"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                style="display:none"
+                ><circle cx="12" cy="12" r="4"></circle><path
+                  d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+                ></path></svg
+              >
+            </button>
+          </div>
+        </header>
+
+        <div class="docs-body">
+          <nav class="docs-sidebar">
+            {
+              NAV.map((section) => (
+                <div class="docs-nav-section">
+                  <div class="docs-nav-section-title">{section.title}</div>
+                  {section.items.map((item) => (
+                    <a
+                      href={`/${item.id}`}
+                      class={`docs-nav-item${activeId === item.id ? " active" : ""}`}
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+              ))
+            }
+          </nav>
+
+          <main class="docs-main">
+            <h1 class="docs-page-title">{title}</h1>
+            {description && <p class="docs-page-description">{description}</p>}
+            <slot />
+          </main>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const root = document.getElementById("theme-root")!;
+      const defaultClass = root.dataset.defaultClass!;
+      const darkClass = root.dataset.darkClass!;
+
+      function applyTheme(dark: boolean) {
+        if (dark) {
+          root.classList.remove(defaultClass);
+          root.classList.add(darkClass);
+          document.body.classList.remove(defaultClass);
+          document.body.classList.add(darkClass);
+        } else {
+          root.classList.remove(darkClass);
+          root.classList.add(defaultClass);
+          document.body.classList.remove(darkClass);
+          document.body.classList.add(defaultClass);
+        }
+        const moonIcon = document.getElementById("icon-moon")!;
+        const sunIcon = document.getElementById("icon-sun")!;
+        moonIcon.style.display = dark ? "none" : "";
+        sunIcon.style.display = dark ? "" : "none";
+      }
+
+      const savedDark = localStorage.getItem("openlab-dark") === "true";
+      applyTheme(savedDark);
+
+      document.getElementById("dark-toggle")!.addEventListener("click", () => {
+        const isDark = root.classList.contains(darkClass);
+        applyTheme(!isDark);
+        localStorage.setItem("openlab-dark", String(!isDark));
+      });
+
+      let currentFw = localStorage.getItem("openlab-fw") || "react";
+
+      function switchFw(fw: string) {
+        currentFw = fw;
+        localStorage.setItem("openlab-fw", fw);
+
+        document.querySelectorAll<HTMLElement>(".fw-section-tab").forEach((tab) => {
+          tab.classList.toggle("active", tab.dataset.fw === fw);
+        });
+        document.querySelectorAll<HTMLElement>(".fw-panel").forEach((panel) => {
+          panel.hidden = panel.dataset.fw !== fw;
+        });
+      }
+
+      function injectSectionTabs() {
+        document.querySelectorAll<HTMLElement>(".docs-section").forEach((section) => {
+          const reactPanel = section.querySelector<HTMLElement>('.fw-panel[data-fw="react"]');
+          const vuePanel = section.querySelector<HTMLElement>('.fw-panel[data-fw="vue"]');
+          if (!reactPanel || !vuePanel) return;
+
+          const bar = document.createElement("div");
+          bar.className = "fw-section-tabs";
+
+          (["react", "vue"] as const).forEach((fw) => {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "fw-section-tab";
+            btn.dataset.fw = fw;
+            btn.textContent = fw === "react" ? "React" : "Vue";
+            btn.addEventListener("click", () => switchFw(fw));
+            bar.appendChild(btn);
+          });
+
+          const firstPanel = section.querySelector(".fw-panel")!;
+          section.insertBefore(bar, firstPanel);
+        });
+      }
+
+      injectSectionTabs();
+      switchFw(currentFw);
+    </script>
+  </body>
+</html>

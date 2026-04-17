@@ -1,0 +1,97 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { InputBasic, InputTextarea, InputDisabled } from "../components/previews/react/InputPreview";
+import InputPreviewVue from "../components/previews/vue/InputPreview.vue";
+---
+
+<DocsLayout title="Input & Textarea" description="Text inputs and multi-line text areas for user data entry." activeId="input">
+  <div class="docs-section">
+    <h2 class="docs-section-title">Input</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview docs-preview-column">
+        <InputBasic client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import { Input, Label, Field } from "@openlab-ui/react";
+
+<Field>
+  <Label>Email</Label>
+  <Input type="email" placeholder="you@example.com" />
+</Field>`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview docs-preview-column">
+        <InputPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<script setup>
+import { Input, Label, Field } from "@openlab-ui/vue";
+</script>
+
+<template>
+  <Field>
+    <Label>Email</Label>
+    <Input type="email" placeholder="you@example.com" />
+  </Field>
+</template>`}</pre></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="docs-section">
+    <h2 class="docs-section-title">Textarea</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview docs-preview-column">
+        <InputTextarea client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import { Textarea, Label, Field } from "@openlab-ui/react";
+
+<Field>
+  <Label>Message</Label>
+  <Textarea placeholder="Type your message…" rows={4} />
+</Field>`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview docs-preview-column">
+        <InputPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<Field>
+  <Label>Message</Label>
+  <Textarea placeholder="Type your message…" />
+</Field>`}</pre></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="docs-section">
+    <h2 class="docs-section-title">Disabled</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview docs-preview-column">
+        <InputDisabled client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`<Input disabled placeholder="Disabled input" />
+<Textarea disabled placeholder="Disabled textarea" />`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview docs-preview-column">
+        <InputPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<Input :disabled="true" placeholder="Disabled input" />
+<Textarea :disabled="true" placeholder="Disabled textarea" />`}</pre></div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>

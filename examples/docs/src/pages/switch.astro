@@ -1,0 +1,43 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { SwitchBasic } from "../components/previews/react/SwitchPreview";
+import SwitchPreviewVue from "../components/previews/vue/SwitchPreview.vue";
+---
+
+<DocsLayout title="Switch" description="A toggle control that represents an on/off state." activeId="switch">
+  <div class="docs-section">
+    <h2 class="docs-section-title">Basic</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview docs-preview-column">
+        <SwitchBasic client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import { Switch, Label, Field } from "@openlab-ui/react";
+
+<Field orientation="horizontal">
+  <Switch id="notifications" defaultChecked />
+  <Label htmlFor="notifications">Enable notifications</Label>
+</Field>`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview docs-preview-column">
+        <SwitchPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<script setup>
+import { Switch, Label, Field } from "@openlab-ui/vue";
+</script>
+
+<template>
+  <Field orientation="horizontal">
+    <Switch id="notifications" :default-checked="true" />
+    <Label for="notifications">Enable notifications</Label>
+  </Field>
+</template>`}</pre></div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>

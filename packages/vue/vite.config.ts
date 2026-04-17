@@ -8,7 +8,9 @@ import path from "path";
 export default defineConfig({
   plugins: [
     vue(),
-    vanillaExtractPlugin({ identifiers: ({ hash }) => `openlab-ui_${hash}` }),
+    vanillaExtractPlugin({
+      identifiers: ({ hash }) => `openlab-ui-vue_${hash}`,
+    }),
     dts({
       tsconfigPath: "./tsconfig.app.json",
       outDir: "dist/@types",

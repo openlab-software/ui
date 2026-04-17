@@ -1,0 +1,43 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { CheckboxBasic } from "../components/previews/react/CheckboxPreview";
+import CheckboxPreviewVue from "../components/previews/vue/CheckboxPreview.vue";
+---
+
+<DocsLayout title="Checkbox" description="A control that allows selecting or deselecting a binary option." activeId="checkbox">
+  <div class="docs-section">
+    <h2 class="docs-section-title">Basic</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview docs-preview-column">
+        <CheckboxBasic client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import { Checkbox, Label, Field } from "@openlab-ui/react";
+
+<Field orientation="horizontal">
+  <Checkbox id="terms" defaultChecked />
+  <Label htmlFor="terms">Accept terms and conditions</Label>
+</Field>`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview docs-preview-column">
+        <CheckboxPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<script setup>
+import { Checkbox, Label, Field } from "@openlab-ui/vue";
+</script>
+
+<template>
+  <Field orientation="horizontal">
+    <Checkbox id="terms" :default-checked="true" />
+    <Label for="terms">Accept terms and conditions</Label>
+  </Field>
+</template>`}</pre></div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>

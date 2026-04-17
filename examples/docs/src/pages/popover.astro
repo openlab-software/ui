@@ -1,0 +1,51 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { PopoverBasic } from "../components/previews/react/PopoverPreview";
+import PopoverPreviewVue from "../components/previews/vue/PopoverPreview.vue";
+---
+
+<DocsLayout title="Popover" description="Displays rich content in a portal, triggered by a button." activeId="popover">
+  <div class="docs-section">
+    <h2 class="docs-section-title">Basic</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview docs-preview-center">
+        <PopoverBasic client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import { Popover, PopoverTrigger, PopoverContent } from "@openlab-ui/react";
+
+<Popover>
+  <PopoverTrigger asChild>
+    <Button variant="outline">Open Popover</Button>
+  </PopoverTrigger>
+  <PopoverContent>
+    <p>Popover content goes here.</p>
+  </PopoverContent>
+</Popover>`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview docs-preview-center">
+        <PopoverPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<script setup>
+import { Popover, PopoverTrigger, PopoverContent } from "@openlab-ui/vue";
+</script>
+
+<template>
+  <Popover>
+    <PopoverTrigger as-child>
+      <Button variant="outline">Open Popover</Button>
+    </PopoverTrigger>
+    <PopoverContent>
+      <p>Popover content goes here.</p>
+    </PopoverContent>
+  </Popover>
+</template>`}</pre></div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>

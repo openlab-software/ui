@@ -1,0 +1,45 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { ScrollAreaBasic } from "../components/previews/react/ScrollAreaPreview";
+import ScrollAreaPreviewVue from "../components/previews/vue/ScrollAreaPreview.vue";
+---
+
+<DocsLayout title="Scroll Area" description="Augments native scroll functionality with a custom scrollbar." activeId="scroll-area">
+  <div class="docs-section">
+    <h2 class="docs-section-title">Basic</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview docs-preview-center">
+        <ScrollAreaBasic client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import { ScrollArea } from "@openlab-ui/react";
+
+<ScrollArea style={{ height: 200, width: 300 }}>
+  <div style={{ padding: "1rem" }}>
+    {items.map(item => <div key={item}>{item}</div>)}
+  </div>
+</ScrollArea>`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview docs-preview-center">
+        <ScrollAreaPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<script setup>
+import { ScrollArea } from "@openlab-ui/vue";
+</script>
+
+<template>
+  <ScrollArea style="height: 200px; width: 300px">
+    <div style="padding: 1rem">
+      <div v-for="item in items" :key="item">{{ item }}</div>
+    </div>
+  </ScrollArea>
+</template>`}</pre></div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>

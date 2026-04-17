@@ -1,0 +1,79 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { ComboboxBasic } from "../components/previews/react/ComboboxPreview";
+import ComboboxPreviewVue from "../components/previews/vue/ComboboxPreview.vue";
+---
+
+<DocsLayout
+  title="Combobox"
+  description="An input that allows users to filter and select from a list of options."
+  activeId="combobox"
+>
+  <div class="docs-section">
+    <h2 class="docs-section-title">Basic</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview">
+        <ComboboxBasic client:only="react" />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body">
+          <pre>{`import {
+  ComboboxRoot,
+  ComboboxInput,
+  ComboboxPopup,
+  ComboboxList,
+  ComboboxItem,
+  ComboboxEmpty,
+} from "@openlab-ui/react";
+
+const fruits = ["Apple", "Banana", "Cherry", "Grape", "Mango"];
+
+<ComboboxRoot<string>>
+  <ComboboxInput placeholder="Search fruits…" />
+  <ComboboxPopup>
+    <ComboboxList>
+      {fruits.map((fruit) => (
+        <ComboboxItem key={fruit} value={fruit}>{fruit}</ComboboxItem>
+      ))}
+      <ComboboxEmpty>No fruits found.</ComboboxEmpty>
+    </ComboboxList>
+  </ComboboxPopup>
+</ComboboxRoot>`}</pre>
+        </div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview">
+        <ComboboxPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body">
+          <pre>{`<script setup>
+import {
+  ComboboxRoot, ComboboxInput, ComboboxPopup,
+  ComboboxList, ComboboxItem, ComboboxEmpty,
+} from "@openlab-ui/vue";
+
+const fruits = ["Apple", "Banana", "Cherry", "Grape", "Mango"];
+</script>
+
+<template>
+  <ComboboxRoot>
+    <ComboboxInput placeholder="Search fruits…" />
+    <ComboboxPopup>
+      <ComboboxList>
+        <ComboboxItem v-for="fruit in fruits" :key="fruit" :value="fruit">
+          {{ fruit }}
+        </ComboboxItem>
+        <ComboboxEmpty>No fruits found.</ComboboxEmpty>
+      </ComboboxList>
+    </ComboboxPopup>
+  </ComboboxRoot>
+</template>`}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>

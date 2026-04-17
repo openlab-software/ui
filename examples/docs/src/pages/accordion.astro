@@ -1,0 +1,65 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { AccordionBasic } from "../components/previews/react/AccordionPreview";
+import AccordionPreviewVue from "../components/previews/vue/AccordionPreview.vue";
+---
+
+<DocsLayout
+    title="Accordion"
+    description="A vertically stacked set of interactive headings that reveal or hide content."
+    activeId="accordion"
+>
+    <div class="docs-section">
+        <h2 class="docs-section-title">Basic</h2>
+        <div class="fw-panel" data-fw="react">
+            <div class="docs-preview docs-preview-column">
+                <AccordionBasic client:load />
+            </div>
+            <div class="docs-code">
+                <div class="docs-code-header"><span>tsx</span></div>
+                <div class="docs-code-body">
+                    <pre>{`import {
+  Accordion, AccordionItem,
+  AccordionTrigger, AccordionContent
+} from "@openlab-ui/react";
+
+<Accordion type="single" collapsible defaultValue="item-1">
+  <AccordionItem value="item-1">
+    <AccordionTrigger>What is OpenLab UI?</AccordionTrigger>
+    <AccordionContent>
+      OpenLab UI is a headless component library...
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>`}</pre>
+                </div>
+            </div>
+        </div>
+        <div class="fw-panel" data-fw="vue" hidden>
+            <div class="docs-preview docs-preview-column">
+                <AccordionPreviewVue client:load />
+            </div>
+            <div class="docs-code">
+                <div class="docs-code-header"><span>vue</span></div>
+                <div class="docs-code-body">
+                    <pre>{`<script setup>
+import {
+  Accordion, AccordionItem,
+  AccordionTrigger, AccordionContent
+} from "@openlab-ui/vue";
+</script>
+
+<template>
+  <Accordion default-value="item-1">
+    <AccordionItem value="item-1">
+      <AccordionTrigger>What is OpenLab UI?</AccordionTrigger>
+      <AccordionContent>
+        OpenLab UI is a headless component library...
+      </AccordionContent>
+    </AccordionItem>
+  </Accordion>
+</template>`}</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</DocsLayout>

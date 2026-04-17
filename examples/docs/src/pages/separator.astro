@@ -1,0 +1,39 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { SeparatorBasic } from "../components/previews/react/SeparatorPreview";
+import SeparatorPreviewVue from "../components/previews/vue/SeparatorPreview.vue";
+---
+
+<DocsLayout title="Separator" description="A visual divider between sections of content." activeId="separator">
+  <div class="docs-section">
+    <h2 class="docs-section-title">Basic</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview docs-preview-column">
+        <SeparatorBasic client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`import { Separator } from "@openlab-ui/react";
+
+<Separator />
+<Separator orientation="vertical" />`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview docs-preview-column">
+        <SeparatorPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`<script setup>
+import { Separator } from "@openlab-ui/vue";
+</script>
+
+<template>
+  <Separator />
+  <Separator orientation="vertical" />
+</template>`}</pre></div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>

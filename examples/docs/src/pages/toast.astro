@@ -1,0 +1,46 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { ToastBasic } from "../components/previews/react/ToastPreview";
+import ToastPreviewVue from "../components/previews/vue/ToastPreview.vue";
+---
+
+<DocsLayout title="Toast" description="A brief notification displayed to the user." activeId="toast">
+  <div class="docs-section">
+    <h2 class="docs-section-title">Basic</h2>
+    <div class="fw-panel" data-fw="react">
+      <div class="docs-preview docs-preview-column">
+        <ToastBasic client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>tsx</span></div>
+        <div class="docs-code-body"><pre>{`// Install sonner: pnpm add sonner
+import { Toaster } from "@openlab-ui/react";
+import { toast } from "sonner";
+
+// In your layout:
+<Toaster />
+
+// To trigger a toast:
+toast("Event has been created.");
+toast.success("Successfully saved!");
+toast.error("Something went wrong.");`}</pre></div>
+      </div>
+    </div>
+    <div class="fw-panel" data-fw="vue" hidden>
+      <div class="docs-preview docs-preview-column">
+        <ToastPreviewVue client:load />
+      </div>
+      <div class="docs-code">
+        <div class="docs-code-header"><span>vue</span></div>
+        <div class="docs-code-body"><pre>{`// Install sonner: pnpm add sonner
+import { toast } from "sonner";
+
+// In your root component:
+<Toaster />
+
+// To trigger a toast:
+toast("Event has been created.");`}</pre></div>
+      </div>
+    </div>
+  </div>
+</DocsLayout>

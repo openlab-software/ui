@@ -53,7 +53,7 @@ const sizeIconXsBase = style({});
 
 globalStyle(
   `${sizeXsBase} svg:not([class*='size-']), ${sizeIconXsBase} svg:not([class*='size-'])`,
-  { width: "0.75rem", height: "0.75rem" }
+  { width: "0.75rem", height: "0.75rem" },
 );
 
 export const button = recipe({
@@ -73,6 +73,7 @@ export const button = recipe({
       outline: {
         borderColor: vars.color.border,
         background: `color-mix(in srgb, ${vars.color.input} 30%, transparent)`,
+        color: vars.color.foreground,
         selectors: {
           "&:hover": {
             background: `color-mix(in srgb, ${vars.color.input} 50%, transparent)`,
@@ -123,7 +124,6 @@ export const button = recipe({
         },
       },
       link: {
-        color: vars.color.primary,
         textUnderlineOffset: "4px",
         selectors: {
           "&:hover": {
