@@ -5,7 +5,7 @@ const props = withDefaults(defineProps<{ dark?: boolean }>(), { dark: false });
 </script>
 
 <template>
-  <div :class="props.dark ? styles.darkTheme : styles.defaultTheme">
-    <slot />
-  </div>
+    <div :class="props.dark ? styles.darkTheme : styles.defaultTheme">
+        <slot />
+    </div>
 </template>

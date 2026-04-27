@@ -13,7 +13,6 @@ export default defineConfig({
     plugins: [
       vanillaExtractPlugin({
         identifiers: ({ hash, ...rest }) => {
-          console.log(rest);
           return `openlab-ui_${hash}`;
         },
       }),
