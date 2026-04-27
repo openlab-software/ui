@@ -21,9 +21,7 @@
     "@base-ui/react": "^1.3.0",
     "@openlab-ui/core": "workspace:*",
     "@tanstack/react-table": "^8.21.3",
-    "@zag-js/react": "^1.25.0",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "@zag-js/react": "^1.25.0"
   },
   "devDependencies": {
     "@types/react": "^19.1.16",
@@ -34,9 +32,11 @@
     "vite-plugin-dts": "^4.5.4"
   },
   "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0",
     "lucide-react": "^1.7.0",
     "sonner": "^2.0.7",
-    "recharts": "3.8.0",
+    "recharts": "^2.0.0 || ^3.0.0",
     "react-resizable-panels": "^4.9.0",
     "react-day-picker": "^9.14.0",
     "cmdk": "^1.1.1",
@@ -44,5 +44,17 @@
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.4.2",
     "vaul": "^1.1.2"
+  },
+  "peerDependenciesMeta": {
+    "lucide-react": { "optional": true },
+    "sonner": { "optional": true },
+    "recharts": { "optional": true },
+    "react-resizable-panels": { "optional": true },
+    "react-day-picker": { "optional": true },
+    "cmdk": { "optional": true },
+    "date-fns": { "optional": true },
+    "embla-carousel-react": { "optional": true },
+    "input-otp": { "optional": true },
+    "vaul": { "optional": true }
   }
 }
