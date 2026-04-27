@@ -14,8 +14,9 @@
   },
   "homepage": "https://github.com/openlab-software/ui#readme",
   "private": true,
+  "packageManager": "pnpm@10.33.2",
   "devDependencies": {
-    "pnpm": "^8.0.0"
+    "pnpm": "^10.0.0"
   },
   "scripts": {
     "dev:react": "pnpm --filter example-react dev",
