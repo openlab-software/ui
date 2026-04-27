@@ -15,6 +15,7 @@ export default defineConfig({
       tsconfigPath: "./tsconfig.app.json",
       outDir: "dist/@types",
       entryRoot: "./src",
+      aliasesExclude: [/@openlab-ui\/core/],
     }),
   ],
   resolve: {
