@@ -27,7 +27,7 @@ export default defineConfig({
   build: {
     cssCodeSplit: true,
     rollupOptions: {
-      external: ["react", "react-dom"],
+      external: ["react", "react-dom", "react/jsx-runtime"],
       output: {
         globals: {
           react: "React",
@@ -39,7 +39,7 @@ export default defineConfig({
       entry: path.resolve(__dirname, "src/index.ts"),
       name: "OpenLabUI",
       fileName: "index",
-      formats: ["es"],
+      formats: ["es", "cjs"],
     },
   },
 });

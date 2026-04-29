@@ -9,7 +9,11 @@ export function Button({ variant, size, className, ...props }: ButtonProps) {
   return (
     <BaseButton
       data-slot="button"
-      className={styles.button({ variant, size })}
+      className={
+        [styles.button({ variant, size }), className]
+          .filter(Boolean)
+          .join(' ')
+      }
       {...props}
     />
   );

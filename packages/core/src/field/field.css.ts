@@ -104,6 +104,7 @@ export const fieldTitle = style({
 });
 
 export const fieldDescription = style({
+  margin: "0",
   textAlign: "left",
   fontSize: "0.875rem",
   lineHeight: "1.5",

@@ -20,6 +20,9 @@ export const vars = createThemeContract({
     // Muted
     muted: null,
     mutedForeground: null,
+    // Ghost
+    ghost: null,
+    ghostForeground: null,
     // Accent
     accent: null,
     accentForeground: null,

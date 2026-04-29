@@ -99,9 +99,11 @@ export const button = recipe({
         },
       },
       ghost: {
+        background: vars.color.ghost,
+        color: vars.color.ghostForeground,
         selectors: {
           "&:hover": {
-            background: vars.color.muted,
+            borderColor: vars.color.ghostForeground,
             color: vars.color.foreground,
           },
           "&[aria-expanded='true']": {

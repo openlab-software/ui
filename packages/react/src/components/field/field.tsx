@@ -1,7 +1,7 @@
+import { Field as BaseField } from "@base-ui/react/field";
 import type { FieldOrientation } from "@openlab-ui/core/field/field.css";
 import * as styles from "@openlab-ui/core/field/field.css";
 import { useMemo } from "react";
-import { Label } from "../label/label";
 import { Separator } from "../separator/separator";
 
 export function FieldSet(props: React.ComponentProps<"fieldset">) {
@@ -33,10 +33,9 @@ export function FieldGroup(props: React.ComponentProps<"div">) {
 export function Field({
   orientation = "vertical",
   ...props
-}: React.ComponentProps<"div"> & FieldOrientation) {
+}: React.ComponentProps<typeof BaseField.Root> & FieldOrientation) {
   return (
-    <div
-      role="group"
+    <BaseField.Root
       data-slot="field"
       data-orientation={orientation}
       className={styles.field({ orientation })}
@@ -51,9 +50,13 @@ export function FieldContent(props: React.ComponentProps<"div">) {
   );
 }
 
-export function FieldLabel(props: React.ComponentProps<typeof Label>) {
+export function FieldLabel(props: React.ComponentProps<typeof BaseField.Label>) {
   return (
-    <Label data-slot="field-label" className={styles.fieldLabel} {...props} />
+    <BaseField.Label
+      data-slot="field-label"
+      className={styles.fieldLabel}
+      {...props}
+    />
   );
 }
 
@@ -63,9 +66,11 @@ export function FieldTitle(props: React.ComponentProps<"div">) {
   );
 }
 
-export function FieldDescription(props: React.ComponentProps<"p">) {
+export function FieldDescription(
+  props: React.ComponentProps<typeof BaseField.Description>,
+) {
   return (
-    <p
+    <BaseField.Description
       data-slot="field-description"
       className={styles.fieldDescription}
       {...props}
@@ -101,7 +106,7 @@ export function FieldError({
   children,
   errors,
   ...props
-}: React.ComponentProps<"div"> & {
+}: React.ComponentProps<typeof BaseField.Error> & {
   errors?: Array<{ message?: string } | undefined>;
 }) {
   const content = useMemo(() => {
@@ -127,13 +132,13 @@ export function FieldError({
   if (!content) return null;
 
   return (
-    <div
-      role="alert"
+    <BaseField.Error
       data-slot="field-error"
       className={styles.fieldError}
+      match={true}
       {...props}
     >
       {content}
-    </div>
+    </BaseField.Error>
   );
 }
