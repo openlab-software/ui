@@ -1,0 +1,40 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import Example from "../components/Example.astro";
+import { DataTableBasic } from "../components/previews/react/DataTablePreview";
+import DataTablePreviewVue from "../components/previews/vue/DataTablePreview.vue";
+
+const reactCode = `import { DataTable } from "@openlab-ui/react";
+import type { ColumnDef } from "@tanstack/react-table";
+
+type Payment = { status: string; email: string; amount: string };
+
+const columns: ColumnDef<Payment>[] = [
+  { accessorKey: "status", header: "Status" },
+  { accessorKey: "email", header: "Email" },
+  { accessorKey: "amount", header: "Amount" },
+];
+
+<DataTable columns={columns} data={payments} />`;
+
+const vueCode = `<script setup>
+import { DataTable } from "@openlab-ui/vue";
+
+const columns = [
+  { key: "status", header: "Status" },
+  { key: "email", header: "Email" },
+  { key: "amount", header: "Amount" },
+];
+</script>
+
+<template>
+  <DataTable :columns="columns" :data="payments" empty-text="No results." />
+</template>`;
+---
+
+<DocsLayout title="Data Table" description="A table driven by column definitions. The React version is powered by TanStack Table." activeId="datatable">
+  <Example title="Basic" reactCode={reactCode} vueCode={vueCode}>
+    <DataTableBasic slot="react" client:load />
+    <DataTablePreviewVue slot="vue" client:load />
+  </Example>
+</DocsLayout>

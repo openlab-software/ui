@@ -4,9 +4,9 @@ import { ReactPreviewProvider } from "../../ReactPreviewProvider";
 export function SpinnerBasic() {
   return (
     <ReactPreviewProvider>
-      <Spinner size="sm" />
+      <Spinner style={{ width: "1rem", height: "1rem" }} />
       <Spinner />
-      <Spinner size="lg" />
+      <Spinner style={{ width: "2rem", height: "2rem" }} />
     </ReactPreviewProvider>
   );
 }

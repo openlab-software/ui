@@ -1,0 +1,51 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import Example from "../components/Example.astro";
+import { AutocompleteBasic } from "../components/previews/react/AutocompletePreview";
+import AutocompletePreviewVue from "../components/previews/vue/AutocompletePreview.vue";
+
+const reactCode = `import {
+  AutocompleteRoot, AutocompleteInput, AutocompletePopup,
+  AutocompleteListbox, AutocompleteItem, AutocompleteEmpty,
+} from "@openlab-ui/react";
+
+const items = ["React", "Vue", "Svelte", "Solid"];
+
+<AutocompleteRoot items={items}>
+  <AutocompleteInput placeholder="Search frameworks..." />
+  <AutocompletePopup>
+    <AutocompleteEmpty>No results.</AutocompleteEmpty>
+    <AutocompleteListbox>
+      {(item) => (
+        <AutocompleteItem key={item} value={item}>{item}</AutocompleteItem>
+      )}
+    </AutocompleteListbox>
+  </AutocompletePopup>
+</AutocompleteRoot>`;
+
+const vueCode = `<script setup>
+import {
+  AutocompleteRoot, AutocompleteInput, AutocompletePopup,
+  AutocompleteListbox, AutocompleteItem,
+} from "@openlab-ui/vue";
+</script>
+
+<template>
+  <AutocompleteRoot>
+    <AutocompleteInput placeholder="Search frameworks..." />
+    <AutocompletePopup>
+      <AutocompleteListbox>
+        <AutocompleteItem>React</AutocompleteItem>
+        <AutocompleteItem>Vue</AutocompleteItem>
+      </AutocompleteListbox>
+    </AutocompletePopup>
+  </AutocompleteRoot>
+</template>`;
+---
+
+<DocsLayout title="Autocomplete" description="An input that suggests options as the user types." activeId="autocomplete">
+  <Example title="Basic" reactCode={reactCode} vueCode={vueCode}>
+    <AutocompleteBasic slot="react" client:load />
+    <AutocompletePreviewVue slot="vue" client:load />
+  </Example>
+</DocsLayout>

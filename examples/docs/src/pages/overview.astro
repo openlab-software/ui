@@ -5,7 +5,7 @@ import DocsLayout from "../layouts/DocsLayout.astro";
 <DocsLayout title="Overview" description="OpenLab UI — a headless component library for React and Vue." activeId="overview">
   <div class="docs-section">
     <h2 class="docs-section-title">Introduction</h2>
-    <p style="font-size: 0.875rem; color: var(--color-muted-foreground); line-height: 1.7; margin-bottom: 1rem">
+    <p class="docs-prose">
       OpenLab UI is a component library built on top of <strong>vanilla-extract</strong> for CSS-in-TypeScript
       styling. It provides the same components for both <strong>React</strong> (via Base UI) and <strong>Vue 3</strong>
       (using native elements with Vue reactivity).
@@ -19,7 +19,7 @@ import DocsLayout from "../layouts/DocsLayout.astro";
         <div class="docs-code-header"><span>bash</span></div>
         <div class="docs-code-body"><pre>pnpm add @openlab-ui/react</pre></div>
       </div>
-      <div class="docs-code" style="margin-top: 0.75rem">
+      <div class="docs-code docs-code-stacked">
         <div class="docs-code-header"><span>tsx</span></div>
         <div class="docs-code-body"><pre>{`import { OpenLabUIProvider, Button } from "@openlab-ui/react";
 import "@openlab-ui/react/styles.css";
@@ -38,7 +38,7 @@ function App() {
         <div class="docs-code-header"><span>bash</span></div>
         <div class="docs-code-body"><pre>pnpm add @openlab-ui/vue</pre></div>
       </div>
-      <div class="docs-code" style="margin-top: 0.75rem">
+      <div class="docs-code docs-code-stacked">
         <div class="docs-code-header"><span>vue</span></div>
         <div class="docs-code-body"><pre>{`<script setup>
 import { OpenLabUIProvider, Button } from "@openlab-ui/vue";
@@ -56,7 +56,7 @@ import "@openlab-ui/vue/styles.css";
 
   <div class="docs-section">
     <h2 class="docs-section-title">Theming</h2>
-    <p style="font-size: 0.875rem; color: var(--color-muted-foreground); line-height: 1.7">
+    <p class="docs-prose">
       The <code>OpenLabUIProvider</code> wraps your app and applies the default theme (or dark theme when
       <code>dark</code> prop is set). All CSS variables are scoped to the theme class, so multiple themes
       can coexist on the same page.

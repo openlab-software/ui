@@ -1,6 +1,8 @@
 ---
 import { defaultTheme, darkTheme } from "@openlab-ui/core/theme/default.css";
+import { vars } from "@openlab-ui/core/theme/theme-contract.css";
 import "@openlab-ui/react/styles.css";
+import "@openlab-ui/vue/styles.css";
 import "../styles/docs.css";
 import "@fontsource/geist-mono";
 
@@ -11,6 +13,21 @@ interface Props {
 }
 
 const { title, description, activeId } = Astro.props;
+
+// Theme vars are hashed by vanilla-extract; expose them under plain names for docs.css.
+const themeAliases = Object.entries({
+  background: vars.color.background,
+  foreground: vars.color.foreground,
+  muted: vars.color.muted,
+  "muted-foreground": vars.color.mutedForeground,
+  primary: vars.color.primary,
+  "primary-foreground": vars.color.primaryForeground,
+  border: vars.color.border,
+  ring: vars.color.ring,
+})
+  .map(([name, value]) => `--color-${name}:${value}`)
+  .concat(`--font-body:${vars.font.body}`)
+  .join(";");
 
 const NAV = [
   {
@@ -29,11 +46,15 @@ const NAV = [
     title: "Forms",
     items: [
       { id: "button", label: "Button" },
+      { id: "field", label: "Field" },
       { id: "input", label: "Input & Textarea" },
+      { id: "input-group", label: "Input Group" },
       { id: "number-field", label: "Number Field" },
       { id: "select", label: "Select" },
       { id: "combobox", label: "Combobox" },
+      { id: "autocomplete", label: "Autocomplete" },
       { id: "checkbox", label: "Checkbox" },
+      { id: "checkbox-group", label: "Checkbox Group" },
       { id: "radio-group", label: "Radio Group" },
       { id: "switch", label: "Switch" },
       { id: "slider", label: "Slider" },
@@ -47,6 +68,7 @@ const NAV = [
       { id: "avatar", label: "Avatar" },
       { id: "progress", label: "Progress & Meter" },
       { id: "table", label: "Table" },
+      { id: "datatable", label: "Data Table" },
     ],
   },
   {
@@ -63,6 +85,7 @@ const NAV = [
       { id: "alert-dialog", label: "Alert Dialog" },
       { id: "drawer", label: "Drawer" },
       { id: "popover", label: "Popover" },
+      { id: "preview-card", label: "Preview Card" },
       { id: "context-menu", label: "Context Menu" },
       { id: "tooltip", label: "Tooltip" },
       { id: "menu", label: "Menu" },
@@ -74,6 +97,7 @@ const NAV = [
       { id: "accordion", label: "Accordion" },
       { id: "collapsible", label: "Collapsible" },
       { id: "tabs", label: "Tabs" },
+      { id: "toolbar", label: "Toolbar" },
     ],
   },
   {
@@ -94,15 +118,47 @@ const NAV = [
     <div
       id="theme-root"
       class={defaultTheme}
+      style={themeAliases}
       data-default-class={defaultTheme}
       data-dark-class={darkTheme}
     >
+      <script is:inline>
+        // Apply the saved theme before first paint to avoid a light flash.
+        try {
+          if (localStorage.getItem("openlab-dark") === "true") {
+            var el = document.getElementById("theme-root");
+            el.classList.remove(el.dataset.defaultClass);
+            el.classList.add(el.dataset.darkClass);
+            document.body.classList.add(el.dataset.darkClass);
+          }
+        } catch (e) {}
+      </script>
       <div class="docs-root">
         <header class="docs-header">
-          <a href="/overview" class="docs-header-brand">
-            <div class="docs-header-brand-logo">OL</div>
-            <span>OpenLab UI</span>
-          </a>
+          <div class="docs-header-start">
+            <button
+              id="menu-toggle"
+              class="docs-icon-btn docs-menu-btn"
+              type="button"
+              aria-label="Toggle navigation"
+              aria-controls="docs-sidebar"
+              aria-expanded="false"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"></path></svg
+              >
+            </button>
+            <a href="/overview" class="docs-header-brand">
+              <div class="docs-header-brand-logo">OL</div>
+              <span>OpenLab UI</span>
+            </a>
+          </div>
           <div class="docs-header-actions">
             <button
               id="dark-toggle"
@@ -140,7 +196,7 @@ const NAV = [
         </header>
 
         <div class="docs-body">
-          <nav class="docs-sidebar">
+          <nav class="docs-sidebar" id="docs-sidebar" aria-label="Components">
             {
               NAV.map((section) => (
                 <div class="docs-nav-section">
@@ -149,6 +205,7 @@ const NAV = [
                     <a
                       href={`/${item.id}`}
                       class={`docs-nav-item${activeId === item.id ? " active" : ""}`}
+                      aria-current={activeId === item.id ? "page" : undefined}
                     >
                       {item.label}
                     </a>
@@ -157,6 +214,7 @@ const NAV = [
               ))
             }
           </nav>
+          <div class="docs-scrim" id="docs-scrim"></div>
 
           <main class="docs-main">
             <h1 class="docs-page-title">{title}</h1>
@@ -221,6 +279,8 @@ const NAV = [
 
           const bar = document.createElement("div");
           bar.className = "fw-section-tabs";
+          bar.setAttribute("role", "group");
+          bar.setAttribute("aria-label", "Framework");
 
           (["react", "vue"] as const).forEach((fw) => {
             const btn = document.createElement("button");
@@ -232,13 +292,87 @@ const NAV = [
             bar.appendChild(btn);
           });
 
-          const firstPanel = section.querySelector(".fw-panel")!;
-          section.insertBefore(bar, firstPanel);
+          const label = document.createElement("span");
+          label.className = "fw-switch-label";
+          label.textContent = "Framework";
+          const sw = document.createElement("div");
+          sw.className = "fw-switch";
+          sw.append(label, bar);
+
+          const title = section.querySelector<HTMLElement>(".docs-section-title");
+          if (title) {
+            const head = document.createElement("div");
+            head.className = "docs-section-head";
+            title.replaceWith(head);
+            head.append(title, sw);
+          } else {
+            section.insertBefore(sw, reactPanel);
+          }
+        });
+      }
+
+      // Label each pane so preview and code are unmistakable
+      function labelPanes() {
+        document.querySelectorAll<HTMLElement>(".fw-panel").forEach((panel) => {
+          const preview = panel.querySelector<HTMLElement>(".docs-preview");
+          if (preview) {
+            const bar = document.createElement("div");
+            bar.className = "docs-pane-bar";
+            bar.innerHTML = '<span class="docs-pane-label">Preview</span>';
+            preview.before(bar);
+          }
+          const header = panel.querySelector<HTMLElement>(".docs-code-header");
+          const lang = header?.querySelector("span");
+          if (header && lang) {
+            const label = document.createElement("span");
+            label.className = "docs-pane-label";
+            label.textContent = "Code";
+            lang.className = "docs-pane-lang";
+            header.prepend(label);
+          }
         });
       }
 
       injectSectionTabs();
+      labelPanes();
       switchFw(currentFw);
+
+      // Mobile navigation drawer
+      const menuBtn = document.getElementById("menu-toggle")!;
+      const docsRoot = document.querySelector<HTMLElement>(".docs-root")!;
+      function setNav(open: boolean) {
+        docsRoot.classList.toggle("docs-nav-open", open);
+        menuBtn.setAttribute("aria-expanded", String(open));
+      }
+      menuBtn.addEventListener("click", () => setNav(!docsRoot.classList.contains("docs-nav-open")));
+      document.getElementById("docs-scrim")!.addEventListener("click", () => setNav(false));
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") setNav(false);
+      });
+
+      // Keep the active nav item visible in the sidebar
+      document.querySelector(".docs-nav-item.active")?.scrollIntoView({ block: "center" });
+
+      // Copy buttons on code blocks
+      document.querySelectorAll<HTMLElement>(".docs-code").forEach((block) => {
+        const header = block.querySelector(".docs-code-header");
+        const pre = block.querySelector("pre");
+        if (!header || !pre) return;
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "docs-copy-btn";
+        btn.textContent = "Copy";
+        btn.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(pre.textContent ?? "");
+            btn.textContent = "Copied";
+          } catch {
+            btn.textContent = "Failed";
+          }
+          setTimeout(() => (btn.textContent = "Copy"), 1500);
+        });
+        header.appendChild(btn);
+      });
     </script>
   </body>
 </html>

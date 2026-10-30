@@ -35,8 +35,17 @@ export function ComboboxInput(props: ComboboxInputProps) {
 }
 ComboboxInput.displayName = "OpenLabUIComboboxInput";
 
-export function ComboboxPopup(props: ComboboxPopupProps) {
-  return <ComboboxBase.Popup className={styles.popup} {...props} />;
+export function ComboboxPopup({
+  sideOffset = 4,
+  ...props
+}: ComboboxPopupProps & { sideOffset?: number }) {
+  return (
+    <ComboboxBase.Portal>
+      <ComboboxBase.Positioner sideOffset={sideOffset} className={styles.positioner}>
+        <ComboboxBase.Popup className={styles.popup} {...props} />
+      </ComboboxBase.Positioner>
+    </ComboboxBase.Portal>
+  );
 }
 ComboboxPopup.displayName = "OpenLabUIComboboxPopup";
 

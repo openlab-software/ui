@@ -35,6 +35,9 @@ importers:
       '@openlab-ui/vue':
         specifier: workspace:*
         version: link:../../packages/vue
+      '@tanstack/react-table':
+        specifier: ^8.21.3
+        version: 8.21.3(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       astro:
         specifier: ^5.7.0
         version: 5.18.1(@types/node@24.6.1)(rollup@4.52.3)(typescript@5.8.3)

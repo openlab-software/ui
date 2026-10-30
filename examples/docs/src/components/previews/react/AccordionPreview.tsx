@@ -5,7 +5,7 @@ export function AccordionBasic() {
   return (
     <ReactPreviewProvider>
       <div style={{ width: "100%", maxWidth: 480 }}>
-        <Accordion type="single" collapsible defaultValue="item-1">
+        <Accordion defaultValue={["item-1"]}>
           <AccordionItem value="item-1">
             <AccordionTrigger>What is OpenLab UI?</AccordionTrigger>
             <AccordionContent>

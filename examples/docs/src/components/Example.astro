@@ -1,0 +1,31 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  reactCode: string;
+  vueCode: string;
+  column?: boolean;
+}
+
+const { title, description, reactCode, vueCode, column = false } = Astro.props;
+const previewClass = `docs-preview${column ? " docs-preview-column" : ""}`;
+---
+
+<div class="docs-section">
+  <h2 class="docs-section-title">{title}</h2>
+  {description && <p class="docs-section-description">{description}</p>}
+  <div class="fw-panel" data-fw="react">
+    <div class={previewClass}><slot name="react" /></div>
+    <div class="docs-code">
+      <div class="docs-code-header"><span>tsx</span></div>
+      <div class="docs-code-body"><pre>{reactCode}</pre></div>
+    </div>
+  </div>
+  <div class="fw-panel" data-fw="vue" hidden>
+    <div class={previewClass}><slot name="vue" /></div>
+    <div class="docs-code">
+      <div class="docs-code-header"><span>vue</span></div>
+      <div class="docs-code-body"><pre>{vueCode}</pre></div>
+    </div>
+  </div>
+</div>

@@ -17,6 +17,9 @@ export function TableBody(props: React.ComponentProps<"tbody">) {
 }
 
 export function TableFooter(props: React.ComponentProps<"tfoot">) {
+
+
+  
   return <tfoot data-slot="table-footer" className={styles.tfoot} {...props} />;
 }
 

@@ -41,27 +41,25 @@ import DrawerPreviewVue from "../components/previews/vue/DrawerPreview.vue";
         <div class="docs-code-header"><span>vue</span></div>
         <div class="docs-code-body"><pre>{`<script setup>
 import {
-  Drawer, DrawerTrigger, DrawerContent,
-  DrawerHeader, DrawerTitle, DrawerFooter
+  DrawerRoot, DrawerTrigger, DrawerPopup,
+  DrawerTitle, DrawerDescription, DrawerClose, Button,
 } from "@openlab-ui/vue";
-import { ref } from "vue";
-const open = ref(false);
 </script>
 
 <template>
-  <Drawer v-model="open">
-    <DrawerTrigger as-child>
-      <Button>Open Drawer</Button>
+  <DrawerRoot>
+    <DrawerTrigger>
+      <Button variant="outline">Open Drawer</Button>
     </DrawerTrigger>
-    <DrawerContent>
-      <DrawerHeader>
-        <DrawerTitle>Shopping Cart</DrawerTitle>
-      </DrawerHeader>
-      <DrawerFooter>
-        <Button @click="open = false">Checkout</Button>
-      </DrawerFooter>
-    </DrawerContent>
-  </Drawer>
+    <DrawerPopup>
+      <DrawerTitle>Shopping Cart</DrawerTitle>
+      <DrawerDescription>Review your items before checkout.</DrawerDescription>
+      <DrawerClose>
+        <Button variant="outline">Cancel</Button>
+      </DrawerClose>
+      <Button>Checkout</Button>
+    </DrawerPopup>
+  </DrawerRoot>
 </template>`}</pre></div>
       </div>
     </div>

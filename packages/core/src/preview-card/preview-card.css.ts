@@ -3,8 +3,8 @@ import { vars } from "../theme/theme-contract.css";
 
 export const root = style({ display: "inline-flex" });
 export const rootImage = style({ width: "100%", height: "auto", borderRadius: vars.radius.base });
+export const positioner = style({ isolation: "isolate", zIndex: 50 });
 export const popup = style({
-  position: "fixed", zIndex: 50,
   width: "20rem",
   backgroundColor: vars.color.background,
   border: `1px solid ${vars.color.border}`,

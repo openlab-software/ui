@@ -1,0 +1,43 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import Example from "../components/Example.astro";
+import { ToolbarBasic } from "../components/previews/react/ToolbarPreview";
+import ToolbarPreviewVue from "../components/previews/vue/ToolbarPreview.vue";
+
+const reactCode = `import { ToolbarRoot, ToolbarGroup, ToolbarButton, ToolbarSeparator } from "@openlab-ui/react";
+
+<ToolbarRoot aria-label="Text formatting">
+  <ToolbarGroup>
+    <ToolbarButton aria-label="Bold"><BoldIcon /></ToolbarButton>
+    <ToolbarButton aria-label="Italic"><ItalicIcon /></ToolbarButton>
+  </ToolbarGroup>
+  <ToolbarSeparator />
+  <ToolbarGroup>
+    <ToolbarButton aria-label="Align left"><AlignLeftIcon /></ToolbarButton>
+  </ToolbarGroup>
+</ToolbarRoot>`;
+
+const vueCode = `<script setup>
+import { ToolbarRoot, ToolbarGroup, ToolbarButton, ToolbarSeparator } from "@openlab-ui/vue";
+</script>
+
+<template>
+  <ToolbarRoot>
+    <ToolbarGroup>
+      <ToolbarButton aria-label="Bold">B</ToolbarButton>
+      <ToolbarButton aria-label="Italic">I</ToolbarButton>
+    </ToolbarGroup>
+    <ToolbarSeparator />
+    <ToolbarGroup>
+      <ToolbarButton>Left</ToolbarButton>
+    </ToolbarGroup>
+  </ToolbarRoot>
+</template>`;
+---
+
+<DocsLayout title="Toolbar" description="A container for grouping a set of controls, such as buttons and toggles." activeId="toolbar">
+  <Example title="Basic" reactCode={reactCode} vueCode={vueCode}>
+    <ToolbarBasic slot="react" client:load />
+    <ToolbarPreviewVue slot="vue" client:load />
+  </Example>
+</DocsLayout>

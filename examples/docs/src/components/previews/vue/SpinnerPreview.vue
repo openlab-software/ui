@@ -5,9 +5,9 @@ import VuePreviewProvider from "../../VuePreviewProvider.vue";
 
 <template>
   <VuePreviewProvider>
-    <Spinner size="sm" />
+    <Spinner style="width: 1rem; height: 1rem" />
     <Spinner />
-    <Spinner size="lg" />
+    <Spinner style="width: 2rem; height: 2rem" />
     <div style="width: 100%; max-width: 320px; display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem">
       <Skeleton style="height: 1rem; width: 60%" />
       <Skeleton style="height: 0.75rem; width: 90%" />

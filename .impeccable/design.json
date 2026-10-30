@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-23T00:00:00Z",
+  "title": "Design System: OpenLab UI",
+  "extensions": {
+    "colorMeta": {
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "oklch(0.145 0 0)", "tonalRamp": ["oklch(0.145 0 0)", "oklch(0.205 0 0)", "oklch(0.269 0 0)", "oklch(0.371 0 0)", "oklch(0.556 0 0)", "oklch(0.708 0 0)", "oklch(0.922 0 0)", "oklch(0.97 0 0)"] },
+      "graphite": { "role": "primary", "displayName": "Graphite", "canonical": "oklch(0.205 0 0)", "tonalRamp": ["oklch(0.145 0 0)", "oklch(0.205 0 0)", "oklch(0.269 0 0)", "oklch(0.371 0 0)", "oklch(0.556 0 0)", "oklch(0.708 0 0)", "oklch(0.922 0 0)", "oklch(0.985 0 0)"] },
+      "alarm": { "role": "alert", "displayName": "Alarm", "canonical": "oklch(0.577 0.245 27.325)", "tonalRamp": ["oklch(0.25 0.245 27.325)", "oklch(0.35 0.245 27.325)", "oklch(0.45 0.245 27.325)", "oklch(0.577 0.245 27.325)", "oklch(0.65 0.19 27.325)", "oklch(0.75 0.13 27.325)", "oklch(0.87 0.07 27.325)", "oklch(0.95 0.03 27.325)"] }
+    },
+    "typographyMeta": {
+      "body": { "displayName": "Body", "purpose": "Texto padrão de componentes e controles." },
+      "title": { "displayName": "Title", "purpose": "Títulos de card e seção." },
+      "label": { "displayName": "Label", "purpose": "Botões xs, metadados e legendas." }
+    },
+    "shadows": [
+      { "name": "hairline-ring", "value": "0 0 0 1px color-mix(in srgb, var(--color-foreground) 10%, transparent)", "purpose": "Contorno de cards." },
+      { "name": "focus-ring", "value": "0 0 0 3px color-mix(in srgb, var(--color-ring) 50%, transparent)", "purpose": "Foco visível em botões e inputs." },
+      { "name": "error-ring", "value": "0 0 0 3px color-mix(in srgb, var(--color-destructive) 20%, transparent)", "purpose": "Campo inválido." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Transições de estado (0.15s)." }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "768px" },
+      { "name": "docs-nav", "value": "900px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-default",
+      "description": "Ação principal.",
+      "html": "<button class=\"ds-btn\">Save changes</button>",
+      "css": ".ds-btn{font-family:'Geist Mono Variable',monospace;font-size:.875rem;height:2.25rem;padding:0 .75rem;border:1px solid transparent;border-radius:0;background:oklch(.205 0 0);color:oklch(.985 0 0);cursor:pointer;transition:all .15s cubic-bezier(.4,0,.2,1)}.ds-btn:hover{background:color-mix(in srgb,oklch(.205 0 0) 80%,transparent)}.ds-btn:focus-visible{outline:none;border-color:oklch(.708 0 0);box-shadow:0 0 0 3px color-mix(in srgb,oklch(.708 0 0) 50%,transparent)}.ds-btn:active{transform:translateY(1px)}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Ação secundária com contorno.",
+      "html": "<button class=\"ds-btn-outline\">Cancel</button>",
+      "css": ".ds-btn-outline{font-family:'Geist Mono Variable',monospace;font-size:.875rem;height:2.25rem;padding:0 .75rem;border:1px solid oklch(.922 0 0);border-radius:0;background:color-mix(in srgb,oklch(.922 0 0) 30%,transparent);color:oklch(.145 0 0);cursor:pointer;transition:all .15s cubic-bezier(.4,0,.2,1)}.ds-btn-outline:hover{background:color-mix(in srgb,oklch(.922 0 0) 50%,transparent)}.ds-btn-outline:focus-visible{outline:none;border-color:oklch(.708 0 0);box-shadow:0 0 0 3px color-mix(in srgb,oklch(.708 0 0) 50%,transparent)}"
+    },
+    {
+      "name": "Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Campo de texto.",
+      "html": "<input class=\"ds-input\" placeholder=\"Email\" />",
+      "css": ".ds-input{font-family:'Geist Mono Variable',monospace;font-size:.875rem;height:2.25rem;width:100%;padding:.25rem .75rem;border:1px solid oklch(.922 0 0);border-radius:0;background:color-mix(in oklch,oklch(.922 0 0) 30%,transparent);color:oklch(.145 0 0);transition:all .15s cubic-bezier(.4,0,.2,1)}.ds-input::placeholder{color:oklch(.556 0 0)}.ds-input:focus-visible{outline:none;border-color:oklch(.708 0 0);box-shadow:0 0 0 3px color-mix(in oklch,oklch(.708 0 0) 50%,transparent)}"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Container com hairline.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card-title\">Title</div><div class=\"ds-card-desc\">Description</div></div>",
+      "css": ".ds-card{font-family:'Geist Mono Variable',monospace;padding:1.5rem;border-radius:0;background:oklch(1 0 0);color:oklch(.145 0 0);box-shadow:0 0 0 1px color-mix(in srgb,oklch(.145 0 0) 10%,transparent);display:grid;gap:.5rem}.ds-card-title{font-weight:500;font-size:1rem}.ds-card-desc{font-size:.875rem;color:oklch(.556 0 0)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Terminal Blueprint",
+    "overview": "OpenLab UI se comporta como uma planta técnica: monocromática, composta em monoespaçada, desenhada com linhas finas e sem ornamento. O conteúdo é a estrutura, e a interface mostra onde as coisas estão em vez de decorá-las.",
+    "keyCharacteristics": [
+      "Raio de canto zero em todos os componentes.",
+      "Uma única família, Geist Mono.",
+      "Sem cor de marca; só o vermelho de erro é cromático.",
+      "Profundidade por hairlines de 1px, não por sombras.",
+      "Foco sempre visível, com anel de 3px."
+    ],
+    "rules": [
+      { "name": "The No Brand Color Rule", "body": "O sistema não tem cor de marca. Ênfase vem de inversão de contraste e peso.", "section": "colors" },
+      { "name": "The One Chromatic Voice Rule", "body": "O vermelho de alerta é o único matiz; aparece só para erro e destruição.", "section": "colors" },
+      { "name": "The One Family Rule", "body": "Não introduza uma segunda família. Ênfase usa peso e tamanho.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Superfícies não têm sombra em repouso. Sombra só em foco, erro ou camada flutuante.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do manter radius 0 em qualquer componente novo.",
+      "Do usar os tokens de vars para toda cor.",
+      "Do dar foco visível com anel de 3px.",
+      "Do expressar ênfase por inversão de contraste e peso.",
+      "Do manter paridade entre React e Vue."
+    ],
+    "donts": [
+      "Don't introduzir cor de marca ou acento cromático.",
+      "Don't arredondar cantos ou usar formas de pílula.",
+      "Don't usar sombras difusas em superfícies em repouso.",
+      "Don't misturar uma segunda família tipográfica.",
+      "Don't usar o vermelho de alerta fora de erro ou ação destrutiva."
+    ]
+  }
+}

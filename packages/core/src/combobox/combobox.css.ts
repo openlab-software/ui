@@ -39,10 +39,8 @@ export const input = style({
   outline: "none",
   selectors: { "&:focus": { borderColor: vars.color.ring } },
 });
+export const positioner = style({ isolation: "isolate", zIndex: 50 });
 export const popup = style({
-  position: "absolute",
-  zIndex: 50,
-  marginTop: "0.25rem",
   backgroundColor: vars.color.background,
   border: `1px solid ${vars.color.border}`,
   borderRadius: vars.radius.base,

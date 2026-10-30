@@ -21,8 +21,17 @@ export function AutocompleteInput(props: AutocompleteBase.Input.Props) {
 }
 AutocompleteInput.displayName = "OpenLabUIAutocompleteInput";
 
-export function AutocompletePopup(props: AutocompleteBase.Popup.Props) {
-  return <AutocompleteBase.Popup className={styles.popup} {...props} />;
+export function AutocompletePopup({
+  sideOffset = 4,
+  ...props
+}: AutocompleteBase.Popup.Props & { sideOffset?: number }) {
+  return (
+    <AutocompleteBase.Portal>
+      <AutocompleteBase.Positioner sideOffset={sideOffset} className={styles.positioner}>
+        <AutocompleteBase.Popup className={styles.popup} {...props} />
+      </AutocompleteBase.Positioner>
+    </AutocompleteBase.Portal>
+  );
 }
 AutocompletePopup.displayName = "OpenLabUIAutocompletePopup";
 

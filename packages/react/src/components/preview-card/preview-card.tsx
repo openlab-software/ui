@@ -15,8 +15,17 @@ export function PreviewCardTrigger(props: PreviewCardTriggerProps) {
   return <PreviewCardBase.Trigger className={styles.root} {...props} />;
 }
 PreviewCardTrigger.displayName = "OpenLabUIPreviewCardTrigger";
-export function PreviewCardPopup(props: PreviewCardPopupProps) {
-  return <PreviewCardBase.Popup className={styles.popup} {...props} />;
+export function PreviewCardPopup({
+  sideOffset = 4,
+  ...props
+}: PreviewCardPopupProps & { sideOffset?: number }) {
+  return (
+    <PreviewCardBase.Portal>
+      <PreviewCardBase.Positioner sideOffset={sideOffset} className={styles.positioner}>
+        <PreviewCardBase.Popup className={styles.popup} {...props} />
+      </PreviewCardBase.Positioner>
+    </PreviewCardBase.Portal>
+  );
 }
 PreviewCardPopup.displayName = "OpenLabUIPreviewCardPopup";
 export function PreviewCardBackdrop(props: PreviewCardBackdropProps) {

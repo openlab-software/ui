@@ -3,7 +3,8 @@ import * as styles from "@openlab-ui/core/drawer/drawer.css";
 
 export type DrawerRootProps = DrawerBase.Root.Props;
 export type DrawerTriggerProps = DrawerBase.Trigger.Props;
-export type DrawerPopupProps = DrawerBase.Popup.Props;
+export type DrawerSide = "top" | "right" | "bottom" | "left";
+export type DrawerPopupProps = DrawerBase.Popup.Props & { side?: DrawerSide };
 export type DrawerOverlayProps = DrawerBase.Backdrop.Props;
 export type DrawerTitleProps = DrawerBase.Title.Props;
 export type DrawerDescriptionProps = DrawerBase.Description.Props;
@@ -17,12 +18,20 @@ export function DrawerTrigger(props: DrawerTriggerProps) {
   return <DrawerBase.Trigger className={styles.trigger} {...props} />;
 }
 DrawerTrigger.displayName = "OpenLabUIDrawerTrigger";
-export function DrawerPopup(props: DrawerPopupProps) {
-  return <DrawerBase.Popup className={styles.popup} {...props} />;
+export function DrawerPopup({ side = "right", ...props }: DrawerPopupProps) {
+  return (
+    <DrawerBase.Portal>
+      <DrawerBase.Popup data-side={side} className={styles.popup} {...props} />
+    </DrawerBase.Portal>
+  );
 }
 DrawerPopup.displayName = "OpenLabUIDrawerPopup";
 export function DrawerOverlay(props: DrawerOverlayProps) {
-  return <DrawerBase.Backdrop className={styles.overlay} {...props} />;
+  return (
+    <DrawerBase.Portal>
+      <DrawerBase.Backdrop className={styles.overlay} {...props} />
+    </DrawerBase.Portal>
+  );
 }
 DrawerOverlay.displayName = "OpenLabUIDrawerOverlay";
 export function DrawerTitle(props: DrawerTitleProps) {

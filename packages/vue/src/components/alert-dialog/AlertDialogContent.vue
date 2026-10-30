@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import * as styles from "@openlab-ui/core/alert-dialog/alert-dialog.css";
-import { inject } from "vue";
+import { inject, onMounted, ref } from "vue";
 
 interface Props {
   size?: "default" | "sm";
@@ -9,10 +9,14 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), { size: "default" });
 
 const ctx = inject<{ isOpen: boolean; close: () => void }>("alert-dialog");
+
+// Teleport only after mount: SSR cannot render into <body>, so hydrating it mismatches.
+const mounted = ref(false);
+onMounted(() => (mounted.value = true));
 </script>
 
 <template>
-  <Teleport to="body">
+  <Teleport v-if="mounted" to="body">
     <template v-if="ctx?.isOpen">
       <div
         data-slot="alert-dialog-overlay"

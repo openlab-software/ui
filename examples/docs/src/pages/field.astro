@@ -1,0 +1,71 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import Example from "../components/Example.astro";
+import { FieldBasic, FieldGrouped } from "../components/previews/react/FieldPreview";
+import FieldPreviewVue from "../components/previews/vue/FieldPreview.vue";
+
+const basicReact = `import { Field, FieldLabel, FieldDescription, Input } from "@openlab-ui/react";
+
+<Field>
+  <FieldLabel>Email</FieldLabel>
+  <Input type="email" placeholder="you@example.com" />
+  <FieldDescription>We will never share your email.</FieldDescription>
+</Field>`;
+
+const basicVue = `<script setup>
+import { Field, FieldLabel, FieldDescription, Input } from "@openlab-ui/vue";
+</script>
+
+<template>
+  <Field>
+    <FieldLabel>Email</FieldLabel>
+    <Input type="email" placeholder="you@example.com" />
+    <FieldDescription>We will never share your email.</FieldDescription>
+  </Field>
+</template>`;
+
+const groupedReact = `import {
+  Field, FieldSet, FieldLegend, FieldGroup, FieldLabel, FieldError, Input,
+} from "@openlab-ui/react";
+
+<FieldSet>
+  <FieldLegend>Account</FieldLegend>
+  <FieldGroup>
+    <Field>
+      <FieldLabel>Username</FieldLabel>
+      <Input placeholder="openlab" />
+    </Field>
+    <Field invalid>
+      <FieldLabel>Password</FieldLabel>
+      <Input type="password" />
+      <FieldError match>Password must be at least 8 characters.</FieldError>
+    </Field>
+  </FieldGroup>
+</FieldSet>`;
+
+const groupedVue = `<FieldSet>
+  <FieldLegend>Account</FieldLegend>
+  <FieldGroup>
+    <Field>
+      <FieldLabel>Username</FieldLabel>
+      <Input placeholder="openlab" />
+    </Field>
+    <Field>
+      <FieldLabel>Password</FieldLabel>
+      <Input type="password" aria-invalid="true" />
+      <FieldError>Password must be at least 8 characters.</FieldError>
+    </Field>
+  </FieldGroup>
+</FieldSet>`;
+---
+
+<DocsLayout title="Field" description="Combines a label, control, description and error message into an accessible form field." activeId="field">
+  <Example title="Basic" reactCode={basicReact} vueCode={basicVue}>
+    <FieldBasic slot="react" client:load />
+    <FieldPreviewVue slot="vue" section="basic" client:load />
+  </Example>
+  <Example title="Grouped with validation" description="Use FieldSet, FieldLegend and FieldGroup to organize related fields." reactCode={groupedReact} vueCode={groupedVue}>
+    <FieldGrouped slot="react" client:load />
+    <FieldPreviewVue slot="vue" section="grouped" client:load />
+  </Example>
+</DocsLayout>

@@ -23,7 +23,7 @@ import AccordionPreviewVue from "../components/previews/vue/AccordionPreview.vue
   AccordionTrigger, AccordionContent
 } from "@openlab-ui/react";
 
-<Accordion type="single" collapsible defaultValue="item-1">
+<Accordion defaultValue={["item-1"]}>
   <AccordionItem value="item-1">
     <AccordionTrigger>What is OpenLab UI?</AccordionTrigger>
     <AccordionContent>

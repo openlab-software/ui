@@ -1,0 +1,43 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import Example from "../components/Example.astro";
+import { CheckboxGroupBasic } from "../components/previews/react/CheckboxGroupPreview";
+import CheckboxGroupPreviewVue from "../components/previews/vue/CheckboxGroupPreview.vue";
+
+const reactCode = `import { CheckboxGroup, Checkbox, Field, Label } from "@openlab-ui/react";
+
+<CheckboxGroup defaultValue={["Apple"]}>
+  <Field orientation="horizontal">
+    <Checkbox id="apple" value="Apple" />
+    <Label htmlFor="apple">Apple</Label>
+  </Field>
+  <Field orientation="horizontal">
+    <Checkbox id="banana" value="Banana" />
+    <Label htmlFor="banana">Banana</Label>
+  </Field>
+</CheckboxGroup>`;
+
+const vueCode = `<script setup>
+import { CheckboxGroup, Checkbox, Field, Label } from "@openlab-ui/vue";
+</script>
+
+<template>
+  <CheckboxGroup>
+    <Field orientation="horizontal">
+      <Checkbox id="apple" default-checked />
+      <Label for="apple">Apple</Label>
+    </Field>
+    <Field orientation="horizontal">
+      <Checkbox id="banana" />
+      <Label for="banana">Banana</Label>
+    </Field>
+  </CheckboxGroup>
+</template>`;
+---
+
+<DocsLayout title="Checkbox Group" description="Groups related checkboxes and manages their values together." activeId="checkbox-group">
+  <Example title="Basic" reactCode={reactCode} vueCode={vueCode}>
+    <CheckboxGroupBasic slot="react" client:load />
+    <CheckboxGroupPreviewVue slot="vue" client:load />
+  </Example>
+</DocsLayout>

@@ -32,7 +32,7 @@ export function ToggleBasic() {
 export function ToggleGroupBasic() {
   return (
     <ReactPreviewProvider>
-      <ToggleGroup type="multiple">
+      <ToggleGroup multiple>
         <ToggleGroupItem value="bold" aria-label="Bold">
           <BoldIcon style={{ width: "1rem", height: "1rem" }} />
         </ToggleGroupItem>

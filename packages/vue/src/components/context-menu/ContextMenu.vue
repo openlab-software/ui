@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { provide, ref } from "vue";
+import { onMounted, provide, ref } from "vue";
 
 interface Position {
   x: number;
@@ -28,12 +28,16 @@ function handleContextMenu(e: MouseEvent) {
 function handleClose() {
   isOpen.value = false;
 }
+
+// Teleport only after mount: SSR cannot render into <body>, so hydrating it mismatches.
+const mounted = ref(false);
+onMounted(() => (mounted.value = true));
 </script>
 
 <template>
   <div data-slot="context-menu" @contextmenu="handleContextMenu">
     <slot />
-    <Teleport to="body">
+    <Teleport v-if="mounted" to="body">
       <div
         v-if="isOpen"
         style="position: fixed; inset: 0; z-index: 49"

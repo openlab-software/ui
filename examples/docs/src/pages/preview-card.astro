@@ -1,0 +1,39 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import Example from "../components/Example.astro";
+import { PreviewCardBasic } from "../components/previews/react/PreviewCardPreview";
+import PreviewCardPreviewVue from "../components/previews/vue/PreviewCardPreview.vue";
+
+const reactCode = `import { PreviewCardRoot, PreviewCardTrigger, PreviewCardPopup } from "@openlab-ui/react";
+
+<PreviewCardRoot>
+  <PreviewCardTrigger href="https://base-ui.com">Base UI</PreviewCardTrigger>
+  <PreviewCardPopup>
+    <strong>Base UI</strong>
+    <p>Unstyled, accessible components for building high-quality UIs.</p>
+  </PreviewCardPopup>
+</PreviewCardRoot>`;
+
+const vueCode = `<script setup>
+import { PreviewCardRoot, PreviewCardTrigger, PreviewCardPopup } from "@openlab-ui/vue";
+</script>
+
+<template>
+  <PreviewCardRoot>
+    <PreviewCardTrigger>
+      <a href="https://vuejs.org">Vue.js</a>
+    </PreviewCardTrigger>
+    <PreviewCardPopup>
+      <strong>Vue.js</strong>
+      <p>The progressive JavaScript framework.</p>
+    </PreviewCardPopup>
+  </PreviewCardRoot>
+</template>`;
+---
+
+<DocsLayout title="Preview Card" description="A popup that previews a link's content when hovering or focusing it." activeId="preview-card">
+  <Example title="Basic" reactCode={reactCode} vueCode={vueCode}>
+    <PreviewCardBasic slot="react" client:load />
+    <PreviewCardPreviewVue slot="vue" client:load />
+  </Example>
+</DocsLayout>

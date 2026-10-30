@@ -1,0 +1,55 @@
+---
+import DocsLayout from "../layouts/DocsLayout.astro";
+import Example from "../components/Example.astro";
+import { InputGroupBasic } from "../components/previews/react/InputGroupPreview";
+import InputGroupPreviewVue from "../components/previews/vue/InputGroupPreview.vue";
+
+const reactCode = `import {
+  InputGroup, InputGroupAddon, InputGroupInput, InputGroupText, InputGroupButton,
+} from "@openlab-ui/react";
+import { SearchIcon } from "lucide-react";
+
+<InputGroup>
+  <InputGroupAddon><SearchIcon /></InputGroupAddon>
+  <InputGroupInput placeholder="Search..." />
+</InputGroup>
+
+<InputGroup>
+  <InputGroupAddon><InputGroupText>https://</InputGroupText></InputGroupAddon>
+  <InputGroupInput placeholder="example.com" />
+</InputGroup>
+
+<InputGroup>
+  <InputGroupInput placeholder="Your name" />
+  <InputGroupAddon align="inline-end">
+    <InputGroupButton>Save</InputGroupButton>
+  </InputGroupAddon>
+</InputGroup>`;
+
+const vueCode = `<script setup>
+import {
+  InputGroup, InputGroupAddon, InputGroupInput, InputGroupText, InputGroupButton,
+} from "@openlab-ui/vue";
+</script>
+
+<template>
+  <InputGroup>
+    <InputGroupAddon><InputGroupText>$</InputGroupText></InputGroupAddon>
+    <InputGroupInput placeholder="0.00" />
+  </InputGroup>
+
+  <InputGroup>
+    <InputGroupInput placeholder="Your name" />
+    <InputGroupAddon align="inline-end">
+      <InputGroupButton>Save</InputGroupButton>
+    </InputGroupAddon>
+  </InputGroup>
+</template>`;
+---
+
+<DocsLayout title="Input Group" description="Attach icons, text or buttons to the start or end of an input." activeId="input-group">
+  <Example title="Addons" description="InputGroupAddon accepts align=&quot;inline-start&quot; (default) or &quot;inline-end&quot;." reactCode={reactCode} vueCode={vueCode}>
+    <InputGroupBasic slot="react" client:load />
+    <InputGroupPreviewVue slot="vue" client:load />
+  </Example>
+</DocsLayout>
